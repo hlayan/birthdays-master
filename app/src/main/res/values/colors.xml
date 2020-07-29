@@ -8,21 +8,21 @@
     <color name="b">#008000</color>
     <color name="c">#8a2be2</color>
     <color name="d">#361FB2</color>
-    <color name="e">#3e4551</color>
+    <color name="e">#232529</color>
     <color name="f">@android:color/holo_red_light</color>
     <color name="g">#D64e94</color>
     <color name="h">#b025d8</color>
     <color name="i">#A52A2A</color>
     <color name="j">#295be0</color>
     <color name="k">#E77755</color>
-    <color name="l">#ab3d0a</color>
+    <color name="l">#C51162</color>
     <color name="m">@android:color/holo_blue_dark</color>
-    <color name="n">@android:color/holo_red_dark</color>
+    <color name="n">#F60606</color>
     <color name="o">#006598</color>
-    <color name="p">#b8860b</color>
+    <color name="p">#00BFA5</color>
     <color name="q">#e26e22</color>
     <color name="r">#fb3d75</color>
-    <color name="s">#424242 </color>
+    <color name="s">#03A9F4</color>
 
     <color name="light_gray">#d3d3d3</color>
 

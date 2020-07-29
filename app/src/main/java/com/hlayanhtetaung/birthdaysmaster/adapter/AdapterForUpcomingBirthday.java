@@ -259,7 +259,7 @@ public class AdapterForUpcomingBirthday extends RecyclerView.Adapter<AdapterForU
     private void setAnimation(View viewToAnimate, int position, Context context) {
         // If the bound view wasn't previously displayed on screen, it's animated
         if (position > -1) {
-            Animation animation = AnimationUtils.loadAnimation(context, android.R.anim.slide_in_left);
+            Animation animation = AnimationUtils.loadAnimation(context, R.anim.fall_down);
             viewToAnimate.startAnimation(animation);
         }
     }

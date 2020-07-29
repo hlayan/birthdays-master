@@ -239,7 +239,7 @@ public class ActivityForWorkingExperience extends UtilsActivity {
         endMonths.setText("0");
         endDays.setText("0");
         endYears.setText("0");
-        startDaysOfWeek.setText("0");
+        endDaysOfWeek.setText("0");
 
         years.setText("0");
         months.setText("0");
