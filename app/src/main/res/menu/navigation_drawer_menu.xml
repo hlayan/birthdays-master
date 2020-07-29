@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/add_person"
+            android:icon="@drawable/ic_baseline_person_add_24"
+            android:title="@string/add_person" />
+
+        <item
+            android:id="@+id/change_theme"
+            android:icon="@drawable/ic_baseline_color_lens_24"
+            android:title="@string/app_theme" />
+
+        <item
+            android:id="@+id/check_leap"
+            android:icon="@drawable/ic_baseline_calendar_today_24"
+            android:title="@string/leap_checking" />
+
+        <item
+            android:id="@+id/working_experience"
+            android:icon="@drawable/ic_baseline_calendar_today_24"
+            android:title="@string/working_experience" />
+
+        <item
+            android:id="@+id/compare_to"
+            android:icon="@drawable/ic_compare_arrows_white_24dp"
+            android:title="@string/compare_person" />
+
+        <item
+            android:id="@+id/delete_everything"
+            android:icon="@drawable/ic_baseline_delete_24"
+            android:title="@string/delete_everything" />
+
+    </group>
+
+    <item android:title="@string/view_as">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/current_age"
+                    android:icon="@drawable/ic_baseline_event_note_24"
+                    android:title="@string/current_age" />
+
+                <item
+                    android:id="@+id/date_of_birth"
+                    android:icon="@drawable/ic_baseline_perm_contact_calendar_24"
+                    android:title="@string/date_of_birth" />
+
+                <item
+                    android:id="@+id/upcoming_birthday"
+                    android:icon="@drawable/ic_cake_white_48dp"
+                    android:title="@string/upcoming_birthday" />
+
+                <item
+                    android:id="@+id/next_birthdays"
+                    android:icon="@drawable/ic_baseline_timer_24"
+                    android:title="@string/RemainingNextBirthday" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/about_developer">
+        <menu>
+            <item
+                android:id="@+id/show_facebook_profile"
+                android:icon="@drawable/ic_baseline_account_circle_24"
+                android:title="@string/developer_name"/>
+            <item
+                android:id="@+id/send_email"
+                android:icon="@android:drawable/ic_dialog_email"
+                android:title="@string/email" />
+        </menu>
+    </item>
+</menu>

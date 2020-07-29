@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/extraAndUpcomingBirthdayOuterLayout">
+
+    <TextView
+        android:id="@+id/upcomingBirthdayMonths"
+        android:layout_weight="1"
+        style="@style/yearMonthDayWithId" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="20sp"
+        android:background="@drawable/background_with_gray" />
+
+    <TextView
+        android:id="@+id/upcomingBirthdayDays"
+        android:layout_weight="1"
+        style="@style/yearMonthDayWithId" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="20sp"
+        android:background="@drawable/background_with_gray" />
+
+    <TextView
+        android:id="@+id/upcomingBirthdayYears"
+        android:layout_weight="1"
+        style="@style/yearMonthDayWithId" />
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="20sp"
+        android:background="@drawable/background_with_gray" />
+
+    <TextView
+        android:id="@+id/upcomingBirthdayDaysOfWeek"
+        android:layout_weight="1"
+        style="@style/yearMonthDayWithId" />
+
+</LinearLayout>

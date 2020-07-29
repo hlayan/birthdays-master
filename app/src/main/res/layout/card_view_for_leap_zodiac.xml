@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/background"
+    style="@style/extraAndUpcomingBirthdayOuterLayout"
+    android:padding="0dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <include android:id="@+id/leap"
+        layout="@layout/card_view_for_months_weeks_days"/>
+
+    <include android:id="@+id/zodiac"
+        layout="@layout/card_view_for_months_weeks_days"/>
+
+    <include android:id="@+id/same"
+        layout="@layout/card_view_for_months_weeks_days"/>
+
+</LinearLayout>

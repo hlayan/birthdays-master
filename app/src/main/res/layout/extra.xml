@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/extraAndUpcomingBirthdayOuterLayout">
+
+    <LinearLayout
+        style="@style/extraAndUpcomingBirthdayInnerLayout"
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry">
+
+            <TextView
+                style="@style/extraLeft"
+                android:text="@string/total_years" />
+
+            <TextView
+                style="@style/extraLeft"
+                android:text="@string/total_months" />
+
+            <TextView
+                style="@style/extraLeft"
+                android:text="@string/total_weeks" />
+
+            <TextView
+                style="@style/extraLeft"
+                android:text="@string/total_days" />
+
+            <TextView
+                style="@style/extraLeft"
+                android:text="@string/total_hours"/>
+
+            <TextView
+                style="@style/extraLeft"
+                android:text="@string/total_minutes"/>
+
+            <TextView
+                style="@style/extraLeft"
+                android:text="@string/total_seconds"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="?attr/colorPrimary" />
+
+    <LinearLayout
+        style="@style/extraAndUpcomingBirthdayInnerLayout"
+        android:paddingStart="10dp"
+        tools:ignore="RtlSymmetry">
+
+        <TextView
+            android:id="@+id/totalYears"
+            style="@style/extraRight"/>
+
+        <TextView
+            android:id="@+id/totalMonths"
+            style="@style/extraRight" />
+
+        <TextView
+            android:id="@+id/totalWeeks"
+            style="@style/extraRight" />
+
+        <TextView
+            android:id="@+id/totalDays"
+            style="@style/extraRight" />
+
+        <TextView
+            android:id="@+id/totalHours"
+            style="@style/extraRight" />
+
+        <TextView
+            android:id="@+id/totalMinutes"
+            style="@style/extraRight" />
+
+        <TextView
+            android:id="@+id/totalSeconds"
+            style="@style/extraRight" />
+
+        </LinearLayout>
+
+</LinearLayout>

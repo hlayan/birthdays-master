@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/yearMonthDayBorderLayout"
+    >
+
+    <LinearLayout
+        style="@style/yearMonthDayLayout"
+        >
+
+        <TextView
+            android:id="@+id/monthsForNext"
+            style="@style/yearMonthDayWithoutId"
+            android:text="@string/months" />
+
+        <TextView
+            android:id="@+id/remainingMonths"
+            style="@style/yearMonthDayWithId" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_marginVertical="5dp"
+        android:layout_width="2dp"
+        android:layout_height="match_parent"
+        android:background="@drawable/background_with_gray" />
+
+    <LinearLayout
+        style="@style/yearMonthDayLayout"
+        >
+
+        <TextView
+            android:id="@+id/daysForNext"
+            style="@style/yearMonthDayWithoutId"
+            android:text="@string/days" />
+
+        <TextView
+            android:id="@+id/remainingDays"
+            style="@style/yearMonthDayWithId" />
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/background_for_bottom_sheet"
+    style="@style/extraAndUpcomingBirthdayInnerLayout"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="30dp"
+        android:layout_height="4dp"
+        android:background="@drawable/background_with_gray" />
+
+    <TextView
+        android:id="@+id/button_sheet_title"
+        android:textSize="25sp"
+        android:text="@string/themes"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimary"
+        android:layout_gravity="center"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray" />
+
+    <TableLayout
+        android:layout_margin="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        app:layout_anchorGravity="center">
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <Button
+                android:onClick="onClickButton1"
+                android:background="@color/colorPrimary"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton2"
+                android:background="@color/a"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton3"
+                android:background="@color/b"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton4"
+                android:background="@color/c"
+                style="@style/colorButtonStyle"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <Button
+                android:onClick="onClickButton5"
+                android:background="@color/d"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton6"
+                android:background="@color/e"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton7"
+                android:background="@color/f"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton8"
+                android:background="@color/g"
+                style="@style/colorButtonStyle"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <Button
+                android:onClick="onClickButton9"
+                android:background="@color/h"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton10"
+                android:background="@color/i"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton11"
+                android:background="@color/j"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton12"
+                android:background="@color/k"
+                style="@style/colorButtonStyle"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <Button
+                android:onClick="onClickButton13"
+                android:background="@color/l"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton14"
+                android:background="@color/m"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton15"
+                android:background="@color/n"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton16"
+                android:background="@color/o"
+                style="@style/colorButtonStyle"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_weight="1"
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            >
+
+            <Button
+                android:onClick="onClickButton17"
+                android:background="@color/p"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton18"
+                android:background="@color/q"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton19"
+                android:background="@color/r"
+                style="@style/colorButtonStyle"/>
+
+            <Button
+                android:onClick="onClickButton20"
+                android:background="@color/s"
+                style="@style/colorButtonStyle"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

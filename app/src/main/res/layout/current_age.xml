@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/yearMonthDayBorderLayout"
+    >
+
+    <LinearLayout
+        style="@style/yearMonthDayLayout"
+        >
+
+        <TextView
+            style="@style/yearMonthDayWithoutId"
+            android:text="@string/years" />
+
+        <TextView
+            android:id="@+id/currentYears"
+            style="@style/yearMonthDayWithId" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/yearMonthDayLayout"
+        >
+
+        <TextView
+            style="@style/yearMonthDayWithoutId"
+            android:text="@string/months" />
+
+        <TextView
+            android:id="@+id/currentMonths"
+            style="@style/yearMonthDayWithId" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/yearMonthDayLayout"
+        >
+
+        <TextView
+            style="@style/yearMonthDayWithoutId"
+            android:text="@string/days" />
+
+        <TextView
+            android:id="@+id/currentDays"
+            style="@style/yearMonthDayWithId" />
+    </LinearLayout>
+
+</LinearLayout>

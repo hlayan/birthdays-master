@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@drawable/background_for_bottom_sheet"
+    style="@style/extraAndUpcomingBirthdayInnerLayout"
+    app:layout_behavior="android.support.design.widget.BottomSheetBehavior"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="30dp"
+        android:layout_height="4dp"
+        android:background="@drawable/background_with_gray" />
+
+    <TextView
+        android:id="@+id/button_sheet_title"
+        android:textSize="25sp"
+        android:text="@string/month"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimary"
+        android:layout_gravity="center"
+        android:elevation="10dp"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <View
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layoutAnimation="@anim/layout_animation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/recyclerView"
+        android:padding="3dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        />
+</LinearLayout>

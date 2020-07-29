@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/search_items"
+        android:title="@string/searching"
+        android:icon="@drawable/ic_baseline_search_24"
+        app:actionViewClass="android.widget.SearchView"
+        android:orderInCategory="1"
+        app:showAsAction="always" />
+
+    <item android:id="@+id/sort_items"
+        android:title="@string/sorting"
+        android:icon="@drawable/ic_baseline_sort_24"
+        android:orderInCategory="1"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/add_person"
+        android:icon="@android:drawable/ic_menu_add"
+        android:title="@string/add_person" />
+
+    <item
+        android:id="@+id/compare_to"
+        android:icon="@android:drawable/ic_menu_sort_alphabetically"
+        android:title="@string/compare_person" />
+
+    <item
+        android:id="@+id/month_by"
+        android:icon="@android:drawable/ic_menu_month"
+        android:title="@string/months" />
+
+    <item
+        android:id="@+id/week_by"
+        android:icon="@android:drawable/ic_menu_week"
+        android:title="@string/weeks" />
+
+    <item
+        android:id="@+id/day_by"
+        android:icon="@android:drawable/ic_menu_day"
+        android:title="@string/days" />
+
+</menu>

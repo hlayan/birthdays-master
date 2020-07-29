@@ -1,0 +1,281 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="buttonStyle">@style/Widget.AppCompat.Button.Borderless</item>
+    </style>
+
+    <style name="a" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/a</item>
+        <item name="colorPrimaryDark">@color/a</item>
+        <item name="colorAccent">@color/a</item>
+    </style>
+
+    <style name="b" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/b</item>
+        <item name="colorPrimaryDark">@color/b</item>
+        <item name="colorAccent">@color/b</item>
+    </style>
+
+    <style name="c" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/c</item>
+        <item name="colorPrimaryDark">@color/c</item>
+        <item name="colorAccent">@color/c</item>
+    </style>
+
+    <style name="d" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/d</item>
+        <item name="colorPrimaryDark">@color/d</item>
+        <item name="colorAccent">@color/d</item>
+    </style>
+
+    <style name="e" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/e</item>
+        <item name="colorPrimaryDark">@color/e</item>
+        <item name="colorAccent">@color/e</item>
+    </style>
+
+    <style name="f" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/f</item>
+        <item name="colorPrimaryDark">@color/f</item>
+        <item name="colorAccent">@color/f</item>
+    </style>
+
+    <style name="g" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/g</item>
+        <item name="colorPrimaryDark">@color/g</item>
+        <item name="colorAccent">@color/g</item>
+    </style>
+
+    <style name="h" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/h</item>
+        <item name="colorPrimaryDark">@color/h</item>
+        <item name="colorAccent">@color/h</item>
+    </style>
+
+    <style name="i" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/i</item>
+        <item name="colorPrimaryDark">@color/i</item>
+        <item name="colorAccent">@color/i</item>
+    </style>
+
+    <style name="j" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/j</item>
+        <item name="colorPrimaryDark">@color/j</item>
+        <item name="colorAccent">@color/j</item>
+    </style>
+
+    <style name="k" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/k</item>
+        <item name="colorPrimaryDark">@color/k</item>
+        <item name="colorAccent">@color/k</item>
+    </style>
+
+    <style name="l" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/l</item>
+        <item name="colorPrimaryDark">@color/l</item>
+        <item name="colorAccent">@color/l</item>
+    </style>
+
+    <style name="m" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/m</item>
+        <item name="colorPrimaryDark">@color/m</item>
+        <item name="colorAccent">@color/m</item>
+    </style>
+
+    <style name="n" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/n</item>
+        <item name="colorPrimaryDark">@color/n</item>
+        <item name="colorAccent">@color/n</item>
+    </style>
+
+    <style name="o" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/o</item>
+        <item name="colorPrimaryDark">@color/o</item>
+        <item name="colorAccent">@color/o</item>
+    </style>
+
+    <style name="p" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/p</item>
+        <item name="colorPrimaryDark">@color/p</item>
+        <item name="colorAccent">@color/p</item>
+    </style>
+
+    <style name="q" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/q</item>
+        <item name="colorPrimaryDark">@color/q</item>
+        <item name="colorAccent">@color/q</item>
+    </style>
+
+    <style name="r" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/r</item>
+        <item name="colorPrimaryDark">@color/r</item>
+        <item name="colorAccent">@color/r</item>
+    </style>
+
+    <style name="s" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/s</item>
+        <item name="colorPrimaryDark">@color/s</item>
+        <item name="colorAccent">@color/s</item>
+    </style>
+
+    <style name="SplashTheme" parent="@android:style/Theme.Light.NoTitleBar.Fullscreen">
+        <item name="android:windowBackground">@drawable/slash_screen</item>
+    </style>
+
+    <style name="BottomSheetShapeAppearance" parent="ShapeAppearance.MaterialComponents.LargeComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">20dp</item>
+        <item name="cornerSizeTopRight">20dp</item>
+    </style>
+
+    <style name="BottomSheetModal" parent="Widget.Design.BottomSheet.Modal">
+        <item name="shapeAppearance">@style/BottomSheetShapeAppearance</item>
+        <item name="behavior_fitToContents">true</item>
+        <item name="behavior_halfExpandedRatio">0.5</item>
+    </style>
+
+    <style name="BaseBottomSheetMenu" parent="Theme.MaterialComponents.DayNight.BottomSheetDialog">
+        <item name="android:windowIsFloating">false</item>
+        <item name="bottomSheetStyle">@style/BottomSheetModal</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+
+    </style>
+
+    <style name="BottomSheetMenuTheme" parent="@style/BaseBottomSheetMenu" />
+
+    <style name="extraLeft">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:text">00</item>
+    </style>
+
+    <style name="extraRight">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:text">00</item>
+    </style>
+
+    <style name="yearMonthDayWithId">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:text">00</item>
+    </style>
+
+    <style name="yearMonthDayWithoutId">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="yearMonthDayLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="yearMonthDayBorderLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">5dp</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="buttonYesNo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="titleTextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="extraAndUpcomingBirthdayOuterLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="extraAndUpcomingBirthdayInnerLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="DialogTheme">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+    <style name="colorButtonStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:elevation">10dp</item>
+        <item name="android:layout_span">1</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="buttonStyleOnRow">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_span">1</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="RowStyleForButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">2dp</item>
+    </style>
+
+    <style name="NumberPickerStyle">
+        <item name="colorControlNormal">?attr/colorPrimary</item>
+    </style>
+
+</resources>

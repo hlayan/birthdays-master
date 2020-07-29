@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityForDetailsOfBirthday">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:padding="5dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include layout="@layout/card_view_for_current_age"/>
+
+            <include android:id="@+id/upcoming_card"
+                layout="@layout/card_view_for_upcoming_birthday" />
+
+            <include layout="@layout/card_view_for_next_birthday"/>
+
+            <include layout="@layout/card_view_for_leap_zodiac"/>
+
+            <include layout="@layout/card_view_for_extra"/>
+
+            <include android:id="@+id/date_of_birth_card"
+                layout="@layout/card_view_for_upcoming_birthday"/>
+
+            <include android:id="@+id/developer"
+                layout="@layout/developed_by" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

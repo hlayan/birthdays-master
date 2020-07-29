@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ActivityForAgeComparison">
+
+    <include layout="@layout/toolbar_layout" />
+
+    <ScrollView
+        android:padding="5dp"
+        android:clipToPadding="false"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/person1"
+                layout="@layout/card_view_for_current_age" />
+
+            <View
+                android:layout_margin="5dp"
+                android:layout_width="30dp"
+                android:layout_height="5dp"
+                android:background="@drawable/background_with_gray" />
+
+            <include
+                android:id="@+id/person2"
+                layout="@layout/card_view_for_current_age" />
+
+            <include layout="@layout/buttons_yes_no" />
+
+            <TextView
+                android:id="@+id/result"
+                android:text="@string/result"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <include
+                android:id="@+id/difference"
+                layout="@layout/card_view_for_current_age" />
+
+            <include layout="@layout/card_view_for_extra" />
+
+            <include android:id="@+id/developer"
+                layout="@layout/developed_by" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

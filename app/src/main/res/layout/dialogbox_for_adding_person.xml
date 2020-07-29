@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content"
+    android:background="@drawable/background"
+    style="@style/extraAndUpcomingBirthdayInnerLayout">
+
+    <EditText
+        android:background="@drawable/background_for_edit_text"
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:labelFor="@id/editText"
+        android:padding="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="5dp"
+        android:hint="@string/enter_your_name"
+        android:maxLength="28"
+        android:inputType="textPersonName"
+        android:textColor="?attr/colorPrimary"
+        android:textColorHint="?attr/colorPrimary"/>
+
+    <DatePicker
+        android:theme="@style/NumberPickerStyle"
+        android:id="@+id/datePicker"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="6dp"
+        android:layout_gravity="center"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        tools:ignore="RtlSymmetry" />
+
+    <include layout="@layout/buttons_yes_no"/>
+
+</LinearLayout>
