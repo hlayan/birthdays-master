@@ -9,7 +9,7 @@
     <include layout="@layout/toolbar_layout" />
 
     <ScrollView
-        android:padding="5dp"
+        android:padding="@dimen/padding_in_scroll"
         android:clipToPadding="false"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

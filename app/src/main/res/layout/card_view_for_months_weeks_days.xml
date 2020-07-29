@@ -6,8 +6,8 @@
     android:layout_weight="1"
     android:foreground="?android:attr/selectableItemBackground"
     card_view:cardCornerRadius="11dp"
-    card_view:cardElevation="5dp"
-    android:layout_margin="5dp"
+    card_view:cardElevation="@dimen/cardElevation"
+    android:layout_margin="@dimen/margin_in_card"
     android:clickable="true"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:focusable="true">
