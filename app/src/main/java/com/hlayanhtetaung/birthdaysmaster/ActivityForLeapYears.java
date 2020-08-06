@@ -11,7 +11,7 @@ import com.hlayanhtetaung.birthdaysmaster.logic.UtilsActivity;
 
 import java.util.Objects;
 
-public class LeapYears extends UtilsActivity {
+public class ActivityForLeapYears extends UtilsActivity {
 
     TextView leapYearText,resultsValue, leapYearNumber;
     String inputUnits, resultText, totalDay;

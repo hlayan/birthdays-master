@@ -8,8 +8,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -17,7 +15,7 @@ import androidx.annotation.NonNull;
  import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hlayanhtetaung.birthdaysmaster.ActivityForFragments;
+import com.hlayanhtetaung.birthdaysmaster.ActivityForRecyclerView;
 import com.hlayanhtetaung.birthdaysmaster.R;
 
 import java.util.Objects;
@@ -60,7 +58,7 @@ public class AdapterForMonthWeekDay extends RecyclerView.Adapter<AdapterForMonth
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(cardView.getContext(), ActivityForFragments.class);
+                Intent intent = new Intent(cardView.getContext(), ActivityForRecyclerView.class);
                 intent.putExtra("title",strings[position]);
                 intent.putExtra("count", String.valueOf(position+1));
                 intent.putExtra("checking", checking);

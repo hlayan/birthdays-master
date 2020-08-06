@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="m">
-        <activity android:name=".LeapYears"
+        <activity android:name=".ActivityForLeapYears"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -24,7 +24,7 @@
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityForFragments"
+            android:name=".ActivityForRecyclerView"
             android:parentActivityName=".MainActivity"
             android:screenOrientation="portrait" />
         <activity

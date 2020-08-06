@@ -310,7 +310,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 break;
 
             case R.id.check_leap:
-                Intent checkLeap = new Intent(this, LeapYears.class);
+                Intent checkLeap = new Intent(this, ActivityForLeapYears.class);
                 startActivity(checkLeap);
                 break;
 

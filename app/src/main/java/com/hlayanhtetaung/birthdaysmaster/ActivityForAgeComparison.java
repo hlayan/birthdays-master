@@ -178,7 +178,7 @@ public class ActivityForAgeComparison extends UtilsActivity {
         person1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextBirthday = new Intent(getApplicationContext(), ActivityForFragments.class);
+                Intent nextBirthday = new Intent(getApplicationContext(), ActivityForRecyclerView.class);
                 nextBirthday.putExtra("title","Choose Person");
                 nextBirthday.putExtra("result",1);
                 startActivityForResult(nextBirthday,1);
@@ -196,7 +196,7 @@ public class ActivityForAgeComparison extends UtilsActivity {
         person2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nextBirthday = new Intent(getApplicationContext(), ActivityForFragments.class);
+                Intent nextBirthday = new Intent(getApplicationContext(), ActivityForRecyclerView.class);
                 nextBirthday.putExtra("title","Choose Person");
                 nextBirthday.putExtra("result",2);
                 startActivityForResult(nextBirthday,2);

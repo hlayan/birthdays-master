@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.Objects;
 
-public class ActivityForFragments extends UtilsActivity {
+public class ActivityForRecyclerView extends UtilsActivity {
 
     private int result;
 

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".LeapYears">
+    tools:context=".ActivityForLeapYears">
 
     <include layout="@layout/toolbar_layout" />
 
@@ -15,7 +15,7 @@
         android:layout_height="1dp"
         android:background="#d3d3d3" />
 
-    <include layout="@layout/result_view"/>
+    <include layout="@layout/result_view" />
 
     <View
         android:layout_width="match_parent"
@@ -23,135 +23,116 @@
         android:background="#d3d3d3" />
 
     <TableLayout
-        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
         android:layout_weight="2"
-        android:orientation="vertical"
         android:gravity="center"
-        android:layout_gravity="center">
+        android:orientation="vertical">
 
-        <TableRow
-            style="@style/RowStyleForButton"
-            >
+        <TableRow style="@style/RowStyleForButton">
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_negative"
                 android:onClick="onClickB1"
-                android:text="@string/t1"
-                android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:text="@string/t1" />
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_negative"
                 android:onClick="onClickB2"
-                android:text="@string/t2"
-                android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:text="@string/t2" />
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_negative"
                 android:onClick="onClickB3"
-                android:text="@string/t3"
-                android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:text="@string/t3" />
 
         </TableRow>
 
-        <TableRow
-            style="@style/RowStyleForButton"
-            >
+        <TableRow style="@style/RowStyleForButton">
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_negative"
                 android:onClick="onClickB4"
-                android:text="@string/t4"
-                android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:text="@string/t4" />
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_negative"
                 android:onClick="onClickB5"
-                android:text="@string/t5"
-                android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:text="@string/t5" />
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_negative"
                 android:onClick="onClickB6"
-                android:text="@string/t6"
-                android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:text="@string/t6" />
 
         </TableRow>
 
-        <TableRow
-            style="@style/RowStyleForButton"
-            >
+        <TableRow style="@style/RowStyleForButton">
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_negative"
                 android:onClick="onClickB7"
-                android:text="@string/t7"
-                android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:text="@string/t7" />
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_negative"
                 android:onClick="onClickB8"
-                android:text="@string/t8"
-                android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:text="@string/t8" />
 
             <Button
-                android:onClick="onClickB9"
-                android:text="@string/t9"
-                android:background="@drawable/ripple_effect_for_negative"
                 style="@style/buttonStyleOnRow"
-                />
+                android:background="@drawable/ripple_effect_for_negative"
+                android:onClick="onClickB9"
+                android:text="@string/t9" />
 
         </TableRow>
 
-        <TableRow
-            style="@style/RowStyleForButton"
-            >
+        <TableRow style="@style/RowStyleForButton">
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_positive"
                 android:onClick="onClickBClear"
                 android:text="@string/t_clear"
-                android:textSize="16sp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/ripple_effect_for_positive"
-                style="@style/buttonStyleOnRow"
-                />
+                android:textSize="16sp" />
 
             <Button
-                android:onClick="onClickB0"
-                android:text="@string/t0"
+                style="@style/buttonStyleOnRow"
                 android:background="@drawable/ripple_effect_for_negative"
-                style="@style/buttonStyleOnRow"
-                />
+                android:onClick="onClickB0"
+                android:text="@string/t0" />
 
             <Button
+                style="@style/buttonStyleOnRow"
+                android:background="@drawable/ripple_effect_for_positive"
                 android:onClick="onClickBDelete"
                 android:text="@string/t_del"
-                android:textSize="16sp"
                 android:textColor="@android:color/white"
-                android:background="@drawable/ripple_effect_for_positive"
-                style="@style/buttonStyleOnRow"
-                />
+                android:textSize="16sp" />
 
         </TableRow>
 
     </TableLayout>
 
     <LinearLayout
-        android:paddingBottom="10dp"
-        android:layout_weight="1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="10dp">
 
-        <include android:id="@+id/developer"
+        <include
+            android:id="@+id/developer"
             layout="@layout/developed_by" />
 
     </LinearLayout>

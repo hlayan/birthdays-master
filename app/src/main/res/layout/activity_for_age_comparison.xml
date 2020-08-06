@@ -9,6 +9,9 @@
     <include layout="@layout/toolbar_layout" />
 
     <ScrollView
+        android:scrollbarStyle="insideInset"
+        android:scrollbarSize="1dp"
+        android:scrollbarFadeDuration="@android:integer/config_shortAnimTime"
         android:padding="@dimen/padding_in_scroll"
         android:clipToPadding="false"
         android:layout_width="match_parent"
