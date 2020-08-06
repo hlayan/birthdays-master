@@ -1,31 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:layout_height="wrap_content"
+    style="@style/extraAndUpcomingBirthdayInnerLayout"
     android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     android:background="@drawable/background"
-    style="@style/extraAndUpcomingBirthdayInnerLayout">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/titleTextView"
-        android:text="@string/date_of_birth"
-        android:background="@drawable/title_background_border"
         style="@style/titleTextView"
-        />
+        android:background="@drawable/title_background_border"
+        android:text="@string/date_of_birth" />
 
     <DatePicker
-        android:theme="@style/NumberPickerStyle"
         android:id="@+id/datePicker"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingStart="6dp"
         android:layout_gravity="center"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
         android:foregroundGravity="center"
+        android:paddingStart="6dp"
+        android:theme="@style/NumberPickerStyle"
         tools:ignore="RtlSymmetry" />
 
-    <include layout="@layout/buttons_yes_no"/>
+    <include layout="@layout/buttons_yes_no" />
 
 </LinearLayout>

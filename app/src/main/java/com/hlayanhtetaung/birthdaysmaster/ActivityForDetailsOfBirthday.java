@@ -14,7 +14,9 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import androidx.appcompat.widget.Toolbar;
+
 import com.hlayanhtetaung.birthdaysmaster.data.DataClass;
 import com.hlayanhtetaung.birthdaysmaster.data.DataForExtra;
 import com.hlayanhtetaung.birthdaysmaster.database.SQLiteDatabaseOpenHelper;
@@ -40,10 +42,10 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
     private Dialog dialog;
     View upcomingCard, dateOfBirthCard, leap, same, sign;
     TextView title, years, months, days,
-            monthsForNext,daysForNext, nextTitle, nextMonths, nextDays,
-            upcomingBirthdayYears,upcomingBirthdayMonths,upcomingBirthdayDays,upcomingBirthdayDaysOfWeek,
-            birthdayTitle,birthdayYears,birthdayMonths,birthdayDays,birthdayDaysOfWeek,
-            totalYears,totalMonths,totalWeeks,totalDays,totalHours,totalMinutes,totalSeconds,
+            monthsForNext, daysForNext, nextTitle, nextMonths, nextDays,
+            upcomingBirthdayYears, upcomingBirthdayMonths, upcomingBirthdayDays, upcomingBirthdayDaysOfWeek,
+            birthdayTitle, birthdayYears, birthdayMonths, birthdayDays, birthdayDaysOfWeek,
+            totalYears, totalMonths, totalWeeks, totalDays, totalHours, totalMinutes, totalSeconds,
             leapTitle, leapCount, sameTitle, sameCount, signTitle, signCount;
 
     @Override
@@ -53,7 +55,7 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
 //        toolbar.setTitle("cardName");
         Objects.requireNonNull(getSupportActionBar()).setTitle(cardName);
 
-        DataClass currentAge = AgeCalculator.calculateAge(userYears,userMonths,userDays);
+        DataClass currentAge = AgeCalculator.calculateAge(userYears, userMonths, userDays);
 
         title.setText(R.string.current_age);
         years.setText(String.valueOf(currentAge.getYears()));
@@ -71,25 +73,25 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
 
         checkYears = now.getYear();
 
-        if (now.getMonthOfYear()>userMonths){
+        if (now.getMonthOfYear() > userMonths) {
 
             checkYears++;
-            showNextBirthday(checkYears+1,userMonths,userDays,nextMonths,nextDays);
+            showNextBirthday(checkYears + 1, userMonths, userDays, nextMonths, nextDays);
 
-        }else if (now.getDayOfMonth()>userDays && now.getMonthOfYear()==userMonths){
+        } else if (now.getDayOfMonth() > userDays && now.getMonthOfYear() == userMonths) {
 
             checkYears++;
-            showNextBirthday(checkYears+1,userMonths,userDays,nextMonths,nextDays);
+            showNextBirthday(checkYears + 1, userMonths, userDays, nextMonths, nextDays);
 
-        }else if (now.getDayOfMonth()==userDays && now.getMonthOfYear()==userMonths){
+        } else if (now.getDayOfMonth() == userDays && now.getMonthOfYear() == userMonths) {
 
             checkYears++;
             nextMonths.setText("0");
             nextDays.setText("0");
 
-        }else {
+        } else {
 
-            showNextBirthday(checkYears,userMonths,userDays,nextMonths,nextDays);
+            showNextBirthday(checkYears, userMonths, userDays, nextMonths, nextDays);
 
         }
 
@@ -101,37 +103,37 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         upcomingBirthdayDays.setText(String.valueOf(userDays));
         upcomingBirthdayDaysOfWeek.setText(upcomingDaysOfWeek);
 
-        final ArrayList<String> leapArray = AgeCalculator.leapYearsTime(now.getYear(),userYears);
+        final ArrayList<String> leapArray = AgeCalculator.leapYearsTime(now.getYear(), userYears);
         leapTitle.setText(R.string.leap);
         leapCount.setText(String.valueOf(leapArray.size()));
         leap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAlertDialog("Leap Year",leapArray.toString());
+                showAlertDialog("Leap Year", leapArray.toString());
             }
         });
 
-        final ArrayList<String> sameYears = AgeCalculator.sameBirthdayTime(checkYears,userYears,userMonths,userDays);
+        final ArrayList<String> sameYears = AgeCalculator.sameBirthdayTime(checkYears, userYears, userMonths, userDays);
         sameTitle.setText(R.string.same);
         sameCount.setText(String.valueOf(sameYears.size()));
         same.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAlertDialog("Same of Date of Birth",sameYears.toString());
+                showAlertDialog("Same of Date of Birth", sameYears.toString());
             }
         });
 
-        final String[] zodiacSign = AgeCalculator.isSign(userDays,userMonths);
+        final String[] zodiacSign = AgeCalculator.isSign(userDays, userMonths);
         signTitle.setText(R.string.sign);
         signCount.setText(zodiacSign[1]);
         sign.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAlertDialog("Zodiac Sign",zodiacSign[0] + " " + zodiacSign[1]);
+                showAlertDialog("Zodiac Sign", zodiacSign[0] + " " + zodiacSign[1]);
             }
         });
 
-        DataForExtra ageExtra = AgeCalculator.calculateExtras(currentAge.getYears(),currentAge.getMonths(),currentAge.getDays());
+        DataForExtra ageExtra = AgeCalculator.calculateExtras(currentAge.getYears(), currentAge.getMonths(), currentAge.getDays());
         totalYears.setText(String.valueOf(ageExtra.getTotalYears()));
         totalMonths.setText(String.valueOf(ageExtra.getTotalMonths()));
         totalWeeks.setText(String.valueOf(ageExtra.getTotalWeeks()));
@@ -255,7 +257,7 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         save.setText(R.string.update);
 
         editText.setText(cardName);
-        datePicker.updateDate(userYears,userMonths-1,userDays);
+        datePicker.updateDate(userYears, userMonths - 1, userDays);
 
         datePicker.setMaxDate(new Date().getTime());
 
@@ -276,11 +278,11 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
                     return;
                 }
 
-                int totalDays = AgeCalculator.calculateTotalDays(years,months,days);
+                int totalDays = AgeCalculator.calculateTotalDays(years, months, days);
 
-                if (name.equals(cardName) && years == userYears && months == userMonths && days == userDays){
+                if (name.equals(cardName) && years == userYears && months == userMonths && days == userDays) {
                     showToast("Unchanged!");
-                }else {
+                } else {
                     ContentValues contentValues = new ContentValues();
                     contentValues.put("name", name);
                     contentValues.put("day", days);
@@ -288,7 +290,7 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
                     contentValues.put("year", years);
                     contentValues.put("days_of_week", daysOfWeek);
                     contentValues.put("total_days", totalDays);
-                    sqLiteDatabase.update("date_of_birth", contentValues,"_id = ?", new String[]{String.valueOf(id)});
+                    sqLiteDatabase.update("date_of_birth", contentValues, "_id = ?", new String[]{String.valueOf(id)});
                     showToast("Edited successfully");
                     dialog.dismiss();
                     cardName = name;
@@ -322,7 +324,7 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sqLiteDatabase.delete("date_of_birth","_id = ?",new String[]{String.valueOf(id)});
+                sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(id)});
                 dialog.dismiss();
                 showToast("Deleted Successfully");
                 finish();
@@ -341,7 +343,7 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         dialog.show();
     }
 
-    private void showNextBirthday(int remainYears, int remainMonths, int remainDays, TextView nextMonths, TextView nextDays){
+    private void showNextBirthday(int remainYears, int remainMonths, int remainDays, TextView nextMonths, TextView nextDays) {
 
         birthday = new LocalDate(remainYears, remainMonths, remainDays);
         Period period = new Period(now, birthday, PeriodType.yearMonthDay());

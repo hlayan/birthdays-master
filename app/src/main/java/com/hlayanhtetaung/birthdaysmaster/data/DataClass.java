@@ -16,12 +16,6 @@ public class DataClass {
         this.days = days;
     }
 
-    public DataClass(String name, int months, int days) {
-        this.name = name;
-        this.months = months;
-        this.days = days;
-    }
-
     public DataClass(int years, int months, int days) {
         this.years = years;
         this.months = months;

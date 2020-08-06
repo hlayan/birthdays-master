@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     android:gravity="center"
-    android:padding="3dp"
     android:orientation="horizontal"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    android:padding="3dp">
 
     <Button
         android:id="@+id/cancel"
+        style="@style/buttonYesNo"
+        android:background="@drawable/ripple_effect_for_negative"
         android:clickable="true"
         android:focusable="true"
-        android:background="@drawable/ripple_effect_for_negative"
-        android:text="@string/cancel"
-        style="@style/buttonYesNo"
-        />
+        android:text="@string/cancel" />
 
     <Button
         android:id="@+id/save"
-        android:background="@drawable/ripple_effect_for_positive"
-        android:textColor="@android:color/white"
-        android:text="@string/calculate"
         style="@style/buttonYesNo"
-        />
+        android:background="@drawable/ripple_effect_for_positive"
+        android:text="@string/calculate"
+        android:textColor="@android:color/white" />
 
 </LinearLayout>

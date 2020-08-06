@@ -2,41 +2,39 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center"
-    android:layout_weight="1"
     android:layout_marginHorizontal="10dp"
+    android:layout_weight="1"
+    android:gravity="center"
     android:orientation="horizontal">
 
     <Button
-        android:layout_weight="1"
-        android:onClick="onClickMinus"
-        android:layout_width="wrap_content"
-        android:background="@drawable/ripple_effect_for_negative"
-        android:text="@string/minus"
-        android:textSize="30sp"
         style="@style/buttonYesNo"
-        />
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/ripple_effect_for_negative"
+        android:onClick="onClickMinus"
+        android:text="@string/minus"
+        android:textSize="30sp" />
 
     <TextView
-        android:layout_weight="5"
         android:id="@+id/leapYearNumber"
-        android:textSize="25sp"
-        android:text="@string/t0"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_gravity="center"
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:text="@string/t0"
         android:textColor="?attr/colorPrimary"
-        android:layout_height="match_parent"/>
+        android:textSize="25sp"
+        android:textStyle="bold" />
 
     <Button
-        android:layout_weight="1"
-        android:onClick="onClickPlus"
-        android:layout_width="wrap_content"
-        android:background="@drawable/ripple_effect_for_negative"
-        android:text="@string/plus"
-        android:textSize="30sp"
         style="@style/buttonYesNo"
-        />
+        android:layout_width="wrap_content"
+        android:layout_weight="1"
+        android:background="@drawable/ripple_effect_for_negative"
+        android:onClick="onClickPlus"
+        android:text="@string/plus"
+        android:textSize="30sp" />
 
 </LinearLayout>

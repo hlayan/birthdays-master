@@ -29,13 +29,13 @@ public class ActivityForWorkingExperience extends UtilsActivity {
     LocalDate start, end, today;
     DataForExtra ageExtra;
     String resultText;
-    String nowYears,nowMonths,nowDays = "0";
+    String nowYears, nowMonths, nowDays = "0";
     int userYears1, userMonths1, userDays1, userWeek1, userYears2, userMonths2, userDays2, userWeek2, firstTotalDays, secondTotalDays;
     View startDate, endDate;
     TextView startTitle, startMonths, startDays, startYears, startDaysOfWeek,
             endTitle, endMonths, endDays, endYears, endDaysOfWeek,
             title, years, months, days,
-            totalYears,totalMonths,totalWeeks,totalDays,totalHours,totalMinutes,totalSeconds,
+            totalYears, totalMonths, totalWeeks, totalDays, totalHours, totalMinutes, totalSeconds,
             result;
 
     @Override
@@ -97,10 +97,10 @@ public class ActivityForWorkingExperience extends UtilsActivity {
                 start = new LocalDate(userYears1, userMonths1, userDays1);
                 end = new LocalDate(userYears2, userMonths2, userDays2);
 
-                firstTotalDays = AgeCalculator.calculateTotalDays(userYears1,userMonths1,userDays1);
-                secondTotalDays = AgeCalculator.calculateTotalDays(userYears2,userMonths2,userDays2);
+                firstTotalDays = AgeCalculator.calculateTotalDays(userYears1, userMonths1, userDays1);
+                secondTotalDays = AgeCalculator.calculateTotalDays(userYears2, userMonths2, userDays2);
 
-                if (firstTotalDays == secondTotalDays){
+                if (firstTotalDays == secondTotalDays) {
 
                     resultText = "No Experience";
                     result.setText(resultText);
@@ -117,10 +117,10 @@ public class ActivityForWorkingExperience extends UtilsActivity {
                     totalMinutes.setText("0");
                     totalSeconds.setText("0");
 
-                }else if (firstTotalDays < secondTotalDays){
+                } else if (firstTotalDays < secondTotalDays) {
 
                     period = new Period(start, end, PeriodType.yearMonthDay());
-                    ageExtra = AgeCalculator.calculateExtras(period.getYears(),period.getMonths(),period.getDays());
+                    ageExtra = AgeCalculator.calculateExtras(period.getYears(), period.getMonths(), period.getDays());
 
                     nowYears = String.valueOf(period.getYears());
                     nowMonths = String.valueOf(period.getMonths());
@@ -132,7 +132,7 @@ public class ActivityForWorkingExperience extends UtilsActivity {
                     setTextPerson();
                     setTextExtra();
 
-                }else {
+                } else {
 
                     resultText = "Invalid";
                     result.setText(resultText);
@@ -179,13 +179,13 @@ public class ActivityForWorkingExperience extends UtilsActivity {
         developer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               visitDev();
+                visitDev();
             }
         });
 
     }
 
-    void setStartDate(){
+    void setStartDate() {
         String daysOfWeeks = AgeCalculator.checkDaysOfWeeks(userWeek1);
         String months = AgeCalculator.checkMonths(userMonths1);
 
@@ -195,7 +195,7 @@ public class ActivityForWorkingExperience extends UtilsActivity {
         startDaysOfWeek.setText(daysOfWeeks);
     }
 
-    void setEndDate(){
+    void setEndDate() {
         String daysOfWeeks = AgeCalculator.checkDaysOfWeeks(userWeek2);
         String months = AgeCalculator.checkMonths(userMonths2);
 
@@ -205,13 +205,13 @@ public class ActivityForWorkingExperience extends UtilsActivity {
         endDaysOfWeek.setText(daysOfWeeks);
     }
 
-    void setTextPerson(){
+    void setTextPerson() {
         years.setText(nowYears);
         months.setText(nowMonths);
         days.setText(nowDays);
     }
 
-    void setTextExtra(){
+    void setTextExtra() {
         totalYears.setText(String.valueOf(ageExtra.getTotalYears()));
         totalMonths.setText(String.valueOf(ageExtra.getTotalMonths()));
         totalWeeks.setText(String.valueOf(ageExtra.getTotalWeeks()));
@@ -221,7 +221,7 @@ public class ActivityForWorkingExperience extends UtilsActivity {
         totalSeconds.setText(String.valueOf(ageExtra.getTotalSeconds()));
     }
 
-    void setTextClear(){
+    void setTextClear() {
 
         today = LocalDate.now();
         userYears1 = today.getYear();
@@ -269,12 +269,12 @@ public class ActivityForWorkingExperience extends UtilsActivity {
 
         TextView titleTextView = dialogView.findViewById(R.id.titleTextView);
 
-        if(requestCode==1) {
+        if (requestCode == 1) {
             titleTextView.setText(R.string.start_date);
-            datePicker.updateDate(userYears1,userMonths1-1,userDays1);
-        }else {
+            datePicker.updateDate(userYears1, userMonths1 - 1, userDays1);
+        } else {
             titleTextView.setText(R.string.end_date);
-            datePicker.updateDate(userYears2,userMonths2-1,userDays2);
+            datePicker.updateDate(userYears2, userMonths2 - 1, userDays2);
         }
 
         save.setText(R.string.confirm);
@@ -286,19 +286,19 @@ public class ActivityForWorkingExperience extends UtilsActivity {
             @Override
             public void onClick(View v) {
 
-                if(requestCode==1) {
-                    userYears1=datePicker.getYear();
-                    userMonths1=datePicker.getMonth() + 1;
-                    userDays1=datePicker.getDayOfMonth();
+                if (requestCode == 1) {
+                    userYears1 = datePicker.getYear();
+                    userMonths1 = datePicker.getMonth() + 1;
+                    userDays1 = datePicker.getDayOfMonth();
                     LocalDate date = new LocalDate(userYears1, userMonths1, userDays1);
-                    userWeek1=date.getDayOfWeek();
+                    userWeek1 = date.getDayOfWeek();
                     setStartDate();
-                }else {
-                    userYears2=datePicker.getYear();
-                    userMonths2=datePicker.getMonth() + 1;
-                    userDays2=datePicker.getDayOfMonth();
+                } else {
+                    userYears2 = datePicker.getYear();
+                    userMonths2 = datePicker.getMonth() + 1;
+                    userDays2 = datePicker.getDayOfMonth();
                     LocalDate date = new LocalDate(userYears2, userMonths2, userDays2);
-                    userWeek2=date.getDayOfWeek();
+                    userWeek2 = date.getDayOfWeek();
                     setEndDate();
                 }
                 dialog.dismiss();

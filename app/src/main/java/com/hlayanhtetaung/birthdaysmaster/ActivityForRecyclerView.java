@@ -52,9 +52,9 @@ public class ActivityForRecyclerView extends UtilsActivity {
         itemSelected = 5;
 
         arrayList = new ArrayList<>();
-        if (result == 0){
+        if (result == 0) {
             readDataFromDatabase(1);
-        }else {
+        } else {
             readDataFromDatabase(0);
         }
 
@@ -64,9 +64,9 @@ public class ActivityForRecyclerView extends UtilsActivity {
         adapterForMainFragment.setReadData(new AdapterForMainFragment.ReadData() {
             @Override
             public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
-                if (i == 0){
+                if (i == 0) {
                     readDataFromDatabase(1);
-                }else {
+                } else {
                     returnResult(id, name, userYears, userMonths, userDays, result);
                 }
             }
@@ -81,7 +81,8 @@ public class ActivityForRecyclerView extends UtilsActivity {
                         try {
                             sleep(500);
                             swipeContainer.setRefreshing(false);
-                        } catch (Exception ignored) {}
+                        } catch (Exception ignored) {
+                        }
                     }
                 };
                 background.start();
@@ -106,6 +107,7 @@ public class ActivityForRecyclerView extends UtilsActivity {
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
+
             @Override
             public boolean onQueryTextChange(String newText) {
                 adapterForMainFragment.getFilter().filter(newText);
@@ -118,10 +120,10 @@ public class ActivityForRecyclerView extends UtilsActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == R.id.sort_items){
-            if (result == 0){
+        if (item.getItemId() == R.id.sort_items) {
+            if (result == 0) {
                 showSorting(0);
-            }else {
+            } else {
                 showSorting(1);
             }
         }
@@ -130,9 +132,9 @@ public class ActivityForRecyclerView extends UtilsActivity {
 
     @Override
     public void onBackPressed() {
-        if (recyclerView.computeVerticalScrollOffset() != 0){
+        if (recyclerView.computeVerticalScrollOffset() != 0) {
             recyclerView.smoothScrollToPosition(0);
-        }else {
+        } else {
             super.onBackPressed();
         }
     }
@@ -145,7 +147,7 @@ public class ActivityForRecyclerView extends UtilsActivity {
         final DatePicker datePicker = dialogView.findViewById(R.id.datePicker);
         Button save = dialogView.findViewById(R.id.save);
         Button cancel = dialogView.findViewById(R.id.cancel);
-        if (result != 0){
+        if (result != 0) {
             save.setText(R.string.confirm);
         }
         datePicker.setMaxDate(new Date().getTime());
@@ -155,17 +157,17 @@ public class ActivityForRecyclerView extends UtilsActivity {
                 final int years = datePicker.getYear();
                 final int months = datePicker.getMonth() + 1;
                 final int days = datePicker.getDayOfMonth();
-                if (result == 0){
+                if (result == 0) {
                     Intent intent = new Intent(getApplicationContext(), ActivityForDetailsOfBirthday.class);
-                    intent.putExtra("name","Details");
-                    intent.putExtra("userYears",years);
-                    intent.putExtra("userMonths",months);
-                    intent.putExtra("userDays",days);
+                    intent.putExtra("name", "Details");
+                    intent.putExtra("userYears", years);
+                    intent.putExtra("userMonths", months);
+                    intent.putExtra("userDays", days);
                     startActivity(intent);
-                }else if (result == 1){
-                    returnResult(0,"Person One",years,months,days,result);
-                }else {
-                    returnResult(0,"Person Two",years,months,days,result);
+                } else if (result == 1) {
+                    returnResult(0, "Person One", years, months, days, result);
+                } else {
+                    returnResult(0, "Person Two", years, months, days, result);
                 }
             }
         });
@@ -181,14 +183,14 @@ public class ActivityForRecyclerView extends UtilsActivity {
         dialog.show();
     }
 
-    void returnResult(int id, String name, int userYears, int userMonths, int userDays, int resultCode){
-        Intent intent=new Intent();
-        intent.putExtra("id",id);
-        intent.putExtra("name",name);
-        intent.putExtra("userYears",userYears);
-        intent.putExtra("userMonths",userMonths);
-        intent.putExtra("userDays",userDays);
-        setResult(resultCode,intent);
+    void returnResult(int id, String name, int userYears, int userMonths, int userDays, int resultCode) {
+        Intent intent = new Intent();
+        intent.putExtra("id", id);
+        intent.putExtra("name", name);
+        intent.putExtra("userYears", userYears);
+        intent.putExtra("userMonths", userMonths);
+        intent.putExtra("userDays", userDays);
+        setResult(resultCode, intent);
         finish();
     }
 

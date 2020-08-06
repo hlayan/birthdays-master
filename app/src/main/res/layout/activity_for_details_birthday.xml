@@ -9,13 +9,13 @@
     <include layout="@layout/toolbar_layout" />
 
     <ScrollView
-        android:scrollbarStyle="insideInset"
-        android:scrollbarSize="1dp"
-        android:scrollbarFadeDuration="@android:integer/config_shortAnimTime"
-        android:padding="@dimen/padding_in_scroll"
-        android:clipToPadding="false"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:padding="@dimen/padding_in_scroll"
+        android:scrollbarFadeDuration="@android:integer/config_shortAnimTime"
+        android:scrollbarSize="1dp"
+        android:scrollbarStyle="insideInset">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,21 +23,24 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <include layout="@layout/card_view_for_current_age"/>
+            <include layout="@layout/card_view_for_current_age" />
 
-            <include android:id="@+id/upcoming_card"
+            <include
+                android:id="@+id/upcoming_card"
                 layout="@layout/card_view_for_upcoming_birthday" />
 
-            <include layout="@layout/card_view_for_next_birthday"/>
+            <include layout="@layout/card_view_for_next_birthday" />
 
-            <include layout="@layout/card_view_for_leap_zodiac"/>
+            <include layout="@layout/card_view_for_leap_zodiac" />
 
-            <include layout="@layout/card_view_for_extra"/>
+            <include layout="@layout/card_view_for_extra" />
 
-            <include android:id="@+id/date_of_birth_card"
-                layout="@layout/card_view_for_upcoming_birthday"/>
+            <include
+                android:id="@+id/date_of_birth_card"
+                layout="@layout/card_view_for_upcoming_birthday" />
 
-            <include android:id="@+id/developer"
+            <include
+                android:id="@+id/developer"
                 layout="@layout/developed_by" />
 
         </LinearLayout>

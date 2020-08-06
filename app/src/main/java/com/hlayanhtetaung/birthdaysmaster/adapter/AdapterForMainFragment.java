@@ -32,29 +32,29 @@ import java.util.Objects;
 public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainFragment.ViewHolderForRecyclerView> implements Filterable {
 
     private ArrayList<DataClass> arrayList;
-    public  ArrayList<DataClass> arrayListFull;
+    public ArrayList<DataClass> arrayListFull;
     public android.database.sqlite.SQLiteDatabase sqLiteDatabase;
     private ReadData readData;
     int result;
 
-    public interface ReadData{
+    public interface ReadData {
         void refresh(int result, int id, String name, int userYears, int userMonths, int userDays);
     }
 
-    public void setReadData(ReadData readData){
+    public void setReadData(ReadData readData) {
         this.readData = readData;
     }
 
     public AdapterForMainFragment(ArrayList<DataClass> arrayList, int result) {
         this.arrayList = arrayList;
-        this.result=result;
+        this.result = result;
         arrayListFull = new ArrayList<>(arrayList);
     }
 
     @NonNull
     @Override
     public ViewHolderForRecyclerView onCreateViewHolder(ViewGroup parent, int viewType) {
-        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_for_current_age, parent,false );
+        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_for_current_age, parent, false);
         return new ViewHolderForRecyclerView(cv);
     }
 
@@ -72,7 +72,7 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
         TextView months = cardView.findViewById(R.id.currentMonths);
         TextView days = cardView.findViewById(R.id.currentDays);
 
-        DataClass dataClass = AgeCalculator.calculateAge(arrayList.get(position).getYears(),arrayList.get(position).getMonths(),arrayList.get(position).getDays());
+        DataClass dataClass = AgeCalculator.calculateAge(arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
 
         title.setText(arrayList.get(position).getName());
         years.setText(String.valueOf(dataClass.getYears()));
@@ -83,18 +83,18 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
             @Override
             public void onClick(View v) {
 
-                if (result == 0){
+                if (result == 0) {
                     Intent intent = new Intent(cardView.getContext(), ActivityForDetailsOfBirthday.class);
 
-                    intent.putExtra("id",arrayList.get(position).getId());
-                    intent.putExtra("name",arrayList.get(position).getName());
-                    intent.putExtra("userYears",arrayList.get(position).getYears());
-                    intent.putExtra("userMonths",arrayList.get(position).getMonths());
-                    intent.putExtra("userDays",arrayList.get(position).getDays());
+                    intent.putExtra("id", arrayList.get(position).getId());
+                    intent.putExtra("name", arrayList.get(position).getName());
+                    intent.putExtra("userYears", arrayList.get(position).getYears());
+                    intent.putExtra("userMonths", arrayList.get(position).getMonths());
+                    intent.putExtra("userDays", arrayList.get(position).getDays());
 
                     cardView.getContext().startActivity(intent);
-                }else {
-                    readData.refresh(result,arrayList.get(position).getId(),arrayList.get(position).getName(),arrayList.get(position).getYears(),arrayList.get(position).getMonths(),arrayList.get(position).getDays());
+                } else {
+                    readData.refresh(result, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
                 }
 
             }
@@ -103,9 +103,9 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
         cardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if (result == 0){
+                if (result == 0) {
 
-                    showPopupToDeleteItem(cardView.getContext(),position);
+                    showPopupToDeleteItem(cardView.getContext(), position);
 
                 }
                 return true;
@@ -134,6 +134,7 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
     public Filter getFilter() {
         return exampleFilter;
     }
+
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
@@ -177,8 +178,8 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sqLiteDatabase.delete("date_of_birth","_id = ?",new String[]{String.valueOf(arrayList.get(position).getId())});
-                readData.refresh(0,arrayList.get(position).getId(),arrayList.get(position).getName(),arrayList.get(position).getYears(),arrayList.get(position).getMonths(),arrayList.get(position).getDays());
+                sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(arrayList.get(position).getId())});
+                readData.refresh(0, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
                 notifyDataSetChanged();
                 dialog.cancel();
             }

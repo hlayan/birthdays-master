@@ -33,13 +33,13 @@ public class ActivityForAgeComparison extends UtilsActivity {
     DataForExtra ageExtra;
     String cardName1 = "Person One", cardName2 = "Person Two";
     String resultText, resultText2;
-    String nowYears,nowMonths,nowDays = "0";
+    String nowYears, nowMonths, nowDays = "0";
     int userYears1, userMonths1, userDays1, userYears2, userMonths2, userDays2, firstTotalDays, secondTotalDays;
-    View person1,person2,difference;
+    View person1, person2, difference;
     TextView title1, years1, months1, days1,
             title2, years2, months2, days2,
             title, years, months, days,
-            totalYears,totalMonths,totalWeeks,totalDays,totalHours,totalMinutes,totalSeconds,
+            totalYears, totalMonths, totalWeeks, totalDays, totalHours, totalMinutes, totalSeconds,
             result;
 
     @Override
@@ -98,12 +98,12 @@ public class ActivityForAgeComparison extends UtilsActivity {
                 first = new LocalDate(userYears1, userMonths1, userDays1);
                 second = new LocalDate(userYears2, userMonths2, userDays2);
 
-                firstTotalDays = AgeCalculator.calculateTotalDays(userYears1,userMonths1,userDays1);
-                secondTotalDays = AgeCalculator.calculateTotalDays(userYears2,userMonths2,userDays2);
+                firstTotalDays = AgeCalculator.calculateTotalDays(userYears1, userMonths1, userDays1);
+                secondTotalDays = AgeCalculator.calculateTotalDays(userYears2, userMonths2, userDays2);
 
-                if (firstTotalDays == secondTotalDays){
+                if (firstTotalDays == secondTotalDays) {
 
-                    resultText = "\"" + cardName1 + "\" and \"" + cardName2 +"\" are the same age.";
+                    resultText = "\"" + cardName1 + "\" and \"" + cardName2 + "\" are the same age.";
                     resultText2 = cardName1 + " = " + cardName2;
                     result.setText(resultText2);
 
@@ -119,20 +119,20 @@ public class ActivityForAgeComparison extends UtilsActivity {
                     totalMinutes.setText("0");
                     totalSeconds.setText("0");
 
-                }else if (firstTotalDays > secondTotalDays){
+                } else if (firstTotalDays > secondTotalDays) {
 
-                    period = new Period(second, first , PeriodType.yearMonthDay());
-                    ageExtra = AgeCalculator.calculateExtras(period.getYears(),period.getMonths(),period.getDays());
+                    period = new Period(second, first, PeriodType.yearMonthDay());
+                    ageExtra = AgeCalculator.calculateExtras(period.getYears(), period.getMonths(), period.getDays());
 
                     nowYears = String.valueOf(period.getYears());
                     nowMonths = String.valueOf(period.getMonths());
                     nowDays = String.valueOf(period.getDays());
 
-                    if (period.getYears()==0&&period.getMonths()==0){
+                    if (period.getYears() == 0 && period.getMonths() == 0) {
                         resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowDays + " days.";
-                    }else if (period.getYears()==0){
+                    } else if (period.getYears() == 0) {
                         resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowMonths + " months " + nowDays + " days.";
-                    }else{
+                    } else {
                         resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowYears + " years " + nowMonths + " months " + nowDays + " days.";
                     }
 
@@ -141,20 +141,20 @@ public class ActivityForAgeComparison extends UtilsActivity {
                     setTextPerson();
                     setTextExtra();
 
-                }else {
+                } else {
 
-                    period = new Period(first, second , PeriodType.yearMonthDay());
-                    ageExtra = AgeCalculator.calculateExtras(period.getYears(),period.getMonths(),period.getDays());
+                    period = new Period(first, second, PeriodType.yearMonthDay());
+                    ageExtra = AgeCalculator.calculateExtras(period.getYears(), period.getMonths(), period.getDays());
 
                     nowYears = String.valueOf(period.getYears());
                     nowMonths = String.valueOf(period.getMonths());
                     nowDays = String.valueOf(period.getDays());
 
-                    if (period.getYears()==0&&period.getMonths()==0){
+                    if (period.getYears() == 0 && period.getMonths() == 0) {
                         resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowDays + " days.";
-                    }else if (period.getYears()==0){
+                    } else if (period.getYears() == 0) {
                         resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowMonths + " months " + nowDays + " days.";
-                    }else{
+                    } else {
                         resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowYears + " years " + nowMonths + " months " + nowDays + " days.";
                     }
 
@@ -179,9 +179,9 @@ public class ActivityForAgeComparison extends UtilsActivity {
             @Override
             public void onClick(View v) {
                 Intent nextBirthday = new Intent(getApplicationContext(), ActivityForRecyclerView.class);
-                nextBirthday.putExtra("title","Choose Person");
-                nextBirthday.putExtra("result",1);
-                startActivityForResult(nextBirthday,1);
+                nextBirthday.putExtra("title", "Choose Person");
+                nextBirthday.putExtra("result", 1);
+                startActivityForResult(nextBirthday, 1);
             }
         });
 
@@ -197,9 +197,9 @@ public class ActivityForAgeComparison extends UtilsActivity {
             @Override
             public void onClick(View v) {
                 Intent nextBirthday = new Intent(getApplicationContext(), ActivityForRecyclerView.class);
-                nextBirthday.putExtra("title","Choose Person");
-                nextBirthday.putExtra("result",2);
-                startActivityForResult(nextBirthday,2);
+                nextBirthday.putExtra("title", "Choose Person");
+                nextBirthday.putExtra("result", 2);
+                startActivityForResult(nextBirthday, 2);
             }
         });
 
@@ -214,7 +214,7 @@ public class ActivityForAgeComparison extends UtilsActivity {
         difference.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAlertDialog("Difference",resultText);
+                showAlertDialog("Difference", resultText);
             }
         });
 
@@ -222,7 +222,7 @@ public class ActivityForAgeComparison extends UtilsActivity {
         developer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               visitDev();
+                visitDev();
             }
         });
 
@@ -231,27 +231,27 @@ public class ActivityForAgeComparison extends UtilsActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (data != null){
-            if(requestCode==1) {
-                cardName1=data.getStringExtra("name");
-                userYears1=data.getIntExtra("userYears",userYears1);
-                userMonths1=data.getIntExtra("userMonths",userMonths1);
-                userDays1=data.getIntExtra("userDays",userDays1);
+        if (data != null) {
+            if (requestCode == 1) {
+                cardName1 = data.getStringExtra("name");
+                userYears1 = data.getIntExtra("userYears", userYears1);
+                userMonths1 = data.getIntExtra("userMonths", userMonths1);
+                userDays1 = data.getIntExtra("userDays", userDays1);
 
                 setTextPerson1();
-            }else {
-                cardName2=data.getStringExtra("name");
-                userYears2=data.getIntExtra("userYears",userYears2);
-                userMonths2=data.getIntExtra("userMonths",userMonths2);
-                userDays2=data.getIntExtra("userDays",userDays2);
+            } else {
+                cardName2 = data.getStringExtra("name");
+                userYears2 = data.getIntExtra("userYears", userYears2);
+                userMonths2 = data.getIntExtra("userMonths", userMonths2);
+                userDays2 = data.getIntExtra("userDays", userDays2);
 
                 setTextPerson2();
             }
         }
     }
 
-    void setTextPerson1(){
-        DataClass currentAge = AgeCalculator.calculateAge(userYears1,userMonths1,userDays1);
+    void setTextPerson1() {
+        DataClass currentAge = AgeCalculator.calculateAge(userYears1, userMonths1, userDays1);
 
         title1.setText(cardName1);
         years1.setText(String.valueOf(currentAge.getYears()));
@@ -259,8 +259,8 @@ public class ActivityForAgeComparison extends UtilsActivity {
         days1.setText(String.valueOf(currentAge.getDays()));
     }
 
-    void setTextPerson2(){
-        DataClass currentAge = AgeCalculator.calculateAge(userYears2,userMonths2,userDays2);
+    void setTextPerson2() {
+        DataClass currentAge = AgeCalculator.calculateAge(userYears2, userMonths2, userDays2);
 
         title2.setText(cardName2);
         years2.setText(String.valueOf(currentAge.getYears()));
@@ -268,13 +268,13 @@ public class ActivityForAgeComparison extends UtilsActivity {
         days2.setText(String.valueOf(currentAge.getDays()));
     }
 
-    void setTextPerson(){
+    void setTextPerson() {
         years.setText(nowYears);
         months.setText(nowMonths);
         days.setText(nowDays);
     }
 
-    void setTextExtra(){
+    void setTextExtra() {
         totalYears.setText(String.valueOf(ageExtra.getTotalYears()));
         totalMonths.setText(String.valueOf(ageExtra.getTotalMonths()));
         totalWeeks.setText(String.valueOf(ageExtra.getTotalWeeks()));
@@ -284,7 +284,7 @@ public class ActivityForAgeComparison extends UtilsActivity {
         totalSeconds.setText(String.valueOf(ageExtra.getTotalSeconds()));
     }
 
-    void setTextClear(){
+    void setTextClear() {
 
         today = LocalDate.now();
         userYears1 = today.getYear();
@@ -334,12 +334,12 @@ public class ActivityForAgeComparison extends UtilsActivity {
 
         TextView titleTextView = dialogView.findViewById(R.id.titleTextView);
 
-        if(requestCode==1) {
+        if (requestCode == 1) {
             titleTextView.setText(R.string.person_one);
-            datePicker.updateDate(userYears1,userMonths1-1,userDays1);
-        }else {
+            datePicker.updateDate(userYears1, userMonths1 - 1, userDays1);
+        } else {
             titleTextView.setText(R.string.person_two);
-            datePicker.updateDate(userYears2,userMonths2-1,userDays2);
+            datePicker.updateDate(userYears2, userMonths2 - 1, userDays2);
         }
 
         save.setText(R.string.confirm);
@@ -351,18 +351,18 @@ public class ActivityForAgeComparison extends UtilsActivity {
             @Override
             public void onClick(View v) {
 
-                if(requestCode==1) {
-                    cardName1="Person One";
-                    userYears1=datePicker.getYear();
-                    userMonths1=datePicker.getMonth() + 1;
-                    userDays1=datePicker.getDayOfMonth();
+                if (requestCode == 1) {
+                    cardName1 = "Person One";
+                    userYears1 = datePicker.getYear();
+                    userMonths1 = datePicker.getMonth() + 1;
+                    userDays1 = datePicker.getDayOfMonth();
 
                     setTextPerson1();
-                }else {
-                    cardName2="Person Two";
-                    userYears2=datePicker.getYear();
-                    userMonths2=datePicker.getMonth() + 1;
-                    userDays2=datePicker.getDayOfMonth();
+                } else {
+                    cardName2 = "Person Two";
+                    userYears2 = datePicker.getYear();
+                    userMonths2 = datePicker.getMonth() + 1;
+                    userDays2 = datePicker.getDayOfMonth();
 
                     setTextPerson2();
                 }

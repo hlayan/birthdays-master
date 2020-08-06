@@ -32,13 +32,13 @@ public class ThemeUtils {
     public final static int r = 19;
     public final static int S = 20;
 
-    public static void changeToTheme(Activity activity, int theme){
+    public static void changeToTheme(Activity activity, int theme) {
 
         cTheme = theme;
 
         SharedPreferences sharedPref = activity.getSharedPreferences("sharedPref", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
-        editor.putInt("cTheme",theme);
+        editor.putInt("cTheme", theme);
         editor.apply();
 
         activity.finish();
@@ -47,14 +47,12 @@ public class ThemeUtils {
 
     }
 
-    public static void onActivityCreateSetTheme(Activity activity){
+    public static void onActivityCreateSetTheme(Activity activity) {
 
         SharedPreferences sharedPref = activity.getSharedPreferences("sharedPref", Context.MODE_PRIVATE);
-        cTheme = sharedPref.getInt("cTheme",ORIGINAL);
+        cTheme = sharedPref.getInt("cTheme", ORIGINAL);
 
-        switch (cTheme)
-
-        {
+        switch (cTheme) {
 
             case ORIGINAL:
 

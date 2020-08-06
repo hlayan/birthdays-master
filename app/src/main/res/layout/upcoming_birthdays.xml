@@ -4,8 +4,8 @@
 
     <TextView
         android:id="@+id/upcomingBirthdayMonths"
-        android:layout_weight="1"
-        style="@style/yearMonthDayWithId" />
+        style="@style/yearMonthDayWithId"
+        android:layout_weight="1" />
 
     <View
         android:layout_width="2dp"
@@ -14,8 +14,8 @@
 
     <TextView
         android:id="@+id/upcomingBirthdayDays"
-        android:layout_weight="1"
-        style="@style/yearMonthDayWithId" />
+        style="@style/yearMonthDayWithId"
+        android:layout_weight="1" />
 
     <View
         android:layout_width="2dp"
@@ -24,8 +24,8 @@
 
     <TextView
         android:id="@+id/upcomingBirthdayYears"
-        android:layout_weight="1"
-        style="@style/yearMonthDayWithId" />
+        style="@style/yearMonthDayWithId"
+        android:layout_weight="1" />
 
     <View
         android:layout_width="2dp"
@@ -34,7 +34,7 @@
 
     <TextView
         android:id="@+id/upcomingBirthdayDaysOfWeek"
-        android:layout_weight="1"
-        style="@style/yearMonthDayWithId" />
+        style="@style/yearMonthDayWithId"
+        android:layout_weight="1" />
 
 </LinearLayout>

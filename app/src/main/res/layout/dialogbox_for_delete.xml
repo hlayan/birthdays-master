@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="@drawable/background"
-    android:orientation="vertical"
-    android:gravity="center"
-    android:padding="20dp"
-    android:layout_gravity="center"
+    android:layout_width="300dp"
     android:layout_height="wrap_content"
-    android:layout_width="300dp">
+    android:layout_gravity="center"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="20dp">
 
     <TextView
+        style="@style/titleTextView"
         android:layout_width="300dp"
         android:text="@string/delete_item"
-        android:textColor="?attr/colorPrimary"
-        style="@style/titleTextView" />
+        android:textColor="?attr/colorPrimary" />
 
     <TextView
-        android:layout_margin="10dp"
         android:id="@+id/warning_text"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="@android:color/black"
-        android:text="@string/warning_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:text="@string/warning_text"
+        android:textColor="@android:color/black" />
 
-    <include layout="@layout/buttons_yes_no"/>
+    <include layout="@layout/buttons_yes_no" />
 
 </LinearLayout>

@@ -8,33 +8,33 @@
         android:paddingEnd="10dp"
         tools:ignore="RtlSymmetry">
 
-            <TextView
-                style="@style/extraLeft"
-                android:text="@string/total_years" />
+        <TextView
+            style="@style/extraLeft"
+            android:text="@string/total_years" />
 
-            <TextView
-                style="@style/extraLeft"
-                android:text="@string/total_months" />
+        <TextView
+            style="@style/extraLeft"
+            android:text="@string/total_months" />
 
-            <TextView
-                style="@style/extraLeft"
-                android:text="@string/total_weeks" />
+        <TextView
+            style="@style/extraLeft"
+            android:text="@string/total_weeks" />
 
-            <TextView
-                style="@style/extraLeft"
-                android:text="@string/total_days" />
+        <TextView
+            style="@style/extraLeft"
+            android:text="@string/total_days" />
 
-            <TextView
-                style="@style/extraLeft"
-                android:text="@string/total_hours"/>
+        <TextView
+            style="@style/extraLeft"
+            android:text="@string/total_hours" />
 
-            <TextView
-                style="@style/extraLeft"
-                android:text="@string/total_minutes"/>
+        <TextView
+            style="@style/extraLeft"
+            android:text="@string/total_minutes" />
 
-            <TextView
-                style="@style/extraLeft"
-                android:text="@string/total_seconds"/>
+        <TextView
+            style="@style/extraLeft"
+            android:text="@string/total_seconds" />
 
     </LinearLayout>
 
@@ -50,7 +50,7 @@
 
         <TextView
             android:id="@+id/totalYears"
-            style="@style/extraRight"/>
+            style="@style/extraRight" />
 
         <TextView
             android:id="@+id/totalMonths"
@@ -76,6 +76,6 @@
             android:id="@+id/totalSeconds"
             style="@style/extraRight" />
 
-        </LinearLayout>
+    </LinearLayout>
 
 </LinearLayout>

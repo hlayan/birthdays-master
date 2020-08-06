@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    style="@style/yearMonthDayBorderLayout"
-    >
+    style="@style/yearMonthDayBorderLayout">
 
-    <LinearLayout
-        style="@style/yearMonthDayLayout"
-        >
+    <LinearLayout style="@style/yearMonthDayLayout">
 
         <TextView
             style="@style/yearMonthDayWithoutId"
@@ -17,9 +14,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/yearMonthDayLayout"
-        >
+    <LinearLayout style="@style/yearMonthDayLayout">
 
         <TextView
             style="@style/yearMonthDayWithoutId"
@@ -31,9 +26,7 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/yearMonthDayLayout"
-        >
+    <LinearLayout style="@style/yearMonthDayLayout">
 
         <TextView
             style="@style/yearMonthDayWithoutId"

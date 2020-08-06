@@ -51,22 +51,22 @@ public class UtilsActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
 
-        if (openHelper != null){
+        if (openHelper != null) {
             openHelper.close();
         }
 
-        if (sqLiteDatabase != null){
+        if (sqLiteDatabase != null) {
             sqLiteDatabase.close();
         }
 
-        if (cursor != null){
+        if (cursor != null) {
             cursor.close();
         }
 
         super.onDestroy();
     }
 
-    public void customSearchView(SearchView searchView){
+    public void customSearchView(SearchView searchView) {
 
         searchView.setImeOptions(EditorInfo.IME_ACTION_DONE);
         searchView.setQueryHint("Search");
@@ -85,71 +85,69 @@ public class UtilsActivity extends AppCompatActivity {
         closeButtonImage.setColorFilter(ContextCompat.getColor(this, android.R.color.black), PorterDuff.Mode.SRC_IN);
     }
 
-    public void visitDev(){
-        try
-        {
+    public void visitDev() {
+        try {
             PackageManager packageManager = getPackageManager();
             ApplicationInfo appInfo = packageManager.getApplicationInfo("com.facebook.katana", 0);
-            if (appInfo.enabled)
-            { Intent i1 = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/100016026428007"));
+            if (appInfo.enabled) {
+                Intent i1 = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/100016026428007"));
                 startActivity(i1);
-            } else  {
+            } else {
                 Intent i2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/HlayanHtetAung"));
                 startActivity(i2);
             }
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             Intent i3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/HlayanHtetAung"));
             startActivity(i3);
         }
     }
 
-    public void showFragments(int id){
+    public void showFragments(int id) {
 
         this.id = id;
 
         recyclerView = findViewById(R.id.recyclerView);
         final TextView emptyView = findViewById(R.id.empty_view);
-        isEmptyRecycler(recyclerView,emptyView);
+        isEmptyRecycler(recyclerView, emptyView);
 
-        GridLayoutManager gridLayout = new GridLayoutManager(this,1);
+        GridLayoutManager gridLayout = new GridLayoutManager(this, 1);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(gridLayout);
 
-        if (id == 1){
+        if (id == 1) {
             recyclerView.setAdapter(adapterForMainFragment);
             adapterForMainFragment.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
                 @Override
                 public void onChanged() {
-                    isEmptyRecycler(recyclerView,emptyView);
+                    isEmptyRecycler(recyclerView, emptyView);
                 }
             });
-        }else if (id == 2){
+        } else if (id == 2) {
             recyclerView.setAdapter(adapterForNextBirthday);
             adapterForNextBirthday.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
                 @Override
                 public void onChanged() {
-                    isEmptyRecycler(recyclerView,emptyView);
+                    isEmptyRecycler(recyclerView, emptyView);
                 }
             });
-        }else {
+        } else {
             recyclerView.setAdapter(adapterForUpcomingBirthday);
             adapterForUpcomingBirthday.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
                 @Override
                 public void onChanged() {
-                    isEmptyRecycler(recyclerView,emptyView);
+                    isEmptyRecycler(recyclerView, emptyView);
                 }
             });
         }
 
     }
 
-    public void showToast(String string){
+    public void showToast(String string) {
         Toast backToast = Toast.makeText(this, string, Toast.LENGTH_SHORT);
         backToast.show();
     }
 
-    public void showSorting (final int id){
+    public void showSorting(final int id) {
         String[] singleChoiceItems = new String[]{"A to Z", "Z to A", "Age Ascending", "Age Descending", "Time Ascending", "Time Descending",
                 "Month Ascending", "Month Descending", "Week Ascending", "Week Descending", "Day Ascending", "Day Descending"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -163,7 +161,7 @@ public class UtilsActivity extends AppCompatActivity {
         builder.setSingleChoiceItems(singleChoiceItems, itemSelected, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int selectedIndex) {
-                switch (selectedIndex){
+                switch (selectedIndex) {
                     case 0:
                         itemSelected = 0;
                         orderBy = "name ASC";
@@ -213,21 +211,21 @@ public class UtilsActivity extends AppCompatActivity {
                         orderBy = "day DESC";
                         break;
                 }
-                if (id == 0){
+                if (id == 0) {
                     readDataFromDatabase(1);
                     adapterForMainFragment.notifyDataSetChanged();
-                }else {
+                } else {
                     readDataFromDatabase(0);
-                    if (id == 1){
+                    if (id == 1) {
                         adapterForMainFragment.notifyDataSetChanged();
-                    }else if (id == 2){
+                    } else if (id == 2) {
                         adapterForNextBirthday.notifyDataSetChanged();
-                    }else{
+                    } else {
                         adapterForUpcomingBirthday.notifyDataSetChanged();
                     }
                 }
                 dialogInterface.dismiss();
-                if (recyclerView.computeVerticalScrollOffset() != 0){
+                if (recyclerView.computeVerticalScrollOffset() != 0) {
                     recyclerView.smoothScrollToPosition(0);
                 }
             }
@@ -239,7 +237,7 @@ public class UtilsActivity extends AppCompatActivity {
 
     public void readDataFromDatabase(int id) {
         arrayList.clear();
-        if (id==0){
+        if (id == 0) {
             cursor = sqLiteDatabase.query(
                     "date_of_birth",
                     new String[]{"_id", "name", "day", "month", "year"},// The columns to return
@@ -249,12 +247,12 @@ public class UtilsActivity extends AppCompatActivity {
                     null,
                     orderBy
             );
-        }else {
+        } else {
             cursor = sqLiteDatabase.query(
                     "date_of_birth",
                     new String[]{"_id", "name", "day", "month", "year"},// The columns to return
                     checking,
-                    new String[] {count},
+                    new String[]{count},
                     null,
                     null,
                     orderBy
@@ -268,7 +266,7 @@ public class UtilsActivity extends AppCompatActivity {
         }
     }
 
-    public void showAlertDialog(String title, String message){
+    public void showAlertDialog(String title, String message) {
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.dialogbox_for_show_info);
         TextView messageText = dialog.findViewById(R.id.warning_text);
@@ -285,19 +283,19 @@ public class UtilsActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    public void isEmptyRecycler(RecyclerView recyclerView, TextView textView){
+    public void isEmptyRecycler(RecyclerView recyclerView, TextView textView) {
 
         int itemCount;
 
-        if (id == 1){
+        if (id == 1) {
             itemCount = adapterForMainFragment.getItemCount();
-        }else if (id == 2){
+        } else if (id == 2) {
             itemCount = adapterForNextBirthday.getItemCount();
-        }else {
+        } else {
             itemCount = adapterForUpcomingBirthday.getItemCount();
         }
 
-        if(itemCount==0){
+        if (itemCount == 0) {
             recyclerView.setVisibility(View.GONE);
             textView.setVisibility(View.VISIBLE);
         } else {

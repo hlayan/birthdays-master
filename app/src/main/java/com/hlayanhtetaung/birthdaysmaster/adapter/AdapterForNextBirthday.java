@@ -37,11 +37,11 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
     private ReadData readData;
     int result;
 
-    public interface ReadData{
+    public interface ReadData {
         void refresh(int result, int id, String name, int userYears, int userMonths, int userDays);
     }
 
-    public void setReadData(ReadData readData){
+    public void setReadData(ReadData readData) {
         this.readData = readData;
     }
 
@@ -54,7 +54,7 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
     @NonNull
     @Override
     public ViewHolderForRecyclerView onCreateViewHolder(ViewGroup parent, int viewType) {
-        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_for_next_birthday, parent,false );
+        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_for_next_birthday, parent, false);
         return new ViewHolderForRecyclerView(cv);
     }
 
@@ -71,15 +71,15 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
         TextView remainingMonths = cardView.findViewById(R.id.remainingMonths);
         TextView remainingDays = cardView.findViewById(R.id.remainingDays);
 
-        DataClass dataClass = AgeCalculator.calculateNextBirthday(arrayList.get(position).getMonths(),arrayList.get(position).getDays());
+        DataClass dataClass = AgeCalculator.calculateNextBirthday(arrayList.get(position).getMonths(), arrayList.get(position).getDays());
 
-        if (dataClass.getMonths()==0 && dataClass.getDays()==0){
+        if (dataClass.getMonths() == 0 && dataClass.getDays() == 0) {
 
             title.setText(arrayList.get(position).getName());
             remainingMonths.setText("0");
             remainingDays.setText("0");
 
-        }else {
+        } else {
 
             title.setText(arrayList.get(position).getName());
             remainingMonths.setText(String.valueOf(dataClass.getMonths()));
@@ -91,18 +91,18 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
             @Override
             public void onClick(View v) {
 
-                if (result == 0){
+                if (result == 0) {
                     Intent intent = new Intent(cardView.getContext(), ActivityForDetailsOfBirthday.class);
 
-                    intent.putExtra("id",arrayList.get(position).getId());
-                    intent.putExtra("name",arrayList.get(position).getName());
-                    intent.putExtra("userYears",arrayList.get(position).getYears());
-                    intent.putExtra("userMonths",arrayList.get(position).getMonths());
-                    intent.putExtra("userDays",arrayList.get(position).getDays());
+                    intent.putExtra("id", arrayList.get(position).getId());
+                    intent.putExtra("name", arrayList.get(position).getName());
+                    intent.putExtra("userYears", arrayList.get(position).getYears());
+                    intent.putExtra("userMonths", arrayList.get(position).getMonths());
+                    intent.putExtra("userDays", arrayList.get(position).getDays());
 
                     cardView.getContext().startActivity(intent);
-                }else {
-                    readData.refresh(result,arrayList.get(position).getId(),arrayList.get(position).getName(),arrayList.get(position).getYears(),arrayList.get(position).getMonths(),arrayList.get(position).getDays());
+                } else {
+                    readData.refresh(result, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
                 }
 
             }
@@ -111,8 +111,8 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
         cardView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View v) {
-                if (result == 0){
-                    showPopupToDeleteAllItems(cardView.getContext(),position);
+                if (result == 0) {
+                    showPopupToDeleteAllItems(cardView.getContext(), position);
                 }
                 return true;
             }
@@ -140,6 +140,7 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
     public Filter getFilter() {
         return exampleFilter;
     }
+
     private Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
@@ -183,8 +184,8 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
         yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sqLiteDatabase.delete("date_of_birth","_id = ?",new String[]{String.valueOf(arrayList.get(position).getId())});
-                readData.refresh(0,arrayList.get(position).getId(),arrayList.get(position).getName(),arrayList.get(position).getYears(),arrayList.get(position).getMonths(),arrayList.get(position).getDays());
+                sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(arrayList.get(position).getId())});
+                readData.refresh(0, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
                 notifyDataSetChanged();
                 dialog.cancel();
             }

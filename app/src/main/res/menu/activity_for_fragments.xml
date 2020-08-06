@@ -2,17 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/search_items"
-        android:title="@string/searching"
+    <item
+        android:id="@+id/search_items"
         android:icon="@drawable/ic_baseline_search_24"
-        app:actionViewClass="android.widget.SearchView"
         android:orderInCategory="1"
+        android:title="@string/searching"
+        app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
 
-    <item android:id="@+id/sort_items"
-        android:title="@string/sorting"
+    <item
+        android:id="@+id/sort_items"
         android:icon="@drawable/ic_baseline_sort_24"
         android:orderInCategory="1"
+        android:title="@string/sorting"
         app:showAsAction="ifRoom" />
 
 </menu>

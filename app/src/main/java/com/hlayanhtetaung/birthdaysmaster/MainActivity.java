@@ -61,10 +61,10 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
     protected void onResume() {
         super.onResume();
         recyclerView = findViewById(R.id.recyclerView);
-        if (arrayList.size() > 1){
-            toolbar.setTitle(arrayList.size()+" Persons");
-        }else {
-            toolbar.setTitle(arrayList.size()+" Person");
+        if (arrayList.size() > 1) {
+            toolbar.setTitle(arrayList.size() + " Persons");
+        } else {
+            toolbar.setTitle(arrayList.size() + " Person");
         }
 
         final SwipeRefreshLayout swipeContainer = findViewById(R.id.swipe_refresh);
@@ -78,25 +78,26 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                         try {
                             sleep(500);
                             swipeContainer.setRefreshing(false);
-                        } catch (Exception ignored) {}
+                        } catch (Exception ignored) {
+                        }
                     }
                 };
                 background.start();
 
                 readDataFromDatabase(0);
 
-                if (id == 1){
+                if (id == 1) {
                     adapterForMainFragment.notifyDataSetChanged();
-                }else if (id == 2){
+                } else if (id == 2) {
                     adapterForNextBirthday.notifyDataSetChanged();
-                }else{
+                } else {
                     adapterForUpcomingBirthday.notifyDataSetChanged();
                 }
 
-                if (arrayList.size() > 1){
-                    toolbar.setTitle(arrayList.size()+" Persons");
-                }else {
-                    toolbar.setTitle(arrayList.size()+" Person");
+                if (arrayList.size() > 1) {
+                    toolbar.setTitle(arrayList.size() + " Persons");
+                } else {
+                    toolbar.setTitle(arrayList.size() + " Person");
                 }
 
                 showToast("Refreshed!");
@@ -124,54 +125,53 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
         readDataFromDatabase(0);
 
         SharedPreferences sharedPref = getSharedPreferences("sharedPref", Context.MODE_PRIVATE);
-        id = sharedPref.getInt("id",1);
+        id = sharedPref.getInt("id", 1);
 
-        if (id == 1){
+        if (id == 1) {
             adapterForMainFragment = new AdapterForMainFragment(arrayList, 0);
-        }else if (id == 2){
+        } else if (id == 2) {
             adapterForNextBirthday = new AdapterForNextBirthday(arrayList, 0);
-        }else if (id == 3){
-            adapterForUpcomingBirthday = new AdapterForUpcomingBirthday(arrayList, 2,0);
-        }else {
-            adapterForUpcomingBirthday = new AdapterForUpcomingBirthday(arrayList, 1,0);
+        } else if (id == 3) {
+            adapterForUpcomingBirthday = new AdapterForUpcomingBirthday(arrayList, 2, 0);
+        } else {
+            adapterForUpcomingBirthday = new AdapterForUpcomingBirthday(arrayList, 1, 0);
         }
 
         showFragments(id);
 
-        if (id == 1){
+        if (id == 1) {
             adapterForMainFragment.setReadData(new AdapterForMainFragment.ReadData() {
-
                 @Override
                 public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
                     readDataFromDatabase(0);
-                    if (arrayList.size() > 1){
-                        toolbar.setTitle(arrayList.size()+" Persons");
-                    }else {
-                        toolbar.setTitle(arrayList.size()+" Person");
+                    if (arrayList.size() > 1) {
+                        toolbar.setTitle(arrayList.size() + " Persons");
+                    } else {
+                        toolbar.setTitle(arrayList.size() + " Person");
                     }
                 }
             });
-        }else if (id == 2){
+        } else if (id == 2) {
             adapterForNextBirthday.setReadData(new AdapterForNextBirthday.ReadData() {
                 @Override
                 public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
                     readDataFromDatabase(0);
-                    if (arrayList.size() > 1){
-                        toolbar.setTitle(arrayList.size()+" Persons");
-                    }else {
-                        toolbar.setTitle(arrayList.size()+" Person");
+                    if (arrayList.size() > 1) {
+                        toolbar.setTitle(arrayList.size() + " Persons");
+                    } else {
+                        toolbar.setTitle(arrayList.size() + " Person");
                     }
                 }
             });
-        }else{
+        } else {
             adapterForUpcomingBirthday.setReadData(new AdapterForUpcomingBirthday.ReadData() {
                 @Override
                 public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
                     readDataFromDatabase(0);
-                    if (arrayList.size() > 1){
-                        toolbar.setTitle(arrayList.size()+" Persons");
-                    }else {
-                        toolbar.setTitle(arrayList.size()+" Person");
+                    if (arrayList.size() > 1) {
+                        toolbar.setTitle(arrayList.size() + " Persons");
+                    } else {
+                        toolbar.setTitle(arrayList.size() + " Person");
                     }
                 }
             });
@@ -202,7 +202,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
     public boolean onCreateOptionsMenu(Menu menu) {
 
         getMenuInflater().inflate(R.menu.main, menu);
-        if(menu instanceof MenuBuilder){
+        if (menu instanceof MenuBuilder) {
 
             MenuBuilder menuBuilder = (MenuBuilder) menu;
             menuBuilder.setOptionalIconsVisible(true);
@@ -219,13 +219,14 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
             public boolean onQueryTextSubmit(String query) {
                 return false;
             }
+
             @Override
             public boolean onQueryTextChange(String newText) {
-                if (id == 1){
+                if (id == 1) {
                     adapterForMainFragment.getFilter().filter(newText);
-                }else if (id == 2){
+                } else if (id == 2) {
                     adapterForNextBirthday.getFilter().filter(newText);
-                }else{
+                } else {
                     adapterForUpcomingBirthday.getFilter().filter(newText);
                 }
                 return false;
@@ -277,25 +278,25 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
         switch (Objects.requireNonNull(item).getItemId()) {
 
             case R.id.upcoming_birthday:
-                editor.putInt("id",3);
+                editor.putInt("id", 3);
                 editor.apply();
                 onStart();
                 break;
 
             case R.id.next_birthdays:
-                editor.putInt("id",2);
+                editor.putInt("id", 2);
                 editor.apply();
                 onStart();
                 break;
 
             case R.id.date_of_birth:
-                editor.putInt("id",4);
+                editor.putInt("id", 4);
                 editor.apply();
                 onStart();
                 break;
 
             case R.id.current_age:
-                editor.putInt("id",1);
+                editor.putInt("id", 1);
                 editor.apply();
                 onStart();
                 break;
@@ -326,7 +327,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
             case R.id.change_theme:
                 View dialogView;
                 dialogView = getLayoutInflater().inflate(R.layout.bottom_sheet_for_app_theme, null);
-                BottomSheetDialog dialog = new BottomSheetDialog(this,R.style.BottomSheetMenuTheme); // Style here
+                BottomSheetDialog dialog = new BottomSheetDialog(this, R.style.BottomSheetMenuTheme); // Style here
                 dialog.setContentView(dialogView);
                 dialog.show();
                 break;
@@ -355,9 +356,9 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
 
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
-        }else if (recyclerView.computeVerticalScrollOffset() != 0){
+        } else if (recyclerView.computeVerticalScrollOffset() != 0) {
             recyclerView.smoothScrollToPosition(0);
-        }else {
+        } else {
             super.onBackPressed();
         }
     }
@@ -394,26 +395,26 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 LocalDate weeks = new LocalDate(years, months, days);
                 int daysOfWeek = weeks.getDayOfWeek();
 
-                int totalDays = AgeCalculator.calculateTotalDays(years,months,days);
+                int totalDays = AgeCalculator.calculateTotalDays(years, months, days);
 
                 insertDataToDatabase(name, days, months, years, daysOfWeek, totalDays);
                 readDataFromDatabase(0);
-                if (id == 1){
+                if (id == 1) {
                     adapterForMainFragment.notifyDataSetChanged();
-                }else if (id == 2){
+                } else if (id == 2) {
                     adapterForNextBirthday.notifyDataSetChanged();
-                }else{
+                } else {
                     adapterForUpcomingBirthday.notifyDataSetChanged();
                 }
                 showToast("Added successfully");
-                if (arrayList.size() > 1){
-                    toolbar.setTitle(arrayList.size()+" Persons");
-                }else {
-                    toolbar.setTitle(arrayList.size()+" Person");
+                if (arrayList.size() > 1) {
+                    toolbar.setTitle(arrayList.size() + " Persons");
+                } else {
+                    toolbar.setTitle(arrayList.size() + " Person");
                 }
                 dialog.cancel();
 
-                if (recyclerView.computeVerticalScrollOffset() != 0){
+                if (recyclerView.computeVerticalScrollOffset() != 0) {
                     recyclerView.smoothScrollToPosition(0);
                 }
             }
@@ -454,10 +455,10 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 final int days = datePicker.getDayOfMonth();
 
                 Intent intent = new Intent(getApplicationContext(), ActivityForDetailsOfBirthday.class);
-                intent.putExtra("name","Anonymous");
-                intent.putExtra("userYears",years);
-                intent.putExtra("userMonths",months);
-                intent.putExtra("userDays",days);
+                intent.putExtra("name", "Anonymous");
+                intent.putExtra("userYears", years);
+                intent.putExtra("userMonths", months);
+                intent.putExtra("userDays", days);
                 startActivity(intent);
 
             }
@@ -494,10 +495,10 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 readDataFromDatabase(0);
                 adapterForMainFragment.notifyDataSetChanged();
                 showToast("Deleted Everything");
-                if (arrayList.size() > 1){
-                    toolbar.setTitle(arrayList.size()+" Persons");
-                }else {
-                    toolbar.setTitle(arrayList.size()+" Person");
+                if (arrayList.size() > 1) {
+                    toolbar.setTitle(arrayList.size() + " Persons");
+                } else {
+                    toolbar.setTitle(arrayList.size() + " Person");
                 }
                 dialog.dismiss();
             }
@@ -534,38 +535,38 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
         loadAdapterForMonthWeekDay(id);
         View dialogView;
         dialogView = getLayoutInflater().inflate(R.layout.bottom_sheet_month_week_day, null);
-        BottomSheetDialog dialog = new BottomSheetDialog(this,R.style.BottomSheetMenuTheme); // Style here
+        BottomSheetDialog dialog = new BottomSheetDialog(this, R.style.BottomSheetMenuTheme); // Style here
         dialog.setContentView(dialogView);
         dialog.show();
 
         TextView textView = dialogView.findViewById(R.id.button_sheet_title);
 
-        if (id != 1){
-            if (id == 2){
+        if (id != 1) {
+            if (id == 2) {
                 textView.setText(R.string.WEEKS);
-            }else {
+            } else {
                 textView.setText(R.string.DAYS);
             }
         }
 
         RecyclerView recyclerView = dialogView.findViewById(R.id.recyclerView);
-        GridLayoutManager gridLayout = new GridLayoutManager(this,3);
+        GridLayoutManager gridLayout = new GridLayoutManager(this, 3);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(gridLayout);
         recyclerView.setAdapter(adapterForMonthWeekDay);
 
     }
 
-    void loadAdapterForMonthWeekDay(int id){
+    void loadAdapterForMonthWeekDay(int id) {
         int[] arrayCount;
-        if (id == 1){
-            arrayCount = resultsForTwelveMonths("month",id);
+        if (id == 1) {
+            arrayCount = resultsForTwelveMonths("month", id);
             adapterForMonthWeekDay = new AdapterForMonthWeekDay(arrayCount, AgeCalculator.MONTH12, 0);
-        }else if (id == 2){
-            arrayCount = resultsForTwelveMonths("days_of_week",id);
+        } else if (id == 2) {
+            arrayCount = resultsForTwelveMonths("days_of_week", id);
             adapterForMonthWeekDay = new AdapterForMonthWeekDay(arrayCount, AgeCalculator.WEEK7, 2);
-        }else {
-            arrayCount = resultsForTwelveMonths("day",id);
+        } else {
+            arrayCount = resultsForTwelveMonths("day", id);
             adapterForMonthWeekDay = new AdapterForMonthWeekDay(arrayCount, AgeCalculator.DAY31, 1);
         }
     }
@@ -593,92 +594,92 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
 
         AgeCalculator ageCalculator = new AgeCalculator();
 
-        if (id == 1){
+        if (id == 1) {
             return ageCalculator.calculateTwelveMonths(arrayListForMonths);
-        }else if (id == 2){
+        } else if (id == 2) {
             return ageCalculator.calculateDaysOfWeek(arrayListForMonths);
-        }else {
+        } else {
             return ageCalculator.calculate31Days(arrayListForMonths);
         }
     }
 
     public void onClickButton1(View view) {
-        ThemeUtils.changeToTheme(this,1);
+        ThemeUtils.changeToTheme(this, 1);
     }
 
     public void onClickButton2(View view) {
-        ThemeUtils.changeToTheme(this,2);
+        ThemeUtils.changeToTheme(this, 2);
     }
 
     public void onClickButton3(View view) {
-        ThemeUtils.changeToTheme(this,3);
+        ThemeUtils.changeToTheme(this, 3);
     }
 
     public void onClickButton4(View view) {
-        ThemeUtils.changeToTheme(this,4);
+        ThemeUtils.changeToTheme(this, 4);
     }
 
     public void onClickButton5(View view) {
-        ThemeUtils.changeToTheme(this,5);
+        ThemeUtils.changeToTheme(this, 5);
     }
 
     public void onClickButton6(View view) {
-        ThemeUtils.changeToTheme(this,6);
+        ThemeUtils.changeToTheme(this, 6);
     }
 
     public void onClickButton7(View view) {
-        ThemeUtils.changeToTheme(this,7);
+        ThemeUtils.changeToTheme(this, 7);
     }
 
     public void onClickButton8(View view) {
-        ThemeUtils.changeToTheme(this,8);
+        ThemeUtils.changeToTheme(this, 8);
     }
 
     public void onClickButton9(View view) {
-        ThemeUtils.changeToTheme(this,9);
+        ThemeUtils.changeToTheme(this, 9);
     }
 
     public void onClickButton10(View view) {
-        ThemeUtils.changeToTheme(this,10);
+        ThemeUtils.changeToTheme(this, 10);
     }
 
     public void onClickButton11(View view) {
-        ThemeUtils.changeToTheme(this,11);
+        ThemeUtils.changeToTheme(this, 11);
     }
 
     public void onClickButton12(View view) {
-        ThemeUtils.changeToTheme(this,12);
+        ThemeUtils.changeToTheme(this, 12);
     }
 
     public void onClickButton13(View view) {
-        ThemeUtils.changeToTheme(this,13);
+        ThemeUtils.changeToTheme(this, 13);
     }
 
     public void onClickButton14(View view) {
-        ThemeUtils.changeToTheme(this,14);
+        ThemeUtils.changeToTheme(this, 14);
     }
 
     public void onClickButton15(View view) {
-        ThemeUtils.changeToTheme(this,15);
+        ThemeUtils.changeToTheme(this, 15);
     }
 
     public void onClickButton16(View view) {
-        ThemeUtils.changeToTheme(this,16);
+        ThemeUtils.changeToTheme(this, 16);
     }
 
     public void onClickButton17(View view) {
-        ThemeUtils.changeToTheme(this,17);
+        ThemeUtils.changeToTheme(this, 17);
     }
 
     public void onClickButton18(View view) {
-        ThemeUtils.changeToTheme(this,18);
+        ThemeUtils.changeToTheme(this, 18);
     }
 
     public void onClickButton19(View view) {
-        ThemeUtils.changeToTheme(this,19);
+        ThemeUtils.changeToTheme(this, 19);
     }
 
     public void onClickButton20(View view) {
-        ThemeUtils.changeToTheme(this,20);
+        ThemeUtils.changeToTheme(this, 20);
     }
 }

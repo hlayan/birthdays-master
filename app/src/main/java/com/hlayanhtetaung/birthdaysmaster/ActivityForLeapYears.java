@@ -13,7 +13,7 @@ import java.util.Objects;
 
 public class ActivityForLeapYears extends UtilsActivity {
 
-    TextView leapYearText,resultsValue, leapYearNumber;
+    TextView leapYearText, resultsValue, leapYearNumber;
     String inputUnits, resultText, totalDay;
     private static final int LIMIT = 3;
 
@@ -46,86 +46,86 @@ public class ActivityForLeapYears extends UtilsActivity {
     }
 
     public void onClickPlus(View view) {
-        if (inputUnits.equals("")){
+        if (inputUnits.equals("")) {
             inputUnits = "0";
         }
 
         int i = Integer.parseInt(inputUnits);
 
-        inputUnits = String.valueOf(i+1);
+        inputUnits = String.valueOf(i + 1);
 
         makeProcess();
     }
 
     public void onClickMinus(View view) {
-        if (inputUnits.equals("")){
+        if (inputUnits.equals("")) {
             inputUnits = "0";
         }
 
         int i = Integer.parseInt(inputUnits);
 
-        if (i > 0){
-            inputUnits = String.valueOf(i-1);
+        if (i > 0) {
+            inputUnits = String.valueOf(i - 1);
             makeProcess();
         }
     }
 
     public void onClickB1(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("1");
         }
     }
 
     public void onClickB2(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("2");
         }
     }
 
     public void onClickB3(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("3");
         }
     }
 
     public void onClickB4(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("4");
         }
     }
 
     public void onClickB5(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("5");
         }
     }
 
     public void onClickB6(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("6");
         }
     }
 
     public void onClickB7(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("7");
         }
     }
 
     public void onClickB8(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("8");
         }
     }
 
     public void onClickB9(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("9");
         }
     }
 
     public void onClickB0(View view) {
-        if (inputUnits.length()<=LIMIT){
+        if (inputUnits.length() <= LIMIT) {
             input("0");
         }
     }
@@ -141,8 +141,8 @@ public class ActivityForLeapYears extends UtilsActivity {
         removeLastChar(inputUnits);
     }
 
-    void input(String s){
-        if (inputUnits.equals("0")){
+    void input(String s) {
+        if (inputUnits.equals("0")) {
             inputUnits = "";
         }
         inputUnits += s;
@@ -152,32 +152,32 @@ public class ActivityForLeapYears extends UtilsActivity {
 
     void removeLastChar(String str) {
 
-        if (!str.isEmpty()){
+        if (!str.isEmpty()) {
             inputUnits = str.substring(0, str.length() - 1);
         }
 
-        if (inputUnits.isEmpty()){
+        if (inputUnits.isEmpty()) {
             totalDay = "366";
             resultText = "Leap Year";
             resultsValue.setText(totalDay);
             leapYearText.setText(resultText);
             leapYearNumber.setText(R.string.t0);
-        }else {
+        } else {
             makeProcess();
         }
     }
 
-    void makeProcess(){
+    void makeProcess() {
 
         int value = Integer.parseInt(inputUnits);
         totalDay = "365 Days";
 
-        if(value % 4 == 0) {
-            if( value % 100 == 0) {
-                if ( value % 400 == 0) {
+        if (value % 4 == 0) {
+            if (value % 100 == 0) {
+                if (value % 400 == 0) {
                     resultText = "Leap Year";
                     totalDay = "366 Days";
-                }else {
+                } else {
                     resultText = "Not Leap Year";
                 }
             } else {
