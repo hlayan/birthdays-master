@@ -33,7 +33,7 @@
                 android:clipToPadding="false"
                 android:layoutAnimation="@anim/layout_animation"
                 android:padding="@dimen/padding_in_scroll"
-                android:scrollbarSize="2dp"
+                android:scrollbarSize="1dp"
                 android:scrollbarStyle="insideInset" />
 
             <TextView
