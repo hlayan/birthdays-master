@@ -47,49 +47,19 @@
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/colorPrimary"
-                android:onClick="onClickButton1" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:gravity="center">
-
-            <Button
-                style="@style/colorButtonStyle"
-                android:background="@color/a"
+                android:backgroundTint="@color/a"
                 android:onClick="onClickButton2" />
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/b"
+                android:backgroundTint="@color/b"
                 android:onClick="onClickButton3" />
 
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_margin="3dp"
-            android:layout_weight="1"
-            android:gravity="center">
-
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/c"
+                android:backgroundTint="@color/c"
                 android:onClick="onClickButton4" />
 
-            <Button
-                style="@style/colorButtonStyle"
-                android:background="@color/d"
-                android:onClick="onClickButton5" />
-
         </TableRow>
 
         <TableRow
@@ -102,18 +72,18 @@
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/e"
+                android:backgroundTint="@color/d"
+                android:onClick="onClickButton5" />
+
+            <Button
+                style="@style/colorButtonStyle"
+                android:backgroundTint="@color/e"
                 android:onClick="onClickButton6" />
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/f"
+                android:backgroundTint="@color/f"
                 android:onClick="onClickButton7" />
-
-            <Button
-                style="@style/colorButtonStyle"
-                android:background="@color/g"
-                android:onClick="onClickButton8" />
 
         </TableRow>
 
@@ -127,18 +97,18 @@
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/h"
+                android:backgroundTint="@color/g"
+                android:onClick="onClickButton8" />
+
+            <Button
+                style="@style/colorButtonStyle"
+                android:backgroundTint="@color/h"
                 android:onClick="onClickButton9" />
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/i"
+                android:backgroundTint="@color/i"
                 android:onClick="onClickButton10" />
-
-            <Button
-                style="@style/colorButtonStyle"
-                android:background="@color/j"
-                android:onClick="onClickButton11" />
 
         </TableRow>
 
@@ -152,18 +122,18 @@
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/k"
+                android:backgroundTint="@color/j"
+                android:onClick="onClickButton11" />
+
+            <Button
+                style="@style/colorButtonStyle"
+                android:backgroundTint="@color/k"
                 android:onClick="onClickButton12" />
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/l"
+                android:backgroundTint="@color/l"
                 android:onClick="onClickButton13" />
-
-            <Button
-                style="@style/colorButtonStyle"
-                android:background="@color/m"
-                android:onClick="onClickButton14" />
 
         </TableRow>
 
@@ -177,12 +147,17 @@
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/n"
+                android:backgroundTint="@color/m"
+                android:onClick="onClickButton14" />
+
+            <Button
+                style="@style/colorButtonStyle"
+                android:backgroundTint="@color/n"
                 android:onClick="onClickButton15" />
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/o"
+                android:backgroundTint="@color/o"
                 android:onClick="onClickButton16" />
 
         </TableRow>
@@ -197,23 +172,38 @@
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/p"
+                android:backgroundTint="@color/p"
                 android:onClick="onClickButton17" />
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/q"
+                android:backgroundTint="@color/q"
                 android:onClick="onClickButton18" />
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/r"
+                android:backgroundTint="@color/r"
                 android:onClick="onClickButton19" />
 
             <Button
                 style="@style/colorButtonStyle"
-                android:background="@color/s"
+                android:backgroundTint="@color/s"
                 android:onClick="onClickButton20" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
+            <Button
+                style="@style/colorButtonStyle"
+                android:backgroundTint="@color/colorPrimary"
+                android:onClick="onClickButton1" />
 
         </TableRow>
 
