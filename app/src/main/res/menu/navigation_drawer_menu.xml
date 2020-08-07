@@ -26,7 +26,7 @@
 
         <item
             android:id="@+id/compare_to"
-            android:icon="@drawable/ic_compare_arrows_white_24dp"
+            android:icon="@drawable/ic_baseline_compare_arrows_24"
             android:title="@string/compare_person" />
 
         <item
@@ -52,12 +52,12 @@
 
                 <item
                     android:id="@+id/upcoming_birthday"
-                    android:icon="@drawable/ic_cake_white_48dp"
+                    android:icon="@drawable/ic_baseline_cake_24"
                     android:title="@string/upcoming_birthday" />
 
                 <item
                     android:id="@+id/next_birthdays"
-                    android:icon="@drawable/ic_baseline_timer_24"
+                    android:icon="@drawable/ic_baseline_cake_24"
                     android:title="@string/RemainingNextBirthday" />
 
             </group>

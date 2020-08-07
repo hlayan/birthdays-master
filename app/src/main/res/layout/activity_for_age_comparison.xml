@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityForAgeComparison">
+    tools:context=".activity.ActivityForAgeComparison">
 
-    <include layout="@layout/toolbar_layout" />
+    <include layout="@layout/view_toolbar_layout" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -28,8 +28,8 @@
                 layout="@layout/card_view_for_current_age" />
 
             <View
-                android:layout_width="30dp"
-                android:layout_height="5dp"
+                android:layout_width="@dimen/dot_size"
+                android:layout_height="@dimen/dot_size"
                 android:layout_margin="5dp"
                 android:background="@drawable/background_with_gray" />
 
@@ -37,7 +37,7 @@
                 android:id="@+id/person2"
                 layout="@layout/card_view_for_current_age" />
 
-            <include layout="@layout/buttons_yes_no" />
+            <include layout="@layout/view_buttons_yes_no" />
 
             <TextView
                 android:id="@+id/result"
@@ -56,7 +56,7 @@
 
             <include
                 android:id="@+id/developer"
-                layout="@layout/developed_by" />
+                layout="@layout/view_developed_by" />
 
         </LinearLayout>
 

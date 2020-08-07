@@ -1,4 +1,4 @@
-package com.hlayanhtetaung.birthdaysmaster;
+package com.hlayanhtetaung.birthdaysmaster.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.logic.ThemeUtils;
 import com.hlayanhtetaung.birthdaysmaster.logic.UtilsActivity;
 

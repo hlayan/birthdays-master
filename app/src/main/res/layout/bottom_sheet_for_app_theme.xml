@@ -50,6 +50,16 @@
                 android:background="@color/colorPrimary"
                 android:onClick="onClickButton1" />
 
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:gravity="center">
+
             <Button
                 style="@style/colorButtonStyle"
                 android:background="@color/a"
@@ -59,11 +69,6 @@
                 style="@style/colorButtonStyle"
                 android:background="@color/b"
                 android:onClick="onClickButton3" />
-
-            <Button
-                style="@style/colorButtonStyle"
-                android:background="@color/c"
-                android:onClick="onClickButton4" />
 
         </TableRow>
 
@@ -77,8 +82,23 @@
 
             <Button
                 style="@style/colorButtonStyle"
+                android:background="@color/c"
+                android:onClick="onClickButton4" />
+
+            <Button
+                style="@style/colorButtonStyle"
                 android:background="@color/d"
                 android:onClick="onClickButton5" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:gravity="center">
 
             <Button
                 style="@style/colorButtonStyle"
@@ -120,11 +140,6 @@
                 android:background="@color/j"
                 android:onClick="onClickButton11" />
 
-            <Button
-                style="@style/colorButtonStyle"
-                android:background="@color/k"
-                android:onClick="onClickButton12" />
-
         </TableRow>
 
         <TableRow
@@ -137,6 +152,11 @@
 
             <Button
                 style="@style/colorButtonStyle"
+                android:background="@color/k"
+                android:onClick="onClickButton12" />
+
+            <Button
+                style="@style/colorButtonStyle"
                 android:background="@color/l"
                 android:onClick="onClickButton13" />
 
@@ -144,6 +164,16 @@
                 style="@style/colorButtonStyle"
                 android:background="@color/m"
                 android:onClick="onClickButton14" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_margin="3dp"
+            android:layout_weight="1"
+            android:gravity="center">
 
             <Button
                 style="@style/colorButtonStyle"

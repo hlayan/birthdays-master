@@ -5,6 +5,7 @@
     android:layout_marginHorizontal="10dp"
     android:layout_weight="1"
     android:gravity="center"
+    android:layout_gravity="center"
     android:orientation="horizontal">
 
     <Button

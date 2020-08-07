@@ -1,4 +1,4 @@
-package com.hlayanhtetaung.birthdaysmaster;
+package com.hlayanhtetaung.birthdaysmaster.activity;
 
 import android.annotation.SuppressLint;
 import android.app.Dialog;
@@ -35,6 +35,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationView;
+import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForMainFragment;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForMonthWeekDay;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForNextBirthday;
@@ -201,7 +202,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
         if (menu instanceof MenuBuilder) {
 
             MenuBuilder menuBuilder = (MenuBuilder) menu;
@@ -241,15 +242,6 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
         switch (item.getItemId()) {
             case R.id.sort_items:
                 showSorting(id);
-                return true;
-
-            case R.id.add_person:
-                showPopupToAddPerson();
-                return true;
-
-            case R.id.compare_to:
-                Intent compareTo = new Intent(getApplicationContext(), ActivityForAgeComparison.class);
-                startActivity(compareTo);
                 return true;
 
             case R.id.month_by:
@@ -437,7 +429,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
 
         dialog = new Dialog(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.date_picker_for_date_of_birth, null);
+        final View dialogView = inflater.inflate(R.layout.dialogbox_for_date_picker, null);
         dialog.setCancelable(true);
 
         final DatePicker datePicker = dialogView.findViewById(R.id.datePicker);

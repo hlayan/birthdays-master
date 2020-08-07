@@ -67,7 +67,6 @@
     <string name="t_clear">CLEAR</string>
     <string name="t0">0</string>
     <string name="t_del">DELETE</string>
-    <string name="not_Leap_year">0 is a Leap Year.</string>
     <string name="leap_checking">Leap Checking</string>
     <string name="plus">+</string>
     <string name="minus">-</string>

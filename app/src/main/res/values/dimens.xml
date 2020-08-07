@@ -3,4 +3,5 @@
     <dimen name="padding_in_scroll">5dp</dimen>
     <dimen name="margin_in_card">5dp</dimen>
     <dimen name="cardElevation">5dp</dimen>
+    <dimen name="dot_size">5dp</dimen>
 </resources>

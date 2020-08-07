@@ -8,8 +8,8 @@
         android:layout_weight="1" />
 
     <View
-        android:layout_width="2dp"
-        android:layout_height="20sp"
+        android:layout_width="@dimen/dot_size"
+        android:layout_height="@dimen/dot_size"
         android:background="@drawable/background_with_gray" />
 
     <TextView
@@ -18,8 +18,8 @@
         android:layout_weight="1" />
 
     <View
-        android:layout_width="2dp"
-        android:layout_height="20sp"
+        android:layout_width="@dimen/dot_size"
+        android:layout_height="@dimen/dot_size"
         android:background="@drawable/background_with_gray" />
 
     <TextView
@@ -28,8 +28,8 @@
         android:layout_weight="1" />
 
     <View
-        android:layout_width="2dp"
-        android:layout_height="20sp"
+        android:layout_width="@dimen/dot_size"
+        android:layout_height="@dimen/dot_size"
         android:background="@drawable/background_with_gray" />
 
     <TextView

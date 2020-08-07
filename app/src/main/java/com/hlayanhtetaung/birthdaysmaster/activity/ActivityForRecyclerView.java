@@ -1,4 +1,4 @@
-package com.hlayanhtetaung.birthdaysmaster;
+package com.hlayanhtetaung.birthdaysmaster.activity;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -16,6 +16,7 @@ import android.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForMainFragment;
 import com.hlayanhtetaung.birthdaysmaster.database.SQLiteDatabaseOpenHelper;
 import com.hlayanhtetaung.birthdaysmaster.logic.ThemeUtils;
@@ -142,7 +143,7 @@ public class ActivityForRecyclerView extends UtilsActivity {
     public void onClickAddFloatAction(View view) {
         final Dialog dialog = new Dialog(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.date_picker_for_date_of_birth, null);
+        final View dialogView = inflater.inflate(R.layout.dialogbox_for_date_picker, null);
         dialog.setCancelable(true);
         final DatePicker datePicker = dialogView.findViewById(R.id.datePicker);
         Button save = dialogView.findViewById(R.id.save);

@@ -1,4 +1,4 @@
-package com.hlayanhtetaung.birthdaysmaster;
+package com.hlayanhtetaung.birthdaysmaster.activity;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 
+import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.data.DataClass;
 import com.hlayanhtetaung.birthdaysmaster.data.DataForExtra;
 import com.hlayanhtetaung.birthdaysmaster.logic.AgeCalculator;
@@ -326,7 +327,7 @@ public class ActivityForAgeComparison extends UtilsActivity {
 
         final Dialog dialog = new Dialog(this);
         LayoutInflater inflater = this.getLayoutInflater();
-        final View dialogView = inflater.inflate(R.layout.date_picker_for_date_of_birth, null);
+        final View dialogView = inflater.inflate(R.layout.dialogbox_for_date_picker, null);
 
         final DatePicker datePicker = dialogView.findViewById(R.id.datePicker);
         Button save = dialogView.findViewById(R.id.save);

@@ -16,10 +16,10 @@
 
         <TextView
             style="@style/titleTextView"
-            android:background="@drawable/title_background_border"
+            android:background="@drawable/background_for_title"
             android:text="@string/extra" />
 
-        <include layout="@layout/extra" />
+        <include layout="@layout/view_for_extra" />
 
     </LinearLayout>
 

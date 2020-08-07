@@ -18,16 +18,6 @@
         app:showAsAction="ifRoom" />
 
     <item
-        android:id="@+id/add_person"
-        android:icon="@android:drawable/ic_menu_add"
-        android:title="@string/add_person" />
-
-    <item
-        android:id="@+id/compare_to"
-        android:icon="@android:drawable/ic_menu_sort_alphabetically"
-        android:title="@string/compare_person" />
-
-    <item
         android:id="@+id/month_by"
         android:icon="@android:drawable/ic_menu_month"
         android:title="@string/months" />

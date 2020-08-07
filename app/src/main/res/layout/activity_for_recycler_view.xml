@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
-        <include layout="@layout/toolbar_layout" />
+        <include layout="@layout/view_toolbar_layout" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -55,8 +55,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="15dp"
+        android:src="@drawable/ic_baseline_cake_24"
         android:onClick="onClickAddFloatAction"
-        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior"
-        app:srcCompat="@drawable/ic_cake_white_48dp" />
+        app:layout_behavior="@string/hide_bottom_view_on_scroll_behavior" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

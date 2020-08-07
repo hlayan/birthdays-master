@@ -4,18 +4,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityForLeapYears">
+    tools:context=".activity.ActivityForLeapYears">
 
-    <include layout="@layout/toolbar_layout" />
+    <include layout="@layout/view_toolbar_layout" />
 
-    <include layout="@layout/leap_view" />
+    <include layout="@layout/view_for_leap" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#d3d3d3" />
 
-    <include layout="@layout/result_view" />
+    <include layout="@layout/view_for_results" />
 
     <View
         android:layout_width="match_parent"
@@ -133,7 +133,7 @@
 
         <include
             android:id="@+id/developer"
-            layout="@layout/developed_by" />
+            layout="@layout/view_developed_by" />
 
     </LinearLayout>
 

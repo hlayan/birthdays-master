@@ -18,7 +18,7 @@
         <TextView
             android:id="@+id/title"
             style="@style/titleTextView"
-            android:background="@drawable/title_background_border"
+            android:background="@drawable/background_for_title"
             android:text="@string/name"
             android:textSize="15sp"
             android:textStyle="bold" />

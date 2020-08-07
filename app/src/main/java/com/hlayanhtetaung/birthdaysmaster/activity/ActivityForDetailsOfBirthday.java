@@ -1,4 +1,4 @@
-package com.hlayanhtetaung.birthdaysmaster;
+package com.hlayanhtetaung.birthdaysmaster.activity;
 
 import android.app.Dialog;
 import android.content.ContentValues;
@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.data.DataClass;
 import com.hlayanhtetaung.birthdaysmaster.data.DataForExtra;
 import com.hlayanhtetaung.birthdaysmaster.database.SQLiteDatabaseOpenHelper;

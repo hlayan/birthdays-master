@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityForDetailsOfBirthday">
+    tools:context=".activity.ActivityForDetailsOfBirthday">
 
-    <include layout="@layout/toolbar_layout" />
+    <include layout="@layout/view_toolbar_layout" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,7 +40,7 @@
 
             <include
                 android:id="@+id/developer"
-                layout="@layout/developed_by" />
+                layout="@layout/view_developed_by" />
 
         </LinearLayout>
 

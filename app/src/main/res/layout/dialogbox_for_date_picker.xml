@@ -10,7 +10,7 @@
     <TextView
         android:id="@+id/titleTextView"
         style="@style/titleTextView"
-        android:background="@drawable/title_background_border"
+        android:background="@drawable/background_for_title"
         android:text="@string/date_of_birth" />
 
     <DatePicker
@@ -25,6 +25,6 @@
         android:theme="@style/NumberPickerStyle"
         tools:ignore="RtlSymmetry" />
 
-    <include layout="@layout/buttons_yes_no" />
+    <include layout="@layout/view_buttons_yes_no" />
 
 </LinearLayout>

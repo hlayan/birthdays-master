@@ -12,27 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="m">
-        <activity android:name=".ActivityForLeapYears"
-            android:parentActivityName=".MainActivity"
+        <activity android:name=".activity.ActivityForLeapYears"
+            android:parentActivityName=".activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityForWorkingExperience"
-            android:parentActivityName=".MainActivity"
+            android:name=".activity.ActivityForWorkingExperience"
+            android:parentActivityName=".activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityForAgeComparison"
-            android:parentActivityName=".MainActivity"
+            android:name=".activity.ActivityForAgeComparison"
+            android:parentActivityName=".activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityForRecyclerView"
-            android:parentActivityName=".MainActivity"
+            android:name=".activity.ActivityForRecyclerView"
+            android:parentActivityName=".activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".ActivityForDetailsOfBirthday"
-            android:parentActivityName=".MainActivity"
+            android:name=".activity.ActivityForDetailsOfBirthday"
+            android:parentActivityName=".activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activity.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/SplashTheme">
             <intent-filter>

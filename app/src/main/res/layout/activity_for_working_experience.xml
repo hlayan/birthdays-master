@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ActivityForWorkingExperience">
+    tools:context=".activity.ActivityForWorkingExperience">
 
-    <include layout="@layout/toolbar_layout" />
+    <include layout="@layout/view_toolbar_layout" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -29,16 +29,16 @@
                 layout="@layout/card_view_for_upcoming_birthday" />
 
             <View
-                android:layout_width="30dp"
-                android:layout_height="5dp"
                 android:layout_margin="5dp"
+                android:layout_width="@dimen/dot_size"
+                android:layout_height="@dimen/dot_size"
                 android:background="@drawable/background_with_gray" />
 
             <include
                 android:id="@+id/end_date"
                 layout="@layout/card_view_for_upcoming_birthday" />
 
-            <include layout="@layout/buttons_yes_no" />
+            <include layout="@layout/view_buttons_yes_no" />
 
             <TextView
                 android:id="@+id/result"
@@ -55,7 +55,7 @@
 
             <include
                 android:id="@+id/developer"
-                layout="@layout/developed_by" />
+                layout="@layout/view_developed_by" />
 
         </LinearLayout>
 

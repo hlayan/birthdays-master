@@ -17,10 +17,10 @@
         <TextView
             android:id="@+id/upcomingBirthday"
             style="@style/titleTextView"
-            android:background="@drawable/title_background_border"
+            android:background="@drawable/background_for_title"
             android:text="@string/upcoming_birthday" />
 
-        <include layout="@layout/upcoming_birthdays" />
+        <include layout="@layout/view_upcoming_birthdays" />
 
     </LinearLayout>
 

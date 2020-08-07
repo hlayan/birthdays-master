@@ -21,7 +21,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hlayanhtetaung.birthdaysmaster.ActivityForDetailsOfBirthday;
+import com.hlayanhtetaung.birthdaysmaster.activity.ActivityForDetailsOfBirthday;
 import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.data.DataClass;
 import com.hlayanhtetaung.birthdaysmaster.database.SQLiteDatabaseOpenHelper;

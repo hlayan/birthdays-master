@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/card_view_for_next_birthday"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/margin_in_card"
@@ -18,10 +17,10 @@
         <TextView
             android:id="@+id/nextTitle"
             style="@style/titleTextView"
-            android:background="@drawable/title_background_border"
+            android:background="@drawable/background_for_title"
             android:text="@string/RemainingNextBirthday" />
 
-        <include layout="@layout/next_birthday" />
+        <include layout="@layout/view_remaining_birthday" />
 
     </LinearLayout>
 

@@ -15,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hlayanhtetaung.birthdaysmaster.ActivityForRecyclerView;
+import com.hlayanhtetaung.birthdaysmaster.activity.ActivityForRecyclerView;
 import com.hlayanhtetaung.birthdaysmaster.R;
 
 import java.util.Objects;

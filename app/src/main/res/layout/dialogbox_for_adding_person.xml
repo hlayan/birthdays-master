@@ -34,6 +34,6 @@
         android:theme="@style/NumberPickerStyle"
         tools:ignore="RtlSymmetry" />
 
-    <include layout="@layout/buttons_yes_no" />
+    <include layout="@layout/view_buttons_yes_no" />
 
 </LinearLayout>

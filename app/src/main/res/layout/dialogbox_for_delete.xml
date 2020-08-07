@@ -24,6 +24,6 @@
         android:text="@string/warning_text"
         android:textColor="@android:color/black" />
 
-    <include layout="@layout/buttons_yes_no" />
+    <include layout="@layout/view_buttons_yes_no" />
 
 </LinearLayout>
