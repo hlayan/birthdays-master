@@ -16,17 +16,17 @@
 
         <item
             android:id="@+id/check_leap"
-            android:icon="@drawable/ic_baseline_calendar_today_24"
+            android:icon="@drawable/ic_leap_years"
             android:title="@string/leap_checking" />
 
         <item
             android:id="@+id/working_experience"
-            android:icon="@drawable/ic_baseline_calendar_today_24"
+            android:icon="@drawable/ic_experience"
             android:title="@string/working_experience" />
 
         <item
             android:id="@+id/compare_to"
-            android:icon="@drawable/ic_baseline_compare_arrows_24"
+            android:icon="@drawable/ic_compare_persons"
             android:title="@string/compare_person" />
 
         <item
@@ -57,8 +57,31 @@
 
                 <item
                     android:id="@+id/next_birthdays"
-                    android:icon="@drawable/ic_baseline_cake_24"
+                    android:icon="@drawable/ic_remain"
                     android:title="@string/RemainingNextBirthday" />
+
+            </group>
+        </menu>
+    </item>
+
+    <item android:title="@string/filter_by">
+        <menu>
+            <group android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/month_by"
+                    android:icon="@drawable/ic_calendar_months"
+                    android:title="@string/months" />
+
+                <item
+                    android:id="@+id/week_by"
+                    android:icon="@drawable/ic_calendar_weeks"
+                    android:title="@string/weeks" />
+
+                <item
+                    android:id="@+id/day_by"
+                    android:icon="@drawable/ic_calendar_days"
+                    android:title="@string/days" />
 
             </group>
         </menu>

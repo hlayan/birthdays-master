@@ -28,7 +28,7 @@
                 android:id="@+id/upcoming_card"
                 layout="@layout/card_view_for_upcoming_birthday" />
 
-            <include layout="@layout/card_view_for_next_birthday" />
+            <include layout="@layout/card_view_for_remaining_birthday" />
 
             <include layout="@layout/card_view_for_leap_zodiac" />
 

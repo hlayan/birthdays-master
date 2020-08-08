@@ -244,16 +244,8 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 showSorting(id);
                 return true;
 
-            case R.id.month_by:
-                showPopupMonthWeekDay(1);
-                return true;
-
-            case R.id.week_by:
-                showPopupMonthWeekDay(2);
-                return true;
-
-            case R.id.day_by:
-                showPopupMonthWeekDay(3);
+            case R.id.add_person:
+                showPopupToAddPerson();
                 return true;
 
             default:
@@ -323,6 +315,18 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 dialog.setContentView(dialogView);
                 dialog.show();
                 break;
+
+            case R.id.month_by:
+                showPopupMonthWeekDay(1);
+                return true;
+
+            case R.id.week_by:
+                showPopupMonthWeekDay(2);
+                return true;
+
+            case R.id.day_by:
+                showPopupMonthWeekDay(3);
+                return true;
 
             case R.id.show_facebook_profile:
                 visitDev();

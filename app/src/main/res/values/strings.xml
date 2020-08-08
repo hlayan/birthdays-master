@@ -77,4 +77,5 @@
     <string name="enter_your_name">Enter your name</string>
     <string name="person_one">Person One</string>
     <string name="person_two">Person Two</string>
+    <string name="filter_by">FILTER BY</string>
 </resources>

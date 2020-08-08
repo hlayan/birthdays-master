@@ -2,16 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/yearMonthDayBorderLayout">
 
-    <LinearLayout style="@style/yearMonthDayLayout">
+    <LinearLayout
+        android:layout_margin="5dp"
+        style="@style/yearMonthDayLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/remainingMonths"
+            style="@style/yearMonthDayWithId"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="5dp" />
 
         <TextView
             android:id="@+id/monthsForNext"
             style="@style/yearMonthDayWithoutId"
+            android:layout_gravity="bottom"
             android:text="@string/months" />
-
-        <TextView
-            android:id="@+id/remainingMonths"
-            style="@style/yearMonthDayWithId" />
 
     </LinearLayout>
 
@@ -20,16 +26,22 @@
         android:layout_height="@dimen/dot_size"
         android:background="@drawable/background_with_gray" />
 
-    <LinearLayout style="@style/yearMonthDayLayout">
+    <LinearLayout
+        android:layout_margin="5dp"
+        style="@style/yearMonthDayLayout"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/remainingDays"
+            style="@style/yearMonthDayWithId"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="5dp" />
 
         <TextView
             android:id="@+id/daysForNext"
             style="@style/yearMonthDayWithoutId"
+            android:layout_gravity="bottom"
             android:text="@string/days" />
-
-        <TextView
-            android:id="@+id/remainingDays"
-            style="@style/yearMonthDayWithId" />
 
     </LinearLayout>
 

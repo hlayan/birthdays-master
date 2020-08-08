@@ -11,25 +11,17 @@
         app:showAsAction="always" />
 
     <item
+        android:id="@+id/add_person"
+        app:showAsAction="ifRoom"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_baseline_person_add_24"
+        android:title="@string/add_person" />
+
+    <item
         android:id="@+id/sort_items"
         android:icon="@drawable/ic_baseline_sort_24"
         android:orderInCategory="1"
         android:title="@string/sorting"
-        app:showAsAction="ifRoom" />
-
-    <item
-        android:id="@+id/month_by"
-        android:icon="@android:drawable/ic_menu_month"
-        android:title="@string/months" />
-
-    <item
-        android:id="@+id/week_by"
-        android:icon="@android:drawable/ic_menu_week"
-        android:title="@string/weeks" />
-
-    <item
-        android:id="@+id/day_by"
-        android:icon="@android:drawable/ic_menu_day"
-        android:title="@string/days" />
+        app:showAsAction="always" />
 
 </menu>

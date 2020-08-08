@@ -54,7 +54,7 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
     @NonNull
     @Override
     public ViewHolderForRecyclerView onCreateViewHolder(ViewGroup parent, int viewType) {
-        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_for_next_birthday, parent, false);
+        CardView cv = (CardView) LayoutInflater.from(parent.getContext()).inflate(R.layout.card_view_for_remaining_birthday, parent, false);
         return new ViewHolderForRecyclerView(cv);
     }
 
