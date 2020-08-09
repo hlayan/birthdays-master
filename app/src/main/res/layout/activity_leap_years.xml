@@ -8,19 +8,19 @@
 
     <include layout="@layout/view_toolbar_layout" />
 
-    <include layout="@layout/view_for_leap" />
-
-    <View
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#d3d3d3" />
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="5dp">
 
-    <include layout="@layout/view_for_results" />
+        <include layout="@layout/view_for_leap" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#d3d3d3" />
+        <include layout="@layout/view_for_results" />
+
+    </LinearLayout>
 
     <TableLayout
         android:layout_width="match_parent"

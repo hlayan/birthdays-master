@@ -27,7 +27,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForMainFragment;
-import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForNextBirthday;
+import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForRemainingBirthday;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForUpcomingBirthday;
 import com.hlayanhtetaung.birthdaysmaster.data.DataClass;
 import com.hlayanhtetaung.birthdaysmaster.database.SQLiteDatabaseOpenHelper;
@@ -37,7 +37,7 @@ import java.util.Objects;
 
 public class UtilsActivity extends AppCompatActivity {
 
-    public AdapterForNextBirthday adapterForNextBirthday;
+    public AdapterForRemainingBirthday adapterForRemainingBirthday;
     public AdapterForUpcomingBirthday adapterForUpcomingBirthday;
     public AdapterForMainFragment adapterForMainFragment;
     public SQLiteDatabaseOpenHelper openHelper;
@@ -123,8 +123,8 @@ public class UtilsActivity extends AppCompatActivity {
                 }
             });
         } else if (id == 2) {
-            recyclerView.setAdapter(adapterForNextBirthday);
-            adapterForNextBirthday.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
+            recyclerView.setAdapter(adapterForRemainingBirthday);
+            adapterForRemainingBirthday.registerAdapterDataObserver(new RecyclerView.AdapterDataObserver() {
                 @Override
                 public void onChanged() {
                     isEmptyRecycler(recyclerView, emptyView);
@@ -219,7 +219,7 @@ public class UtilsActivity extends AppCompatActivity {
                     if (id == 1) {
                         adapterForMainFragment.notifyDataSetChanged();
                     } else if (id == 2) {
-                        adapterForNextBirthday.notifyDataSetChanged();
+                        adapterForRemainingBirthday.notifyDataSetChanged();
                     } else {
                         adapterForUpcomingBirthday.notifyDataSetChanged();
                     }
@@ -290,7 +290,7 @@ public class UtilsActivity extends AppCompatActivity {
         if (id == 1) {
             itemCount = adapterForMainFragment.getItemCount();
         } else if (id == 2) {
-            itemCount = adapterForNextBirthday.getItemCount();
+            itemCount = adapterForRemainingBirthday.getItemCount();
         } else {
             itemCount = adapterForUpcomingBirthday.getItemCount();
         }

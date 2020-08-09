@@ -38,7 +38,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForMainFragment;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForMonthWeekDay;
-import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForNextBirthday;
+import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForRemainingBirthday;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForUpcomingBirthday;
 import com.hlayanhtetaung.birthdaysmaster.database.SQLiteDatabaseOpenHelper;
 import com.hlayanhtetaung.birthdaysmaster.logic.AgeCalculator;
@@ -90,7 +90,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 if (id == 1) {
                     adapterForMainFragment.notifyDataSetChanged();
                 } else if (id == 2) {
-                    adapterForNextBirthday.notifyDataSetChanged();
+                    adapterForRemainingBirthday.notifyDataSetChanged();
                 } else {
                     adapterForUpcomingBirthday.notifyDataSetChanged();
                 }
@@ -131,7 +131,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
         if (id == 1) {
             adapterForMainFragment = new AdapterForMainFragment(arrayList, 0);
         } else if (id == 2) {
-            adapterForNextBirthday = new AdapterForNextBirthday(arrayList, 0);
+            adapterForRemainingBirthday = new AdapterForRemainingBirthday(arrayList, 0);
         } else if (id == 3) {
             adapterForUpcomingBirthday = new AdapterForUpcomingBirthday(arrayList, 2, 0);
         } else {
@@ -153,7 +153,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 }
             });
         } else if (id == 2) {
-            adapterForNextBirthday.setReadData(new AdapterForNextBirthday.ReadData() {
+            adapterForRemainingBirthday.setReadData(new AdapterForRemainingBirthday.ReadData() {
                 @Override
                 public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
                     readDataFromDatabase(0);
@@ -226,7 +226,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 if (id == 1) {
                     adapterForMainFragment.getFilter().filter(newText);
                 } else if (id == 2) {
-                    adapterForNextBirthday.getFilter().filter(newText);
+                    adapterForRemainingBirthday.getFilter().filter(newText);
                 } else {
                     adapterForUpcomingBirthday.getFilter().filter(newText);
                 }
@@ -398,7 +398,7 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                 if (id == 1) {
                     adapterForMainFragment.notifyDataSetChanged();
                 } else if (id == 2) {
-                    adapterForNextBirthday.notifyDataSetChanged();
+                    adapterForRemainingBirthday.notifyDataSetChanged();
                 } else {
                     adapterForUpcomingBirthday.notifyDataSetChanged();
                 }

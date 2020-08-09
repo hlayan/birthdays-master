@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextBirthday.ViewHolderForRecyclerView> implements Filterable {
+public class AdapterForRemainingBirthday extends RecyclerView.Adapter<AdapterForRemainingBirthday.ViewHolderForRecyclerView> implements Filterable {
 
     private ArrayList<DataClass> arrayList;
     private ArrayList<DataClass> arrayListFull;
@@ -45,7 +45,7 @@ public class AdapterForNextBirthday extends RecyclerView.Adapter<AdapterForNextB
         this.readData = readData;
     }
 
-    public AdapterForNextBirthday(ArrayList<DataClass> arrayList, int result) {
+    public AdapterForRemainingBirthday(ArrayList<DataClass> arrayList, int result) {
         this.arrayList = arrayList;
         this.result = result;
         arrayListFull = new ArrayList<>(arrayList);
