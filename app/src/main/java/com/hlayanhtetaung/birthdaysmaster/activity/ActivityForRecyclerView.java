@@ -91,6 +91,8 @@ public class ActivityForRecyclerView extends UtilsActivity {
             }
         });
 
+        swipeContainer.setColorSchemeColors(getThemeColor());
+
     }
 
     @Override

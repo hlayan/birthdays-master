@@ -10,6 +10,9 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.Bundle;
+import android.os.PersistableBundle;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
@@ -19,6 +22,7 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -64,6 +68,14 @@ public class UtilsActivity extends AppCompatActivity {
         }
 
         super.onDestroy();
+    }
+
+    public int getThemeColor() {
+        TypedValue typedValue = new TypedValue();
+        if (this.getTheme().resolveAttribute(R.attr.colorPrimary, typedValue, true))
+            return typedValue.data;
+        else
+            return Color.TRANSPARENT;
     }
 
     public void customSearchView(SearchView searchView) {
@@ -271,7 +283,9 @@ public class UtilsActivity extends AppCompatActivity {
         dialog.setContentView(R.layout.dialogbox_for_show_info);
         TextView messageText = dialog.findViewById(R.id.warning_text);
         messageText.setText(message);
-        Button ok = dialog.findViewById(R.id.ok);
+        TextView titleText = dialog.findViewById(R.id.title_text);
+        titleText.setText(title);
+        ImageView ok = dialog.findViewById(R.id.close_app);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

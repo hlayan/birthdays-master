@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -102,7 +103,9 @@ public class AdapterForMonthWeekDay extends RecyclerView.Adapter<AdapterForMonth
         dialog.setContentView(R.layout.dialogbox_for_show_info);
         TextView messageText = dialog.findViewById(R.id.warning_text);
         messageText.setText(message);
-        Button ok = dialog.findViewById(R.id.ok);
+        TextView titleText = dialog.findViewById(R.id.title_text);
+        titleText.setText(title);
+        ImageView ok = dialog.findViewById(R.id.close_app);
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

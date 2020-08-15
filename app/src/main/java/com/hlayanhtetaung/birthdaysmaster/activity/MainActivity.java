@@ -12,6 +12,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -101,9 +102,11 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                     toolbar.setTitle(arrayList.size() + " Person");
                 }
 
-                showToast("Refreshed!");
+                showToast("Refreshed");
             }
         });
+
+        swipeContainer.setColorSchemeColors(getThemeColor());
 
         drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,

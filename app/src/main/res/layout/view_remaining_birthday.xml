@@ -16,7 +16,7 @@
         <TextView
             android:id="@+id/monthsForNext"
             style="@style/yearMonthDayWithoutId"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center"
             android:text="@string/months" />
 
     </LinearLayout>
@@ -40,7 +40,7 @@
         <TextView
             android:id="@+id/daysForNext"
             style="@style/yearMonthDayWithoutId"
-            android:layout_gravity="bottom"
+            android:layout_gravity="center"
             android:text="@string/days" />
 
     </LinearLayout>
