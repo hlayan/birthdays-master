@@ -16,9 +16,7 @@
             style="@style/titleTextView"
             android:layout_height="40dp"
             android:background="@drawable/background_for_title"
-            android:text="@string/name"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:text="@string/name" />
 
         <TextView
             android:id="@+id/warning_text"

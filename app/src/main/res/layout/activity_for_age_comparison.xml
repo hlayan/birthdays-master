@@ -27,12 +27,6 @@
                 android:id="@+id/person1"
                 layout="@layout/card_view_for_current_age" />
 
-            <View
-                android:layout_width="@dimen/dot_size"
-                android:layout_height="@dimen/dot_size"
-                android:layout_margin="5dp"
-                android:background="@drawable/background_with_gray" />
-
             <include
                 android:id="@+id/person2"
                 layout="@layout/card_view_for_current_age" />

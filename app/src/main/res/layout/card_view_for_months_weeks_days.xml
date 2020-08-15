@@ -21,8 +21,7 @@
             style="@style/titleTextView"
             android:background="@drawable/background_for_title"
             android:text="@string/name"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/count"

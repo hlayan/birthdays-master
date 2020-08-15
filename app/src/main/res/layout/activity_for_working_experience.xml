@@ -12,7 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-
         android:padding="@dimen/padding_in_scroll"
         android:scrollbarFadeDuration="@android:integer/config_shortAnimTime"
         android:scrollbarSize="1dp"
@@ -27,12 +26,6 @@
             <include
                 android:id="@+id/start_date"
                 layout="@layout/card_view_for_upcoming_birthday" />
-
-            <View
-                android:layout_margin="5dp"
-                android:layout_width="@dimen/dot_size"
-                android:layout_height="@dimen/dot_size"
-                android:background="@drawable/background_with_gray" />
 
             <include
                 android:id="@+id/end_date"
