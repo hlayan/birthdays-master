@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:targetApi="m">
-        <activity android:name=".activity.ActivityForLeapYears"
+        <activity
+            android:name=".activity.ActivityForLeapYears"
             android:parentActivityName=".activity.MainActivity"
             android:screenOrientation="portrait" />
         <activity

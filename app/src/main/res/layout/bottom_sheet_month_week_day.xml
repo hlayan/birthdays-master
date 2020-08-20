@@ -37,7 +37,5 @@
         android:clipToPadding="false"
         android:layoutAnimation="@anim/layout_animation"
         android:padding="@dimen/padding_in_scroll"
-        android:scrollbarFadeDuration="@android:integer/config_shortAnimTime"
-        android:scrollbarSize="1dp"
-        android:scrollbarStyle="insideInset" />
+        android:scrollbars="none" />
 </LinearLayout>

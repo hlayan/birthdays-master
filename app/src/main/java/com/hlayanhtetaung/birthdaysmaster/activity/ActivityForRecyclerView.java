@@ -36,6 +36,8 @@ public class ActivityForRecyclerView extends UtilsActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_for_recycler_view);
 
+        swipeContainer = findViewById(R.id.swipe_refresh);
+
         result = Objects.requireNonNull(getIntent().getExtras()).getInt("result");
         String title = Objects.requireNonNull(getIntent().getExtras()).getString("title");
         count = Objects.requireNonNull(getIntent().getExtras()).getString("count");
@@ -73,21 +75,15 @@ public class ActivityForRecyclerView extends UtilsActivity {
             }
         });
 
-        final SwipeRefreshLayout swipeContainer = findViewById(R.id.swipe_refresh);
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                Thread background = new Thread() {
-                    public void run() {
-                        try {
-                            sleep(500);
-                            swipeContainer.setRefreshing(false);
-                        } catch (Exception ignored) {
-                        }
-                    }
-                };
-                background.start();
-                showToast("Refreshed!");
+                swipeContainer.setRefreshing(false);
             }
         });
 

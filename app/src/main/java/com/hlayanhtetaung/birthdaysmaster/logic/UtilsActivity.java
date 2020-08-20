@@ -28,6 +28,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForMainFragment;
@@ -51,6 +52,7 @@ public class UtilsActivity extends AppCompatActivity {
     public String orderBy, count, checking;
     public int itemSelected, id;
     public static RecyclerView recyclerView;
+    public SwipeRefreshLayout swipeContainer;
 
     @Override
     protected void onDestroy() {
@@ -276,6 +278,7 @@ public class UtilsActivity extends AppCompatActivity {
             } while (cursor.moveToNext());
 
         }
+        swipeContainer.setRefreshing(false);
     }
 
     public void showAlertDialog(String title, String message) {

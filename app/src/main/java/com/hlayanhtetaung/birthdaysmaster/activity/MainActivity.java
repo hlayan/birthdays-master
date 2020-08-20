@@ -69,22 +69,10 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
             toolbar.setTitle(arrayList.size() + " Person");
         }
 
-        final SwipeRefreshLayout swipeContainer = findViewById(R.id.swipe_refresh);
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onRefresh() {
-
-                Thread background = new Thread() {
-                    public void run() {
-                        try {
-                            sleep(500);
-                            swipeContainer.setRefreshing(false);
-                        } catch (Exception ignored) {
-                        }
-                    }
-                };
-                background.start();
 
                 readDataFromDatabase(0);
 
@@ -102,7 +90,6 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
                     toolbar.setTitle(arrayList.size() + " Person");
                 }
 
-                showToast("Refreshed");
             }
         });
 
@@ -187,6 +174,8 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
         super.onCreate(savedInstanceState);
         ThemeUtils.onActivityCreateSetTheme(this);
         setContentView(R.layout.activity_main);
+
+        swipeContainer = findViewById(R.id.swipe_refresh);
 
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
