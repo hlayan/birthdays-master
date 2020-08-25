@@ -33,12 +33,11 @@
 
     <ImageView
         android:id="@+id/close_app"
-        android:layout_width="30sp"
-        android:layout_height="30sp"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
         android:layout_gravity="end"
-        android:layout_margin="5dp"
+        android:layout_margin="6dp"
         android:gravity="center"
-        android:src="@drawable/ic_baseline_close_24"
-        android:tint="@android:color/white" />
+        android:src="@drawable/ic_baseline_close_24" />
 
 </FrameLayout>
