@@ -38,10 +38,7 @@ public class SQLiteDatabaseOpenHelper extends android.database.sqlite.SQLiteOpen
                 TOTAL_DAY + " INT " +
                 ")");
 
-        insertDataToDateOfBirth(db, "Republic Day", 4, 1, 1948);
-        insertDataToDateOfBirth(db, "Martyrs' Day", 19, 7, 1947);
-        insertDataToDateOfBirth(db, "Aung San Suu Kyi", 19, 6, 1945);
-        insertDataToDateOfBirth(db, "Hlayan Htet Aung", 15, 11, 2000);
+        insertDataToDateOfBirth(db);
 
         db.execSQL("CREATE TABLE " + "public_holidays" + " (" +
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
@@ -50,23 +47,6 @@ public class SQLiteDatabaseOpenHelper extends android.database.sqlite.SQLiteOpen
                 MONTH + " INT " +
                 ")");
 
-        insertDataToPublicHolidays(db, "လွတ်လပ်ရေးနေ့", 4, 1);
-        insertDataToPublicHolidays(db, "အမေများနေ့", 20, 1);
-        insertDataToPublicHolidays(db, "ပြည်ထောင်စုနေ့", 12, 2);
-        insertDataToPublicHolidays(db, "ဗိုလ်ချုပ်မွေးနေ့", 13, 2);
-        insertDataToPublicHolidays(db, "ချစ်သူများနေ့", 14, 2);
-        insertDataToPublicHolidays(db, "တောင်သူလယ်သမားနေ့", 2, 3);
-        insertDataToPublicHolidays(db, "တပ်မတော်နေ့", 27, 3);
-        insertDataToPublicHolidays(db, "အလုပ်သမားနေ့", 1, 5);
-        insertDataToPublicHolidays(db, "အာဇာနည်နေ့", 19, 7);
-        insertDataToPublicHolidays(db, "ကုလသမဂ္ဂနေ့", 24, 10);
-        insertDataToPublicHolidays(db, "သီတင်းကျွတ်", 13, 10);
-        insertDataToPublicHolidays(db, "အမျိုးသားနေ့", 21, 10);
-        insertDataToPublicHolidays(db, "ခရစ္စမတ်နေ့", 25, 12);
-        insertDataToPublicHolidays(db, "တန်ဆောင်တိုင်", 11, 11);
-        insertDataToPublicHolidays(db, "ကမ္ဘာဆရာများနေ့", 5, 10);
-        insertDataToPublicHolidays(db, "ဟောလိုးဝင်း", 31, 10);
-
     }
 
     @Override
@@ -74,30 +54,21 @@ public class SQLiteDatabaseOpenHelper extends android.database.sqlite.SQLiteOpen
         onCreate(db);
     }
 
-    private void insertDataToDateOfBirth(SQLiteDatabase sqLiteDatabase, String name, int days, int months, int years) {
+    private void insertDataToDateOfBirth(SQLiteDatabase sqLiteDatabase) {
 
-        LocalDate weeks = new LocalDate(years, months, days);
+        LocalDate weeks = new LocalDate(2000, 11, 15);
         int daysOfWeek = weeks.getDayOfWeek();
 
-        int totalDays = AgeCalculator.calculateTotalDays(years, months, days);
+        int totalDays = AgeCalculator.calculateTotalDays(2000, 11, 15);
 
         ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("day", days);
-        contentValues.put("month", months);
-        contentValues.put("year", years);
+        contentValues.put("name", "Hlayan Htet Aung");
+        contentValues.put("day", 15);
+        contentValues.put("month", 11);
+        contentValues.put("year", 2000);
         contentValues.put("days_of_week", daysOfWeek);
         contentValues.put("total_days", totalDays);
         sqLiteDatabase.insert("date_of_birth", null, contentValues);
-    }
-
-    private void insertDataToPublicHolidays(SQLiteDatabase sqLiteDatabase, String name, int days, int months) {
-
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("name", name);
-        contentValues.put("day", days);
-        contentValues.put("month", months);
-        sqLiteDatabase.insert("public_holidays", null, contentValues);
     }
 
 }
