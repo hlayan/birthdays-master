@@ -28,6 +28,16 @@ public class ActivityForLeapYears extends UtilsActivity {
         toolbar.setTitle(R.string.leap_checking);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                }
+        );
 
         inputUnits = "";
 

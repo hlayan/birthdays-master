@@ -49,7 +49,16 @@ public class ActivityForWorkingExperience extends UtilsActivity {
         toolbar.setTitle(R.string.working_experience);
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                }
+        );
         startDate = findViewById(R.id.start_date);
         endDate = findViewById(R.id.end_date);
 
@@ -127,7 +136,7 @@ public class ActivityForWorkingExperience extends UtilsActivity {
                     nowMonths = String.valueOf(period.getMonths());
                     nowDays = String.valueOf(period.getDays());
 
-                    resultText = "";
+                    resultText = "Congratulations!";
                     result.setText(resultText);
 
                     setTextPerson();

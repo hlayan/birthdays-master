@@ -53,6 +53,16 @@ public class ActivityForAgeComparison extends UtilsActivity {
         toolbar.setTitle("Age Comparison");
         setSupportActionBar(toolbar);
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                }
+        );
 
         person1 = findViewById(R.id.person1);
         person2 = findViewById(R.id.person2);

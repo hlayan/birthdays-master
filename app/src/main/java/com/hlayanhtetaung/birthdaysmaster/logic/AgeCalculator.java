@@ -107,7 +107,7 @@ public class AgeCalculator {
                     break;
             }
         }
-        return new int[]{a, b, c, d, e, f, g, h, ii, j, k, m};
+        return new int[]{a, b, c, d, e, f, g, h, ii, j, k, l};
     }
 
     public int[] calculateDaysOfWeek(ArrayList<Integer> arrayList) {

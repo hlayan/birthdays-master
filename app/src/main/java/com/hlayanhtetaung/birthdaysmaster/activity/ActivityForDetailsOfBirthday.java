@@ -56,6 +56,18 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
 //        toolbar.setTitle("cardName");
         Objects.requireNonNull(getSupportActionBar()).setTitle(cardName);
 
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+
+        toolbar.setNavigationOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        finish();
+                    }
+                }
+        );
+
         DataClass currentAge = AgeCalculator.calculateAge(userYears, userMonths, userDays);
 
         title.setText(R.string.current_age);
@@ -120,7 +132,7 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         same.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showAlertDialog("Same of Date of Birth", sameYears.toString());
+                showAlertDialog("Same Birth Date", sameYears.toString());
             }
         });
 
