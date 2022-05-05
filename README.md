@@ -4,23 +4,20 @@ A sample free and offline note for saving dates of birth and calculator
 
 ## Screenshots
 
-<p align="center">
-   <img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-1.png" width="16%"/>
-   <img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-2.png" width="16%"/>
-   <img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-3.png" width="16%"/>
-   <img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-4.png" width="16%"/>
-   <img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-5.png" width="16%"/>
-   <img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-6.png" width="16%"/>
-</p>
-
-<!-- <p align="left">
-          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-1.png" width="200"></td>
-          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-2.png" width="200"></td>
-          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-3.png" width="200"></td>
-          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-4.png" width="200"></td>
-          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-5.png" width="200"></td>
-          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-6.png" width="200"></td>
-</p> -->
+<table align="center">
+   <tr>
+      <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-1.png"></td>
+      <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-2.png"></td>
+      <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-3.png"></td>
+      <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-4.png"></td>
+   </tr>
+   <tr>
+      <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-5.png"></td>
+      <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-6.png"></td>
+      <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-7.png"></td>
+      <td><img src="https://github.com/hlayan/birthdays-master/blob/main/screenshots/Screenshot-8.png"></td>
+   </tr>
+</table>
 
 ## Download
 
