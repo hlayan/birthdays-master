@@ -1,39 +1,50 @@
-# Birthdays-Master
+# Birthdays Master
 
-You can calculate you age as much as possible in details.
+A sample free and offline note for saving dates of birth and calculator
 
-You only have to add your date of birth.
+## Screenshots
 
-And then, you can save a lot of date of birth.
+<table align="center">
+       <tr>
+          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/Screenshots/Screenshot-1.png" width="200"></td>
+          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/Screenshots/Screenshot-2.png" width="200"></td>
+          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/Screenshots/Screenshot-3.png" width="200"></td>
+          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/Screenshots/Screenshot-4.png" width="200"></td>
+          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/Screenshots/Screenshot-5.png" width="200"></td>
+          <td><img src="https://github.com/hlayan/birthdays-master/blob/main/Screenshots/Screenshot-6.png" width="200"></td>
+       </tr>
+</table>
+ 
+## Download
 
-It only needs a name and date of birth of your friends or family members.
+You can easily install from [google play](https://play.google.com/store/apps/details?id=com.hlayanhtetaung.birthdaysmaster&hl=en).
 
-You can know your age in year, month, day and also upcoming birthdays and remaining time for next birthday.
+For directly download, see [releases](https://github.com/hlayan/birthdays-master/releases)
+ 
+## Features
 
-Leap means your experience on that you have faced leap years through your life time.
+#### View types
 
-Sign means Zodiac Sign.
+- Current age
+- Date of Birth
+- Upcoming Birthday
+- Remaining Birthday
 
-Same means your same date of birth, it means especially same day of week on your birthday.
+#### Filter types
 
-And extra is all totals (years, months, days, weeks, hours, minutes, seconds).
+- Months
+- Weeks
+- Days
 
-In the profile, you can edit name and date of birth you added and if you want, you can delete it.
+#### Behavour
 
-You can sort persons you added so many way as possible and also search in app bar directly.
+- Simplicity
+- Performance
+- UI/UX
+- Animations
+- Lightweight
 
-You can see persons you added by months by, weeks by and days by alternatively.
+#### Others
 
-You can also compare two persons how difference in age.
-
-You can check you working experience and you only needs to add start date and end date.
-
-You can also check a year is leap or not.
-
-My app size is more lightweight than normal.
-
-I had avoid white screen in app startup and then show app logo and default theme background.
-
-100% Offline avaliable and Absolutely No Ads **Free**
-
-Finally, In my app, you can really change theme color a lot.
+- Multiple themes
+- Comparing different dates of birth
