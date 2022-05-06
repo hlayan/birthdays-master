@@ -14,27 +14,22 @@
         tools:targetApi="m">
         <activity
             android:name=".activity.ActivityForLeapYears"
-            android:parentActivityName=".activity.MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.ActivityForWorkingExperience"
-            android:parentActivityName=".activity.MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.ActivityForAgeComparison"
-            android:parentActivityName=".activity.MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.ActivityForRecyclerView"
-            android:parentActivityName=".activity.MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.ActivityForDetailsOfBirthday"
-            android:parentActivityName=".activity.MainActivity"
-            android:screenOrientation="portrait" />
+            android:parentActivityName=".activity.MainActivity" />
         <activity
             android:name=".activity.MainActivity"
-            android:screenOrientation="portrait"
+            android:exported="true"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
