@@ -7,115 +7,115 @@
         <item name="buttonStyle">@style/Widget.AppCompat.Button.Borderless</item>
     </style>
 
-    <style name="a" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="a" parent="AppTheme">
         <item name="colorPrimary">@color/a</item>
         <item name="colorPrimaryDark">@color/a</item>
         <item name="colorAccent">@color/a</item>
     </style>
 
-    <style name="b" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="b" parent="AppTheme">
         <item name="colorPrimary">@color/b</item>
         <item name="colorPrimaryDark">@color/b</item>
         <item name="colorAccent">@color/b</item>
     </style>
 
-    <style name="c" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="c" parent="AppTheme">
         <item name="colorPrimary">@color/c</item>
         <item name="colorPrimaryDark">@color/c</item>
         <item name="colorAccent">@color/c</item>
     </style>
 
-    <style name="d" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="d" parent="AppTheme">
         <item name="colorPrimary">@color/d</item>
         <item name="colorPrimaryDark">@color/d</item>
         <item name="colorAccent">@color/d</item>
     </style>
 
-    <style name="e" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="e" parent="AppTheme">
         <item name="colorPrimary">@color/e</item>
         <item name="colorPrimaryDark">@color/e</item>
         <item name="colorAccent">@color/e</item>
     </style>
 
-    <style name="f" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="f" parent="AppTheme">
         <item name="colorPrimary">@color/f</item>
         <item name="colorPrimaryDark">@color/f</item>
         <item name="colorAccent">@color/f</item>
     </style>
 
-    <style name="g" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="g" parent="AppTheme">
         <item name="colorPrimary">@color/g</item>
         <item name="colorPrimaryDark">@color/g</item>
         <item name="colorAccent">@color/g</item>
     </style>
 
-    <style name="h" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="h" parent="AppTheme">
         <item name="colorPrimary">@color/h</item>
         <item name="colorPrimaryDark">@color/h</item>
         <item name="colorAccent">@color/h</item>
     </style>
 
-    <style name="i" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="i" parent="AppTheme">
         <item name="colorPrimary">@color/i</item>
         <item name="colorPrimaryDark">@color/i</item>
         <item name="colorAccent">@color/i</item>
     </style>
 
-    <style name="j" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="j" parent="AppTheme">
         <item name="colorPrimary">@color/j</item>
         <item name="colorPrimaryDark">@color/j</item>
         <item name="colorAccent">@color/j</item>
     </style>
 
-    <style name="k" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="k" parent="AppTheme">
         <item name="colorPrimary">@color/k</item>
         <item name="colorPrimaryDark">@color/k</item>
         <item name="colorAccent">@color/k</item>
     </style>
 
-    <style name="l" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="l" parent="AppTheme">
         <item name="colorPrimary">@color/l</item>
         <item name="colorPrimaryDark">@color/l</item>
         <item name="colorAccent">@color/l</item>
     </style>
 
-    <style name="m" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="m" parent="AppTheme">
         <item name="colorPrimary">@color/m</item>
         <item name="colorPrimaryDark">@color/m</item>
         <item name="colorAccent">@color/m</item>
     </style>
 
-    <style name="n" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="n" parent="AppTheme">
         <item name="colorPrimary">@color/n</item>
         <item name="colorPrimaryDark">@color/n</item>
         <item name="colorAccent">@color/n</item>
     </style>
 
-    <style name="o" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="o" parent="AppTheme">
         <item name="colorPrimary">@color/o</item>
         <item name="colorPrimaryDark">@color/o</item>
         <item name="colorAccent">@color/o</item>
     </style>
 
-    <style name="p" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="p" parent="AppTheme">
         <item name="colorPrimary">@color/p</item>
         <item name="colorPrimaryDark">@color/p</item>
         <item name="colorAccent">@color/p</item>
     </style>
 
-    <style name="q" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="q" parent="AppTheme">
         <item name="colorPrimary">@color/q</item>
         <item name="colorPrimaryDark">@color/q</item>
         <item name="colorAccent">@color/q</item>
     </style>
 
-    <style name="r" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="r" parent="AppTheme">
         <item name="colorPrimary">@color/r</item>
         <item name="colorPrimaryDark">@color/r</item>
         <item name="colorAccent">@color/r</item>
     </style>
 
-    <style name="s" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="s" parent="AppTheme">
         <item name="colorPrimary">@color/s</item>
         <item name="colorPrimaryDark">@color/s</item>
         <item name="colorAccent">@color/s</item>
