@@ -14,18 +14,18 @@ android {
 
     buildTypes {
         debug {
+            versionNameSuffix '-debug'
             applicationIdSuffix '.debug'
         }
         release {
             minifyEnabled true
             shrinkResources true
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
 }
 
 dependencies {
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
-    implementation 'com.google.android.material:material:1.6.0'
+    implementation 'com.google.android.material:material:1.6.1'
     implementation 'joda-time:joda-time:2.10.6'
 }
