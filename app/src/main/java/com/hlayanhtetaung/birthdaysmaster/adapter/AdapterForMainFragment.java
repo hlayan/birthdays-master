@@ -31,7 +31,7 @@ import java.util.Objects;
 
 public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainFragment.ViewHolderForRecyclerView> implements Filterable {
 
-    private ArrayList<DataClass> arrayList;
+    private final ArrayList<DataClass> arrayList;
     public ArrayList<DataClass> arrayListFull;
     public android.database.sqlite.SQLiteDatabase sqLiteDatabase;
     private ReadData readData;
@@ -79,37 +79,29 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
         months.setText(String.valueOf(dataClass.getMonths()));
         days.setText(String.valueOf(dataClass.getDays()));
 
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cardView.setOnClickListener(v -> {
 
-                if (result == 0) {
-                    Intent intent = new Intent(cardView.getContext(), ActivityForDetailsOfBirthday.class);
+            if (result == 0) {
+                Intent intent = new Intent(cardView.getContext(), ActivityForDetailsOfBirthday.class);
 
-                    intent.putExtra("id", arrayList.get(position).getId());
-                    intent.putExtra("name", arrayList.get(position).getName());
-                    intent.putExtra("userYears", arrayList.get(position).getYears());
-                    intent.putExtra("userMonths", arrayList.get(position).getMonths());
-                    intent.putExtra("userDays", arrayList.get(position).getDays());
+                intent.putExtra("id", arrayList.get(position).getId());
+                intent.putExtra("name", arrayList.get(position).getName());
+                intent.putExtra("userYears", arrayList.get(position).getYears());
+                intent.putExtra("userMonths", arrayList.get(position).getMonths());
+                intent.putExtra("userDays", arrayList.get(position).getDays());
 
-                    cardView.getContext().startActivity(intent);
-                } else {
-                    readData.refresh(result, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
-                }
-
+                cardView.getContext().startActivity(intent);
+            } else {
+                readData.refresh(result, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
             }
+
         });
 
-        cardView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if (result == 0) {
-
-                    showPopupToDeleteItem(cardView.getContext(), position);
-
-                }
-                return true;
+        cardView.setOnLongClickListener(v -> {
+            if (result == 0) {
+                showPopupToDeleteItem(cardView.getContext(), position);
             }
+            return true;
         });
 
     }
@@ -122,7 +114,7 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
 
     static class ViewHolderForRecyclerView extends RecyclerView.ViewHolder {
 
-        private CardView cardView;
+        private final CardView cardView;
 
         ViewHolderForRecyclerView(CardView v) {
             super(v);
@@ -135,7 +127,7 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
         return exampleFilter;
     }
 
-    private Filter exampleFilter = new Filter() {
+    private final Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<DataClass> filteredList = new ArrayList<>();
@@ -175,22 +167,14 @@ public class AdapterForMainFragment extends RecyclerView.Adapter<AdapterForMainF
         TextView deleteItem = dialog.findViewById(R.id.warning_text);
         deleteItem.setText(resultText);
 
-        yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(arrayList.get(position).getId())});
-                readData.refresh(0, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
-                notifyDataSetChanged();
-                dialog.cancel();
-            }
+        yes.setOnClickListener(v -> {
+            sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(arrayList.get(position).getId())});
+            readData.refresh(0, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
+            notifyDataSetChanged();
+            dialog.cancel();
         });
 
-        no.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        no.setOnClickListener(v -> dialog.dismiss());
 
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Objects.requireNonNull(dialog.getWindow()).getAttributes().windowAnimations = R.style.DialogTheme;

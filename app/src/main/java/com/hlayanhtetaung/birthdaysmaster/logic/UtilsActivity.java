@@ -1,7 +1,6 @@
 package com.hlayanhtetaung.birthdaysmaster.logic;
 
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -10,19 +9,15 @@ import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
@@ -166,82 +161,74 @@ public class UtilsActivity extends AppCompatActivity {
                 "Month Ascending", "Month Descending", "Week Ascending", "Week Descending", "Day Ascending", "Day Descending"};
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Sort by");
-        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.dismiss();
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.dismiss());
+        builder.setSingleChoiceItems(singleChoiceItems, itemSelected, (dialogInterface, selectedIndex) -> {
+            switch (selectedIndex) {
+                case 0:
+                    itemSelected = 0;
+                    orderBy = "name ASC";
+                    break;
+                case 1:
+                    itemSelected = 1;
+                    orderBy = "name DESC";
+                    break;
+                case 2:
+                    itemSelected = 2;
+                    orderBy = "total_days ASC";
+                    break;
+                case 3:
+                    itemSelected = 3;
+                    orderBy = "total_days DESC";
+                    break;
+                case 4:
+                    itemSelected = 4;
+                    orderBy = "_id ASC";
+                    break;
+                case 5:
+                    itemSelected = 5;
+                    orderBy = "_id DESC";
+                    break;
+                case 6:
+                    itemSelected = 6;
+                    orderBy = "month ASC";
+                    break;
+                case 7:
+                    itemSelected = 7;
+                    orderBy = "month DESC";
+                    break;
+                case 8:
+                    itemSelected = 8;
+                    orderBy = "days_of_week ASC";
+                    break;
+                case 9:
+                    itemSelected = 9;
+                    orderBy = "days_of_week DESC";
+                    break;
+                case 10:
+                    itemSelected = 10;
+                    orderBy = "day ASC";
+                    break;
+                case 11:
+                    itemSelected = 11;
+                    orderBy = "day DESC";
+                    break;
             }
-        });
-        builder.setSingleChoiceItems(singleChoiceItems, itemSelected, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int selectedIndex) {
-                switch (selectedIndex) {
-                    case 0:
-                        itemSelected = 0;
-                        orderBy = "name ASC";
-                        break;
-                    case 1:
-                        itemSelected = 1;
-                        orderBy = "name DESC";
-                        break;
-                    case 2:
-                        itemSelected = 2;
-                        orderBy = "total_days ASC";
-                        break;
-                    case 3:
-                        itemSelected = 3;
-                        orderBy = "total_days DESC";
-                        break;
-                    case 4:
-                        itemSelected = 4;
-                        orderBy = "_id ASC";
-                        break;
-                    case 5:
-                        itemSelected = 5;
-                        orderBy = "_id DESC";
-                        break;
-                    case 6:
-                        itemSelected = 6;
-                        orderBy = "month ASC";
-                        break;
-                    case 7:
-                        itemSelected = 7;
-                        orderBy = "month DESC";
-                        break;
-                    case 8:
-                        itemSelected = 8;
-                        orderBy = "days_of_week ASC";
-                        break;
-                    case 9:
-                        itemSelected = 9;
-                        orderBy = "days_of_week DESC";
-                        break;
-                    case 10:
-                        itemSelected = 10;
-                        orderBy = "day ASC";
-                        break;
-                    case 11:
-                        itemSelected = 11;
-                        orderBy = "day DESC";
-                        break;
-                }
-                if (id == 0) {
-                    readDataFromDatabase(1);
+            if (id == 0) {
+                readDataFromDatabase(1);
+                adapterForMainFragment.notifyDataSetChanged();
+            } else {
+                readDataFromDatabase(0);
+                if (id == 1) {
                     adapterForMainFragment.notifyDataSetChanged();
+                } else if (id == 2) {
+                    adapterForRemainingBirthday.notifyDataSetChanged();
                 } else {
-                    readDataFromDatabase(0);
-                    if (id == 1) {
-                        adapterForMainFragment.notifyDataSetChanged();
-                    } else if (id == 2) {
-                        adapterForRemainingBirthday.notifyDataSetChanged();
-                    } else {
-                        adapterForUpcomingBirthday.notifyDataSetChanged();
-                    }
+                    adapterForUpcomingBirthday.notifyDataSetChanged();
                 }
-                dialogInterface.dismiss();
-                if (recyclerView.computeVerticalScrollOffset() != 0) {
-                    recyclerView.smoothScrollToPosition(0);
-                }
+            }
+            dialogInterface.dismiss();
+            if (recyclerView.computeVerticalScrollOffset() != 0) {
+                recyclerView.smoothScrollToPosition(0);
             }
         });
         AlertDialog dialog = builder.create();
@@ -289,12 +276,7 @@ public class UtilsActivity extends AppCompatActivity {
         TextView titleText = dialog.findViewById(R.id.title_text);
         titleText.setText(title);
         ImageView ok = dialog.findViewById(R.id.close_app);
-        ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        ok.setOnClickListener(v -> dialog.dismiss());
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
         dialog.show();

@@ -55,14 +55,7 @@ public class ActivityForAgeComparison extends UtilsActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        toolbar.setNavigationOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                }
-        );
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         person1 = findViewById(R.id.person1);
         person2 = findViewById(R.id.person2);
@@ -100,100 +93,89 @@ public class ActivityForAgeComparison extends UtilsActivity {
 
         setTextClear();
 
-        calculate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        calculate.setOnClickListener(v -> {
 
-                Period period;
+            Period period;
 
-                first = new LocalDate(userYears1, userMonths1, userDays1);
-                second = new LocalDate(userYears2, userMonths2, userDays2);
+            first = new LocalDate(userYears1, userMonths1, userDays1);
+            second = new LocalDate(userYears2, userMonths2, userDays2);
 
-                firstTotalDays = AgeCalculator.calculateTotalDays(userYears1, userMonths1, userDays1);
-                secondTotalDays = AgeCalculator.calculateTotalDays(userYears2, userMonths2, userDays2);
+            firstTotalDays = AgeCalculator.calculateTotalDays(userYears1, userMonths1, userDays1);
+            secondTotalDays = AgeCalculator.calculateTotalDays(userYears2, userMonths2, userDays2);
 
-                if (firstTotalDays == secondTotalDays) {
+            if (firstTotalDays == secondTotalDays) {
 
-                    resultText = "\"" + cardName1 + "\" and \"" + cardName2 + "\" are the same age.";
-                    resultText2 = cardName1 + " = " + cardName2;
-                    result.setText(resultText2);
+                resultText = "\"" + cardName1 + "\" and \"" + cardName2 + "\" are the same age.";
+                resultText2 = cardName1 + " = " + cardName2;
+                result.setText(resultText2);
 
-                    years.setText("0");
-                    months.setText("0");
-                    days.setText("0");
+                years.setText("0");
+                months.setText("0");
+                days.setText("0");
 
-                    totalYears.setText("0");
-                    totalMonths.setText("0");
-                    totalWeeks.setText("0");
-                    totalDays.setText("0");
-                    totalHours.setText("0");
-                    totalMinutes.setText("0");
-                    totalSeconds.setText("0");
+                totalYears.setText("0");
+                totalMonths.setText("0");
+                totalWeeks.setText("0");
+                totalDays.setText("0");
+                totalHours.setText("0");
+                totalMinutes.setText("0");
+                totalSeconds.setText("0");
 
-                } else if (firstTotalDays > secondTotalDays) {
+            } else if (firstTotalDays > secondTotalDays) {
 
-                    period = new Period(second, first, PeriodType.yearMonthDay());
-                    ageExtra = AgeCalculator.calculateExtras(period.getYears(), period.getMonths(), period.getDays());
+                period = new Period(second, first, PeriodType.yearMonthDay());
+                ageExtra = AgeCalculator.calculateExtras(period.getYears(), period.getMonths(), period.getDays());
 
-                    nowYears = String.valueOf(period.getYears());
-                    nowMonths = String.valueOf(period.getMonths());
-                    nowDays = String.valueOf(period.getDays());
+                nowYears = String.valueOf(period.getYears());
+                nowMonths = String.valueOf(period.getMonths());
+                nowDays = String.valueOf(period.getDays());
 
-                    if (period.getYears() == 0 && period.getMonths() == 0) {
-                        resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowDays + " days.";
-                    } else if (period.getYears() == 0) {
-                        resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowMonths + " months " + nowDays + " days.";
-                    } else {
-                        resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowYears + " years " + nowMonths + " months " + nowDays + " days.";
-                    }
-
-                    resultText2 = cardName2 + " > " + cardName1;
-                    result.setText(resultText2);
-                    setTextPerson();
-                    setTextExtra();
-
+                if (period.getYears() == 0 && period.getMonths() == 0) {
+                    resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowDays + " days.";
+                } else if (period.getYears() == 0) {
+                    resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowMonths + " months " + nowDays + " days.";
                 } else {
-
-                    period = new Period(first, second, PeriodType.yearMonthDay());
-                    ageExtra = AgeCalculator.calculateExtras(period.getYears(), period.getMonths(), period.getDays());
-
-                    nowYears = String.valueOf(period.getYears());
-                    nowMonths = String.valueOf(period.getMonths());
-                    nowDays = String.valueOf(period.getDays());
-
-                    if (period.getYears() == 0 && period.getMonths() == 0) {
-                        resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowDays + " days.";
-                    } else if (period.getYears() == 0) {
-                        resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowMonths + " months " + nowDays + " days.";
-                    } else {
-                        resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowYears + " years " + nowMonths + " months " + nowDays + " days.";
-                    }
-
-                    resultText2 = cardName1 + " > " + cardName2;
-                    result.setText(resultText2);
-                    setTextPerson();
-                    setTextExtra();
-
+                    resultText = "\"" + cardName2 + "\" is older than \"" + cardName1 + "\" by " + nowYears + " years " + nowMonths + " months " + nowDays + " days.";
                 }
 
+                resultText2 = cardName2 + " > " + cardName1;
+                result.setText(resultText2);
+                setTextPerson();
+                setTextExtra();
+
+            } else {
+
+                period = new Period(first, second, PeriodType.yearMonthDay());
+                ageExtra = AgeCalculator.calculateExtras(period.getYears(), period.getMonths(), period.getDays());
+
+                nowYears = String.valueOf(period.getYears());
+                nowMonths = String.valueOf(period.getMonths());
+                nowDays = String.valueOf(period.getDays());
+
+                if (period.getYears() == 0 && period.getMonths() == 0) {
+                    resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowDays + " days.";
+                } else if (period.getYears() == 0) {
+                    resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowMonths + " months " + nowDays + " days.";
+                } else {
+                    resultText = "\"" + cardName1 + "\" is older than \"" + cardName2 + "\" by " + nowYears + " years " + nowMonths + " months " + nowDays + " days.";
+                }
+
+                resultText2 = cardName1 + " > " + cardName2;
+                result.setText(resultText2);
+                setTextPerson();
+                setTextExtra();
+
             }
+
         });
 
-        clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                setTextClear();
-            }
-        });
+        clear.setOnClickListener(v -> setTextClear());
 
-        person1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent nextBirthday = new Intent(getApplicationContext(), ActivityForRecyclerView.class);
-                nextBirthday.putExtra("title", "Choose Person");
-                nextBirthday.putExtra("result", 1);
-                startActivityForResult(nextBirthday, 1);
-            }
+        person1.setOnClickListener(v -> {
+            Intent nextBirthday = new Intent(getApplicationContext(), ActivityForRecyclerView.class);
+            nextBirthday.putExtra("title", "Choose Person");
+            nextBirthday.putExtra("result", 1);
+            startActivityForResult(nextBirthday, 1);
         });
 
         person1.setOnLongClickListener(new View.OnLongClickListener() {
@@ -358,35 +340,27 @@ public class ActivityForAgeComparison extends UtilsActivity {
 
         datePicker.setMaxDate(new Date().getTime());
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        save.setOnClickListener(v -> {
 
-                if (requestCode == 1) {
-                    cardName1 = "Person One";
-                    userYears1 = datePicker.getYear();
-                    userMonths1 = datePicker.getMonth() + 1;
-                    userDays1 = datePicker.getDayOfMonth();
+            if (requestCode == 1) {
+                cardName1 = "Person One";
+                userYears1 = datePicker.getYear();
+                userMonths1 = datePicker.getMonth() + 1;
+                userDays1 = datePicker.getDayOfMonth();
 
-                    setTextPerson1();
-                } else {
-                    cardName2 = "Person Two";
-                    userYears2 = datePicker.getYear();
-                    userMonths2 = datePicker.getMonth() + 1;
-                    userDays2 = datePicker.getDayOfMonth();
+                setTextPerson1();
+            } else {
+                cardName2 = "Person Two";
+                userYears2 = datePicker.getYear();
+                userMonths2 = datePicker.getMonth() + 1;
+                userDays2 = datePicker.getDayOfMonth();
 
-                    setTextPerson2();
-                }
-                dialog.dismiss();
+                setTextPerson2();
             }
+            dialog.dismiss();
         });
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        cancel.setOnClickListener(v -> dialog.dismiss());
 
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;

@@ -35,7 +35,7 @@ import java.util.Objects;
 
 public class ActivityForDetailsOfBirthday extends UtilsActivity {
 
-    private LocalDate now = new LocalDate();
+    private final LocalDate now = new LocalDate();
     private LocalDate birthday;
     int checkYears, id, userYears, userMonths, userDays;
     String cardName;
@@ -59,14 +59,7 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        toolbar.setNavigationOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                }
-        );
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         DataClass currentAge = AgeCalculator.calculateAge(userYears, userMonths, userDays);
 
@@ -119,32 +112,17 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         final ArrayList<String> leapArray = AgeCalculator.leapYearsTime(now.getYear(), userYears);
         leapTitle.setText(R.string.leap);
         leapCount.setText(String.valueOf(leapArray.size()));
-        leap.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAlertDialog("Leap Year", leapArray.toString());
-            }
-        });
+        leap.setOnClickListener(v -> showAlertDialog("Leap Year", leapArray.toString()));
 
         final ArrayList<String> sameYears = AgeCalculator.sameBirthdayTime(checkYears, userYears, userMonths, userDays);
         sameTitle.setText(R.string.same);
         sameCount.setText(String.valueOf(sameYears.size()));
-        same.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAlertDialog("Same Birth Date", sameYears.toString());
-            }
-        });
+        same.setOnClickListener(v -> showAlertDialog("Same Birth Date", sameYears.toString()));
 
         final String[] zodiacSign = AgeCalculator.isSign(userDays, userMonths);
         signTitle.setText(R.string.sign);
         signCount.setText(zodiacSign[1]);
-        sign.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAlertDialog("Zodiac Sign", zodiacSign[0] + " " + zodiacSign[1]);
-            }
-        });
+        sign.setOnClickListener(v -> showAlertDialog("Zodiac Sign", zodiacSign[0] + " " + zodiacSign[1]));
 
         DataForExtra ageExtra = AgeCalculator.calculateExtras(currentAge.getYears(), currentAge.getMonths(), currentAge.getDays());
         totalYears.setText(String.valueOf(ageExtra.getTotalYears()));
@@ -274,53 +252,45 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
 
         datePicker.setMaxDate(new Date().getTime());
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        save.setOnClickListener(v -> {
 
-                int years = datePicker.getYear();
-                int months = datePicker.getMonth() + 1;
-                int days = datePicker.getDayOfMonth();
-                String name = editText.getText().toString();
+            int years = datePicker.getYear();
+            int months = datePicker.getMonth() + 1;
+            int days = datePicker.getDayOfMonth();
+            String name = editText.getText().toString();
 
-                LocalDate weeks = new LocalDate(years, months, days);
-                int daysOfWeek = weeks.getDayOfWeek();
+            LocalDate weeks = new LocalDate(years, months, days);
+            int daysOfWeek = weeks.getDayOfWeek();
 
-                if (TextUtils.isEmpty(name)) {
-                    editText.setError("Enter name please!");
-                    return;
-                }
+            if (TextUtils.isEmpty(name)) {
+                editText.setError("Enter name please!");
+                return;
+            }
 
-                int totalDays = AgeCalculator.calculateTotalDays(years, months, days);
+            int totalDays = AgeCalculator.calculateTotalDays(years, months, days);
 
-                if (name.equals(cardName) && years == userYears && months == userMonths && days == userDays) {
-                    showToast("Unchanged!");
-                } else {
-                    ContentValues contentValues = new ContentValues();
-                    contentValues.put("name", name);
-                    contentValues.put("day", days);
-                    contentValues.put("month", months);
-                    contentValues.put("year", years);
-                    contentValues.put("days_of_week", daysOfWeek);
-                    contentValues.put("total_days", totalDays);
-                    sqLiteDatabase.update("date_of_birth", contentValues, "_id = ?", new String[]{String.valueOf(id)});
-                    showToast("Edited successfully");
-                    dialog.dismiss();
-                    cardName = name;
-                    userYears = years;
-                    userMonths = months;
-                    userDays = days;
-                    onStart();
-                }
+            if (name.equals(cardName) && years == userYears && months == userMonths && days == userDays) {
+                showToast("Unchanged!");
+            } else {
+                ContentValues contentValues = new ContentValues();
+                contentValues.put("name", name);
+                contentValues.put("day", days);
+                contentValues.put("month", months);
+                contentValues.put("year", years);
+                contentValues.put("days_of_week", daysOfWeek);
+                contentValues.put("total_days", totalDays);
+                sqLiteDatabase.update("date_of_birth", contentValues, "_id = ?", new String[]{String.valueOf(id)});
+                showToast("Edited successfully");
+                dialog.dismiss();
+                cardName = name;
+                userYears = years;
+                userMonths = months;
+                userDays = days;
+                onStart();
             }
         });
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.cancel();
-            }
-        });
+        cancel.setOnClickListener(v -> dialog.cancel());
 
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
@@ -334,22 +304,14 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         Button yes = dialog.findViewById(R.id.save);
         Button no = dialog.findViewById(R.id.cancel);
         yes.setText(R.string.delete);
-        yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(id)});
-                dialog.dismiss();
-                showToast("Deleted Successfully");
-                finish();
-            }
+        yes.setOnClickListener(v -> {
+            sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(id)});
+            dialog.dismiss();
+            showToast("Deleted Successfully");
+            finish();
         });
 
-        no.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        no.setOnClickListener(v -> dialog.dismiss());
 
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;

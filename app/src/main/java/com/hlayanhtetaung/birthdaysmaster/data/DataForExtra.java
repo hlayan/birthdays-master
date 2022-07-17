@@ -2,13 +2,13 @@ package com.hlayanhtetaung.birthdaysmaster.data;
 
 public class DataForExtra {
 
-    private int totalYears;
-    private int totalMonths;
-    private int totalWeeks;
-    private int totalDays;
-    private int totalHours;
-    private int totalMinutes;
-    private int totalSeconds;
+    private final int totalYears;
+    private final int totalMonths;
+    private final int totalWeeks;
+    private final int totalDays;
+    private final int totalHours;
+    private final int totalMinutes;
+    private final int totalSeconds;
 
     public DataForExtra(int totalYears, int totalMonths, int totalWeeks, int totalDays, int totalHours, int totalMinutes, int totalSeconds) {
         this.totalYears = totalYears;

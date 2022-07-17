@@ -30,14 +30,7 @@ public class ActivityForLeapYears extends UtilsActivity {
         Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
 
-        toolbar.setNavigationOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                }
-        );
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         inputUnits = "";
 
@@ -47,12 +40,7 @@ public class ActivityForLeapYears extends UtilsActivity {
         leapYearNumber = findViewById(R.id.leapYearNumber);
 
         View developer = findViewById(R.id.developer);
-        developer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                visitDev();
-            }
-        });
+        developer.setOnClickListener(v -> visitDev());
 
     }
 

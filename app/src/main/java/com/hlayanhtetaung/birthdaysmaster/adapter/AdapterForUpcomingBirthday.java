@@ -2,7 +2,6 @@ package com.hlayanhtetaung.birthdaysmaster.adapter;
 
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -21,8 +20,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hlayanhtetaung.birthdaysmaster.activity.ActivityForDetailsOfBirthday;
 import com.hlayanhtetaung.birthdaysmaster.R;
+import com.hlayanhtetaung.birthdaysmaster.activity.ActivityForDetailsOfBirthday;
 import com.hlayanhtetaung.birthdaysmaster.data.DataClass;
 import com.hlayanhtetaung.birthdaysmaster.database.SQLiteDatabaseOpenHelper;
 import com.hlayanhtetaung.birthdaysmaster.logic.AgeCalculator;
@@ -35,13 +34,13 @@ import java.util.Objects;
 
 public class AdapterForUpcomingBirthday extends RecyclerView.Adapter<AdapterForUpcomingBirthday.ViewHolderForRecyclerView> implements Filterable {
 
-    private ArrayList<DataClass> arrayList;
-    private ArrayList<DataClass> arrayListFull;
+    private final ArrayList<DataClass> arrayList;
+    private final ArrayList<DataClass> arrayListFull;
     private android.database.sqlite.SQLiteDatabase sqLiteDatabase;
     private ReadData readData;
     int checkYears, id;
     int result;
-    private LocalDate now = new LocalDate();
+    private final LocalDate now = new LocalDate();
 
     public interface ReadData {
         void refresh(int result, int id, String name, int userYears, int userMonths, int userDays);
@@ -121,56 +120,46 @@ public class AdapterForUpcomingBirthday extends RecyclerView.Adapter<AdapterForU
 
         }
 
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        cardView.setOnClickListener(v -> {
 
-                if (id != 3) {
-                    if (result == 0) {
-                        Intent intent = new Intent(cardView.getContext(), ActivityForDetailsOfBirthday.class);
+            if (id != 3) {
+                if (result == 0) {
+                    Intent intent = new Intent(cardView.getContext(), ActivityForDetailsOfBirthday.class);
 
-                        intent.putExtra("id", arrayList.get(position).getId());
-                        intent.putExtra("name", arrayList.get(position).getName());
-                        intent.putExtra("userYears", arrayList.get(position).getYears());
-                        intent.putExtra("userMonths", arrayList.get(position).getMonths());
-                        intent.putExtra("userDays", arrayList.get(position).getDays());
+                    intent.putExtra("id", arrayList.get(position).getId());
+                    intent.putExtra("name", arrayList.get(position).getName());
+                    intent.putExtra("userYears", arrayList.get(position).getYears());
+                    intent.putExtra("userMonths", arrayList.get(position).getMonths());
+                    intent.putExtra("userDays", arrayList.get(position).getDays());
 
-                        cardView.getContext().startActivity(intent);
-                    } else {
-                        readData.refresh(result, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
-                    }
+                    cardView.getContext().startActivity(intent);
                 } else {
-                    DataClass dataClass = AgeCalculator.calculateNextBirthday(arrayList.get(position).getMonths(), arrayList.get(position).getDays());
-                    String resultText;
-                    if (dataClass.getMonths() == 0 && dataClass.getDays() == 0) {
-                        resultText = "ဒီနေ့သည် \"" + arrayList.get(position).getName() + "\" နေ့ဖြစ်သည်။";
-                    } else if (dataClass.getMonths() == 0) {
-                        resultText = "\"" + arrayList.get(position).getName() + "\" သို့ရောက်ရန် " + dataClass.getDays() + "ရက်သာကျန်ပါတော့သည်။";
-                    } else {
-                        resultText = "\"" + arrayList.get(position).getName() + "\" သို့ရောက်ရန် " + dataClass.getMonths() + "လ၊ " + dataClass.getDays() + "ရက်ကျန်ပါသေးသည်။";
-                    }
-                    new AlertDialog.Builder(cardView.getContext())
-                            .setTitle("Remaining Time!")
-                            .setMessage(resultText)
-                            .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                                public void onClick(DialogInterface dialog, int id) {
-                                    dialog.cancel();
-                                }
-                            }).show();
+                    readData.refresh(result, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
                 }
+            } else {
+                DataClass dataClass = AgeCalculator.calculateNextBirthday(arrayList.get(position).getMonths(), arrayList.get(position).getDays());
+                String resultText;
+                if (dataClass.getMonths() == 0 && dataClass.getDays() == 0) {
+                    resultText = "ဒီနေ့သည် \"" + arrayList.get(position).getName() + "\" နေ့ဖြစ်သည်။";
+                } else if (dataClass.getMonths() == 0) {
+                    resultText = "\"" + arrayList.get(position).getName() + "\" သို့ရောက်ရန် " + dataClass.getDays() + "ရက်သာကျန်ပါတော့သည်။";
+                } else {
+                    resultText = "\"" + arrayList.get(position).getName() + "\" သို့ရောက်ရန် " + dataClass.getMonths() + "လ၊ " + dataClass.getDays() + "ရက်ကျန်ပါသေးသည်။";
+                }
+                new AlertDialog.Builder(cardView.getContext())
+                        .setTitle("Remaining Time!")
+                        .setMessage(resultText)
+                        .setPositiveButton("OK", (dialog, id) -> dialog.cancel()).show();
             }
         });
 
-        cardView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                if (id != 3) {
-                    if (result == 0) {
-                        showPopupToDeleteAllItems(cardView.getContext(), position);
-                    }
+        cardView.setOnLongClickListener(v -> {
+            if (id != 3) {
+                if (result == 0) {
+                    showPopupToDeleteAllItems(cardView.getContext(), position);
                 }
-                return true;
             }
+            return true;
         });
 
     }
@@ -182,7 +171,7 @@ public class AdapterForUpcomingBirthday extends RecyclerView.Adapter<AdapterForU
 
     static class ViewHolderForRecyclerView extends RecyclerView.ViewHolder {
 
-        private CardView cardView;
+        private final CardView cardView;
 
         ViewHolderForRecyclerView(CardView v) {
             super(v);
@@ -195,7 +184,7 @@ public class AdapterForUpcomingBirthday extends RecyclerView.Adapter<AdapterForU
         return exampleFilter;
     }
 
-    private Filter exampleFilter = new Filter() {
+    private final Filter exampleFilter = new Filter() {
         @Override
         protected FilterResults performFiltering(CharSequence constraint) {
             List<DataClass> filteredList = new ArrayList<>();
@@ -235,22 +224,14 @@ public class AdapterForUpcomingBirthday extends RecyclerView.Adapter<AdapterForU
         TextView deleteItem = dialog.findViewById(R.id.warning_text);
         deleteItem.setText(resultText);
 
-        yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(arrayList.get(position).getId())});
-                readData.refresh(0, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
-                notifyDataSetChanged();
-                dialog.cancel();
-            }
+        yes.setOnClickListener(v -> {
+            sqLiteDatabase.delete("date_of_birth", "_id = ?", new String[]{String.valueOf(arrayList.get(position).getId())});
+            readData.refresh(0, arrayList.get(position).getId(), arrayList.get(position).getName(), arrayList.get(position).getYears(), arrayList.get(position).getMonths(), arrayList.get(position).getDays());
+            notifyDataSetChanged();
+            dialog.cancel();
         });
 
-        no.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        no.setOnClickListener(v -> dialog.dismiss());
 
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         Objects.requireNonNull(dialog.getWindow()).getAttributes().windowAnimations = R.style.DialogTheme;

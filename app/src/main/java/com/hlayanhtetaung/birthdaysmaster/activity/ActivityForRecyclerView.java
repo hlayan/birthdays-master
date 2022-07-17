@@ -14,7 +14,6 @@ import android.widget.DatePicker;
 import android.widget.SearchView;
 
 import androidx.appcompat.widget.Toolbar;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.hlayanhtetaung.birthdaysmaster.R;
 import com.hlayanhtetaung.birthdaysmaster.adapter.AdapterForMainFragment;
@@ -49,14 +48,7 @@ public class ActivityForRecyclerView extends UtilsActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         Objects.requireNonNull(getSupportActionBar()).setTitle(title);
 
-        toolbar.setNavigationOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        finish();
-                    }
-                }
-        );
+        toolbar.setNavigationOnClickListener(v -> finish());
 
         openHelper = new SQLiteDatabaseOpenHelper(this);
         sqLiteDatabase = openHelper.getReadableDatabase();
@@ -74,14 +66,11 @@ public class ActivityForRecyclerView extends UtilsActivity {
         adapterForMainFragment = new AdapterForMainFragment(arrayList, result);
         showFragments(1);
 
-        adapterForMainFragment.setReadData(new AdapterForMainFragment.ReadData() {
-            @Override
-            public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
-                if (i == 0) {
-                    readDataFromDatabase(1);
-                } else {
-                    returnResult(id, name, userYears, userMonths, userDays, result);
-                }
+        adapterForMainFragment.setReadData((i, id, name, userYears, userMonths, userDays) -> {
+            if (i == 0) {
+                readDataFromDatabase(1);
+            } else {
+                returnResult(id, name, userYears, userMonths, userDays, result);
             }
         });
 
@@ -90,12 +79,7 @@ public class ActivityForRecyclerView extends UtilsActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                swipeContainer.setRefreshing(false);
-            }
-        });
+        swipeContainer.setOnRefreshListener(() -> swipeContainer.setRefreshing(false));
 
         swipeContainer.setColorSchemeColors(getThemeColor());
 
@@ -160,32 +144,24 @@ public class ActivityForRecyclerView extends UtilsActivity {
             save.setText(R.string.confirm);
         }
         datePicker.setMaxDate(new Date().getTime());
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final int years = datePicker.getYear();
-                final int months = datePicker.getMonth() + 1;
-                final int days = datePicker.getDayOfMonth();
-                if (result == 0) {
-                    Intent intent = new Intent(getApplicationContext(), ActivityForDetailsOfBirthday.class);
-                    intent.putExtra("name", "Details");
-                    intent.putExtra("userYears", years);
-                    intent.putExtra("userMonths", months);
-                    intent.putExtra("userDays", days);
-                    startActivity(intent);
-                } else if (result == 1) {
-                    returnResult(0, "Person One", years, months, days, result);
-                } else {
-                    returnResult(0, "Person Two", years, months, days, result);
-                }
+        save.setOnClickListener(v -> {
+            final int years = datePicker.getYear();
+            final int months = datePicker.getMonth() + 1;
+            final int days = datePicker.getDayOfMonth();
+            if (result == 0) {
+                Intent intent = new Intent(getApplicationContext(), ActivityForDetailsOfBirthday.class);
+                intent.putExtra("name", "Details");
+                intent.putExtra("userYears", years);
+                intent.putExtra("userMonths", months);
+                intent.putExtra("userDays", days);
+                startActivity(intent);
+            } else if (result == 1) {
+                returnResult(0, "Person One", years, months, days, result);
+            } else {
+                returnResult(0, "Person Two", years, months, days, result);
             }
         });
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        cancel.setOnClickListener(v -> dialog.dismiss());
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
         dialog.setContentView(dialogView);

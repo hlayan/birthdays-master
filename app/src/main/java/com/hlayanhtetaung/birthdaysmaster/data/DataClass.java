@@ -5,8 +5,8 @@ public class DataClass {
     private int id;
     private String name;
     private int years;
-    private int months;
-    private int days;
+    private final int months;
+    private final int days;
 
     public DataClass(int id, String name, int years, int months, int days) {
         this.id = id;

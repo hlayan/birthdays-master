@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class AgeCalculator {
 
-    private static LocalDate now = new LocalDate();
+    private static final LocalDate now = new LocalDate();
 
     public final static String[] MONTH12 = new String[]{"January", "February", "Match", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
     public final static String[] WEEK7 = new String[]{"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};

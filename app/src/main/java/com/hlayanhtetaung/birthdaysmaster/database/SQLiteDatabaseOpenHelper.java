@@ -56,16 +56,16 @@ public class SQLiteDatabaseOpenHelper extends android.database.sqlite.SQLiteOpen
 
     private void insertDataToDateOfBirth(SQLiteDatabase sqLiteDatabase) {
 
-        LocalDate weeks = new LocalDate(2000, 11, 15);
+        LocalDate weeks = new LocalDate(2001, 6, 1);
         int daysOfWeek = weeks.getDayOfWeek();
 
-        int totalDays = AgeCalculator.calculateTotalDays(2000, 11, 15);
+        int totalDays = AgeCalculator.calculateTotalDays(2001, 6, 1);
 
         ContentValues contentValues = new ContentValues();
         contentValues.put("name", "Hlayan Htet Aung");
-        contentValues.put("day", 15);
-        contentValues.put("month", 11);
-        contentValues.put("year", 2000);
+        contentValues.put("day", 1);
+        contentValues.put("month", 6);
+        contentValues.put("year", 2001);
         contentValues.put("days_of_week", daysOfWeek);
         contentValues.put("total_days", totalDays);
         sqLiteDatabase.insert("date_of_birth", null, contentValues);

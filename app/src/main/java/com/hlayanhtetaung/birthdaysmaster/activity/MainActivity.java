@@ -9,10 +9,8 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -24,7 +22,6 @@ import android.widget.SearchView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.Toolbar;
@@ -32,7 +29,6 @@ import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.navigation.NavigationView;
@@ -69,28 +65,24 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
             toolbar.setTitle(arrayList.size() + " Person");
         }
 
-        swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onRefresh() {
+        swipeContainer.setOnRefreshListener(() -> {
 
-                readDataFromDatabase(0);
+            readDataFromDatabase(0);
 
-                if (id == 1) {
-                    adapterForMainFragment.notifyDataSetChanged();
-                } else if (id == 2) {
-                    adapterForRemainingBirthday.notifyDataSetChanged();
-                } else {
-                    adapterForUpcomingBirthday.notifyDataSetChanged();
-                }
-
-                if (arrayList.size() > 1) {
-                    toolbar.setTitle(arrayList.size() + " Persons");
-                } else {
-                    toolbar.setTitle(arrayList.size() + " Person");
-                }
-
+            if (id == 1) {
+                adapterForMainFragment.notifyDataSetChanged();
+            } else if (id == 2) {
+                adapterForRemainingBirthday.notifyDataSetChanged();
+            } else {
+                adapterForUpcomingBirthday.notifyDataSetChanged();
             }
+
+            if (arrayList.size() > 1) {
+                toolbar.setTitle(arrayList.size() + " Persons");
+            } else {
+                toolbar.setTitle(arrayList.size() + " Person");
+            }
+
         });
 
         swipeContainer.setColorSchemeColors(getThemeColor());
@@ -366,54 +358,46 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
 
         datePicker.setMaxDate(new Date().getTime());
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        save.setOnClickListener(v -> {
 
-                int years = datePicker.getYear();
-                int months = datePicker.getMonth() + 1;
-                int days = datePicker.getDayOfMonth();
-                String name = editText.getText().toString();
+            int years = datePicker.getYear();
+            int months = datePicker.getMonth() + 1;
+            int days = datePicker.getDayOfMonth();
+            String name = editText.getText().toString();
 
-                if (TextUtils.isEmpty(name)) {
-                    editText.setError("Enter name please!");
-                    return;
-                }
+            if (TextUtils.isEmpty(name)) {
+                editText.setError("Enter name please!");
+                return;
+            }
 
-                LocalDate weeks = new LocalDate(years, months, days);
-                int daysOfWeek = weeks.getDayOfWeek();
+            LocalDate weeks = new LocalDate(years, months, days);
+            int daysOfWeek = weeks.getDayOfWeek();
 
-                int totalDays = AgeCalculator.calculateTotalDays(years, months, days);
+            int totalDays = AgeCalculator.calculateTotalDays(years, months, days);
 
-                insertDataToDatabase(name, days, months, years, daysOfWeek, totalDays);
-                readDataFromDatabase(0);
-                if (id == 1) {
-                    adapterForMainFragment.notifyDataSetChanged();
-                } else if (id == 2) {
-                    adapterForRemainingBirthday.notifyDataSetChanged();
-                } else {
-                    adapterForUpcomingBirthday.notifyDataSetChanged();
-                }
-                showToast("Added successfully");
-                if (arrayList.size() > 1) {
-                    toolbar.setTitle(arrayList.size() + " Persons");
-                } else {
-                    toolbar.setTitle(arrayList.size() + " Person");
-                }
-                dialog.cancel();
+            insertDataToDatabase(name, days, months, years, daysOfWeek, totalDays);
+            readDataFromDatabase(0);
+            if (id == 1) {
+                adapterForMainFragment.notifyDataSetChanged();
+            } else if (id == 2) {
+                adapterForRemainingBirthday.notifyDataSetChanged();
+            } else {
+                adapterForUpcomingBirthday.notifyDataSetChanged();
+            }
+            showToast("Added successfully");
+            if (arrayList.size() > 1) {
+                toolbar.setTitle(arrayList.size() + " Persons");
+            } else {
+                toolbar.setTitle(arrayList.size() + " Person");
+            }
+            dialog.cancel();
 
-                if (recyclerView.computeVerticalScrollOffset() != 0) {
-                    recyclerView.smoothScrollToPosition(0);
-                }
+            if (recyclerView.computeVerticalScrollOffset() != 0) {
+                recyclerView.smoothScrollToPosition(0);
             }
         });
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.cancel();
-            }
-        });
+        cancel.setOnClickListener(v -> dialog.cancel());
 
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
@@ -434,30 +418,22 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
 
         datePicker.setMaxDate(new Date().getTime());
 
-        save.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        save.setOnClickListener(v -> {
 
-                final int years = datePicker.getYear();
-                final int months = datePicker.getMonth() + 1;
-                final int days = datePicker.getDayOfMonth();
+            final int years = datePicker.getYear();
+            final int months = datePicker.getMonth() + 1;
+            final int days = datePicker.getDayOfMonth();
 
-                Intent intent = new Intent(getApplicationContext(), ActivityForDetailsOfBirthday.class);
-                intent.putExtra("name", "Anonymous");
-                intent.putExtra("userYears", years);
-                intent.putExtra("userMonths", months);
-                intent.putExtra("userDays", days);
-                startActivity(intent);
+            Intent intent = new Intent(getApplicationContext(), ActivityForDetailsOfBirthday.class);
+            intent.putExtra("name", "Anonymous");
+            intent.putExtra("userYears", years);
+            intent.putExtra("userMonths", months);
+            intent.putExtra("userDays", days);
+            startActivity(intent);
 
-            }
         });
 
-        cancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        cancel.setOnClickListener(v -> dialog.dismiss());
 
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
@@ -476,28 +452,20 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
         TextView deleteItem = dialog.findViewById(R.id.warning_text);
         deleteItem.setText(R.string.delete_all_item);
 
-        yes.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sqLiteDatabase.delete("date_of_birth", null, null);
-                readDataFromDatabase(0);
-                adapterForMainFragment.notifyDataSetChanged();
-                showToast("Deleted Everything");
-                if (arrayList.size() > 1) {
-                    toolbar.setTitle(arrayList.size() + " Persons");
-                } else {
-                    toolbar.setTitle(arrayList.size() + " Person");
-                }
-                dialog.dismiss();
+        yes.setOnClickListener(v -> {
+            sqLiteDatabase.delete("date_of_birth", null, null);
+            readDataFromDatabase(0);
+            adapterForMainFragment.notifyDataSetChanged();
+            showToast("Deleted Everything");
+            if (arrayList.size() > 1) {
+                toolbar.setTitle(arrayList.size() + " Persons");
+            } else {
+                toolbar.setTitle(arrayList.size() + " Person");
             }
+            dialog.dismiss();
         });
 
-        no.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        no.setOnClickListener(v -> dialog.dismiss());
 
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;

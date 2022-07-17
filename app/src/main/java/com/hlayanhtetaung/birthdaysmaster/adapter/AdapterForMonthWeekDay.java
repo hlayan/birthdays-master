@@ -6,9 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,16 +14,16 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.hlayanhtetaung.birthdaysmaster.activity.ActivityForRecyclerView;
 import com.hlayanhtetaung.birthdaysmaster.R;
+import com.hlayanhtetaung.birthdaysmaster.activity.ActivityForRecyclerView;
 
 import java.util.Objects;
 
 public class AdapterForMonthWeekDay extends RecyclerView.Adapter<AdapterForMonthWeekDay.ViewHolderForRecyclerView> {
 
-    private int[] arrayList;
-    private String[] strings;
-    private String checking;
+    private final int[] arrayList;
+    private final String[] strings;
+    private final String checking;
 
     public AdapterForMonthWeekDay(int[] arrayList, String[] strings, int count) {
         this.arrayList = arrayList;
@@ -56,29 +54,23 @@ public class AdapterForMonthWeekDay extends RecyclerView.Adapter<AdapterForMonth
         title.setText(strings[position]);
         count.setText(String.valueOf(arrayList[position]));
 
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(cardView.getContext(), ActivityForRecyclerView.class);
-                intent.putExtra("title", strings[position]);
-                intent.putExtra("count", String.valueOf(position + 1));
-                intent.putExtra("checking", checking);
-                cardView.getContext().startActivity(intent);
-            }
+        cardView.setOnClickListener(v -> {
+            Intent intent = new Intent(cardView.getContext(), ActivityForRecyclerView.class);
+            intent.putExtra("title", strings[position]);
+            intent.putExtra("count", String.valueOf(position + 1));
+            intent.putExtra("checking", checking);
+            cardView.getContext().startActivity(intent);
         });
 
-        cardView.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                String resultText;
-                if (arrayList[position] > 1) {
-                    resultText = "It has (" + arrayList[position] + ") persons in " + strings[position];
-                } else {
-                    resultText = "It has (" + arrayList[position] + ") person in " + strings[position];
-                }
-                showAlertDialog(strings[position], resultText, cardView.getContext());
-                return true;
+        cardView.setOnLongClickListener(v -> {
+            String resultText;
+            if (arrayList[position] > 1) {
+                resultText = "It has (" + arrayList[position] + ") persons in " + strings[position];
+            } else {
+                resultText = "It has (" + arrayList[position] + ") person in " + strings[position];
             }
+            showAlertDialog(strings[position], resultText, cardView.getContext());
+            return true;
         });
 
     }
@@ -90,7 +82,7 @@ public class AdapterForMonthWeekDay extends RecyclerView.Adapter<AdapterForMonth
 
     static class ViewHolderForRecyclerView extends RecyclerView.ViewHolder {
 
-        private CardView cardView;
+        private final CardView cardView;
 
         ViewHolderForRecyclerView(CardView v) {
             super(v);
@@ -106,12 +98,7 @@ public class AdapterForMonthWeekDay extends RecyclerView.Adapter<AdapterForMonth
         TextView titleText = dialog.findViewById(R.id.title_text);
         titleText.setText(title);
         ImageView ok = dialog.findViewById(R.id.close_app);
-        ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+        ok.setOnClickListener(v -> dialog.dismiss());
         Objects.requireNonNull(dialog.getWindow()).setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogTheme;
         dialog.show();
