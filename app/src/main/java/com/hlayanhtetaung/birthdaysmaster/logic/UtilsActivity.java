@@ -102,11 +102,11 @@ public class UtilsActivity extends AppCompatActivity {
                 Intent i1 = new Intent(Intent.ACTION_VIEW, Uri.parse("fb://profile/100016026428007"));
                 startActivity(i1);
             } else {
-                Intent i2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/HlayanHtetAung"));
+                Intent i2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/hlayan.fb"));
                 startActivity(i2);
             }
         } catch (Exception e) {
-            Intent i3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/HlayanHtetAung"));
+            Intent i3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/hlayan.fb"));
             startActivity(i3);
         }
     }
