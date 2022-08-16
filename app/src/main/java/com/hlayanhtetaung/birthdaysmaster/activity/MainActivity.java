@@ -123,39 +123,30 @@ public class MainActivity extends UtilsActivity implements NavigationView.OnNavi
         showFragments(id);
 
         if (id == 1) {
-            adapterForMainFragment.setReadData(new AdapterForMainFragment.ReadData() {
-                @Override
-                public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
-                    readDataFromDatabase(0);
-                    if (arrayList.size() > 1) {
-                        toolbar.setTitle(arrayList.size() + " Persons");
-                    } else {
-                        toolbar.setTitle(arrayList.size() + " Person");
-                    }
+            adapterForMainFragment.setReadData((i, id, name, userYears, userMonths, userDays) -> {
+                readDataFromDatabase(0);
+                if (arrayList.size() > 1) {
+                    toolbar.setTitle(arrayList.size() + " Persons");
+                } else {
+                    toolbar.setTitle(arrayList.size() + " Person");
                 }
             });
         } else if (id == 2) {
-            adapterForRemainingBirthday.setReadData(new AdapterForRemainingBirthday.ReadData() {
-                @Override
-                public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
-                    readDataFromDatabase(0);
-                    if (arrayList.size() > 1) {
-                        toolbar.setTitle(arrayList.size() + " Persons");
-                    } else {
-                        toolbar.setTitle(arrayList.size() + " Person");
-                    }
+            adapterForRemainingBirthday.setReadData((i, id, name, userYears, userMonths, userDays) -> {
+                readDataFromDatabase(0);
+                if (arrayList.size() > 1) {
+                    toolbar.setTitle(arrayList.size() + " Persons");
+                } else {
+                    toolbar.setTitle(arrayList.size() + " Person");
                 }
             });
         } else {
-            adapterForUpcomingBirthday.setReadData(new AdapterForUpcomingBirthday.ReadData() {
-                @Override
-                public void refresh(int i, int id, String name, int userYears, int userMonths, int userDays) {
-                    readDataFromDatabase(0);
-                    if (arrayList.size() > 1) {
-                        toolbar.setTitle(arrayList.size() + " Persons");
-                    } else {
-                        toolbar.setTitle(arrayList.size() + " Person");
-                    }
+            adapterForUpcomingBirthday.setReadData((i, id, name, userYears, userMonths, userDays) -> {
+                readDataFromDatabase(0);
+                if (arrayList.size() > 1) {
+                    toolbar.setTitle(arrayList.size() + " Persons");
+                } else {
+                    toolbar.setTitle(arrayList.size() + " Person");
                 }
             });
         }

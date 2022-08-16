@@ -178,46 +178,27 @@ public class ActivityForAgeComparison extends UtilsActivity {
             startActivityForResult(nextBirthday, 1);
         });
 
-        person1.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                showPopupToFillUserInfo(1);
-                return true;
-            }
+        person1.setOnLongClickListener(v -> {
+            showPopupToFillUserInfo(1);
+            return true;
         });
 
-        person2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent nextBirthday = new Intent(getApplicationContext(), ActivityForRecyclerView.class);
-                nextBirthday.putExtra("title", "Choose Person");
-                nextBirthday.putExtra("result", 2);
-                startActivityForResult(nextBirthday, 2);
-            }
+        person2.setOnClickListener(v -> {
+            Intent nextBirthday = new Intent(getApplicationContext(), ActivityForRecyclerView.class);
+            nextBirthday.putExtra("title", "Choose Person");
+            nextBirthday.putExtra("result", 2);
+            startActivityForResult(nextBirthday, 2);
         });
 
-        person2.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                showPopupToFillUserInfo(2);
-                return true;
-            }
+        person2.setOnLongClickListener(v -> {
+            showPopupToFillUserInfo(2);
+            return true;
         });
 
-        difference.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showAlertDialog("Difference", resultText);
-            }
-        });
+        difference.setOnClickListener(v -> showAlertDialog("Difference", resultText));
 
         View developer = findViewById(R.id.developer);
-        developer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                visitDev();
-            }
-        });
+        developer.setOnClickListener(v -> visitDev());
 
     }
 

@@ -205,12 +205,7 @@ public class ActivityForDetailsOfBirthday extends UtilsActivity {
         sqLiteDatabase = openHelper.getReadableDatabase();
 
         View developer = findViewById(R.id.developer);
-        developer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                visitDev();
-            }
-        });
+        developer.setOnClickListener(v -> visitDev());
     }
 
     @Override
