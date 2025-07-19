@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 34
+    compileSdkVersion 35
     namespace 'com.hlayanhtetaung.birthdaysmaster'
 
     defaultConfig {
         applicationId "com.hlayanhtetaung.birthdaysmaster"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 35
         versionCode 3
         versionName "1.0.1"
     }
